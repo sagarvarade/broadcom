@@ -16,6 +16,7 @@
     <modules>
         <module>namingserver</module>
         <module>apigateway</module>
+        <module>authentication</module>
     </modules>
 
     <properties>
@@ -25,7 +26,7 @@
         <spring-cloud.version>2022.0.1</spring-cloud.version>
 
         <namingserver.version>2.1.1</namingserver.version>
-
+        <authentication.version>3.1.1</authentication.version>
     </properties>
 
 </project>
