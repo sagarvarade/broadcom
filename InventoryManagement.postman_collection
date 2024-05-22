@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "8a4cd6d2-5146-4f7c-9687-094bae56bd38",
+		"name": "InventoryManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1_Login",
+			"protocolProfileBehavior": {
+				"strictSSL": false,
+				"followRedirects": false
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"sagar\",\r\n    \"password\":\"sagar\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7200/auth/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7200",
+					"path": [
+						"auth",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2_Test_token",
+			"protocolProfileBehavior": {
+				"strictSSL": false,
+				"followRedirects": false,
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWdhciIsImlhdCI6MTY3NzQzMTMwMSwiZXhwIjoxNjc3NDMzMTAxfQ.0e3HUVfbFV_PychmugyDbCrbOEZe3fXfEG9nxCzRnMA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8765/authentication/auth/testtoken",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"authentication",
+						"auth",
+						"testtoken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SpringApp1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/helloworld/hello1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"helloworld",
+						"hello1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SpringApp2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/helloworld/hello2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"helloworld",
+						"hello2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SpringApp1 API",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWdhciIsImlhdCI6MTY3NzQzMTMwMSwiZXhwIjoxNjc3NDMzMTAxfQ.0e3HUVfbFV_PychmugyDbCrbOEZe3fXfEG9nxCzRnMA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/springapp1/helloworld/hello1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"springapp1",
+						"helloworld",
+						"hello1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SpringApp2 API",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWdhciIsImlhdCI6MTY3NzQzMTMwMSwiZXhwIjoxNjc3NDMzMTAxfQ.0e3HUVfbFV_PychmugyDbCrbOEZe3fXfEG9nxCzRnMA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/springapp2/helloworld/hello2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"springapp2",
+						"helloworld",
+						"hello2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
