@@ -15,6 +15,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>namingserver</module>
+        <module>apigateway</module>
     </modules>
 
     <properties>
@@ -24,6 +25,7 @@
         <spring-cloud.version>2022.0.1</spring-cloud.version>
 
         <namingserver.version>2.1.1</namingserver.version>
+
     </properties>
 
 </project>
