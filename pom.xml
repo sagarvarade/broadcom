@@ -17,6 +17,7 @@
         <module>namingserver</module>
         <module>apigateway</module>
         <module>authentication</module>
+        <module>Util</module>
     </modules>
 
     <properties>
