@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "fc9b1bb1-1001-4d20-bb81-717f56adb07f",
+		"name": "BroadComPostman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1783708"
+	},
+	"item": [
+		{
+			"name": "Gateway",
+			"item": [
+				{
+					"name": "1_Login_GT",
+					"protocolProfileBehavior": {
+						"strictSSL": false,
+						"followRedirects": false
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"sagar\",\r\n    \"password\":\"sagar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/authentication/auth/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"authentication",
+								"auth",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2_Test_token_GT",
+					"protocolProfileBehavior": {
+						"strictSSL": false,
+						"followRedirects": false,
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJyb2xlcyI6IlJPTEVfQURNSU4iLCJlbWFpbCI6ImFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJzYWdhciIsInN1YiI6InNhZ2FyIiwiaWF0IjoxNzE2Mzk5ODAxLCJleHAiOjE3MTY0MDE2MDF9.M41u2rgBtO8amxerNBmVbiB6A2PD3y7HJKgH3IM3v_M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/authentication/auth/testtoken",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"authentication",
+								"auth",
+								"testtoken"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BroadComAppHelloGT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJyb2xlcyI6IlJPTEVfQURNSU4iLCJlbWFpbCI6ImFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJzYWdhciIsInN1YiI6InNhZ2FyIiwiaWF0IjoxNzE2NDAxMjQzLCJleHAiOjE3MTY0MDMwNDN9.D20zR6WAfEqtfz1rIbVck9vmG_PNjE4dyVZnbcOMz-I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/broadcomapp/helloworld/hello1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"broadcomapp",
+								"helloworld",
+								"hello1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DirectURLS",
+			"item": [
+				{
+					"name": "1_Login",
+					"protocolProfileBehavior": {
+						"strictSSL": false,
+						"followRedirects": false
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"sagar\",\r\n    \"password\":\"sagar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7200/auth/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7200",
+							"path": [
+								"auth",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2_Test_token",
+					"protocolProfileBehavior": {
+						"strictSSL": false,
+						"followRedirects": false,
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJyb2xlcyI6IlJPTEVfQURNSU4iLCJlbWFpbCI6ImFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJzYWdhciIsInN1YiI6InNhZ2FyIiwiaWF0IjoxNzE2Mzk5ODAxLCJleHAiOjE3MTY0MDE2MDF9.M41u2rgBtO8amxerNBmVbiB6A2PD3y7HJKgH3IM3v_M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7200/auth/testtoken",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7200",
+							"path": [
+								"auth",
+								"testtoken"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BroadComAppHello",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7210/helloworld/hello1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7210",
+							"path": [
+								"helloworld",
+								"hello1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
