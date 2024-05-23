@@ -18,7 +18,7 @@ To change the port of application, In VM arguments :
 -Dserver.port=8021
 
 <br/>
-<p>
+<pre>
 DB insert for Auth DB:
 DROP DATABASE IF EXISTS `authentication`;
 CREATE DATABASE IF NOT EXISTS `authentication` /*!40100 DEFAULT CHARACTER SET latin1 */;
@@ -42,7 +42,7 @@ DELETE FROM `userinfo`;
 /*!40000 ALTER TABLE `userinfo` DISABLE KEYS */;
 INSERT INTO `userinfo` (`id`, `email`, `name`, `password`, `roles`) VALUES
 	(1, 'a@gmail.com', 'sagar', '$2a$10$zan24hGdotQG9VEOKNkQoO01Owv9GF5CIihhOGHgv5zNbF2HJrmBy', 'ROLE_ADMIN');
-</p>
+<pre>
 
 Username : sagar , password : sagar
 
