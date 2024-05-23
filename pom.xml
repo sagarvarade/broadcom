@@ -26,12 +26,12 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-cloud.version>2022.0.1</spring-cloud.version>
-
+        <!--
         <namingserver.version>1.1.1</namingserver.version>
-        <!-- API Gateway is hosted by itself at version 2.1.1 -->
+         API Gateway is hosted by itself at version 2.1.1
         <authentication.version>3.1.1</authentication.version>
         <broadcomapp.version>4.1.1</broadcomapp.version>
-
+        -->
     </properties>
 
 </project>

@@ -13,7 +13,7 @@
     <artifactId>broadcomapp</artifactId>
     <name>broadcomapp</name>
     <description>broadcomapp</description>
-    <version>${broadcomapp.version}</version>
+    <version>4.1.1</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

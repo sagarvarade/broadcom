@@ -11,7 +11,7 @@
     <groupId>com.namingserver</groupId>
     <artifactId>namingserver</artifactId>
     <name>namingserver</name>
-    <version>${namingserver.version}</version>
+    <version>1.1.1</version>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>

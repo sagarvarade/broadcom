@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  namingserver:
+    image: broadcom-namingserver:1.1.1
+    restart: always
+    ports:
+      - "7100:7100"
+    networks:
+      - broadcom-network
+
+  apigateway:
+    image: broadcom-apigateway:2.1.1
+    restart: always
+    ports:
+      - "7000:7000"
+    depends_on:
+      - namingserver
+    networks:
+      - broadcom-network
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7100/eureka/
+
+  authentication:
+    image: broadcom-authentication:3.1.1
+    restart: always
+    ports:
+      - "7200:7200"
+    depends_on:
+      - apigateway
+    networks:
+      - broadcom-network
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7100/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:mysql://host.docker.internal:3306/authentication?allowPublicKeyRetrieval=true&useSSL=false
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=admin
+
+  broadcomapp:
+    image: broadcom-broadcomapp:4.1.1
+    restart: always
+    ports:
+      - "7210:7210"
+    depends_on:
+      - authentication
+    networks:
+      - broadcom-network
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7100/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:mysql://host.docker.internal:3306/authentication?allowPublicKeyRetrieval=true&useSSL=false
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=admin
+
+networks:
+  broadcom-network:
+    driver: bridge

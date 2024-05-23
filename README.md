@@ -7,9 +7,7 @@ Inventory Management, Multi Module Spring Boot Project for learning purpose
 1. Authentication       : 7200
 2. Naming Server        : 7100
 3. API Gateway Server   : 7000  
-4. Inventory Manager    : 7210
-5. UI Application       : 7211
-6. Inventory Notification : 7213
+4. Broadcom application : 7210
 
 
 Add below to your Java application run configuration to avoid certificate issue, In VM arguments :
@@ -20,6 +18,65 @@ To change the port of application, In VM arguments :
 -Dserver.port=8021
 
 
+Docker Build Commands :
+mvn clean install
+
+mvn --projects namingserver spring-boot:build-image
+
+mvn --projects apigateway spring-boot:build-image
+
+mvn --projects authentication spring-boot:build-image
+
+mvn --projects broadcomapp spring-boot:build-image
+
+To run images on docker :
+
+docker run -d --restart=always -p 7100:7100 broadcom-namingserver:1.1.1
+
+docker run -d --restart=always -p 7000:7000 broadcom-apigateway:2.1.1
+
+docker run -d --restart=always -p 7200:7200 broadcom-authentication:3.1.1
+
+docker run -d --restart=always -p 7210:7210 broadcom-broadcomapp:4.1.1
+
+
+Docker stop all containers :
+
+docker stop $(docker ps -q)
+
+Remove all container :
+
+docker rm $(docker ps -a -q)
+
+Stop and remove all containers :
+docker stop $(docker ps -q) && docker rm $(docker ps -a -q)
+
+docker-compose down
+docker-compose up --build -d
+
+docker-compose logs apigateway
+docker-compose up -d
+--
+
+docker stop $(docker ps -a -q --filter="ancestor=broadcom-namingserver:1.1.1") -f
+docker stop $(docker ps -a -q --filter="ancestor=broadcom-apigateway:2.1.1") -f
+docker stop $(docker ps -a -q --filter="ancestor=broadcom-authentication:3.1.1") -f
+docker stop $(docker ps -a -q --filter="ancestor=broadcom-broadcomapp:4.1.1") -f
+
+docker rm $(docker ps -a -q --filter="ancestor=broadcom-namingserver:1.1.1") -f
+docker rm $(docker ps -a -q --filter="ancestor=broadcom-apigateway:2.1.1") -f
+docker rm $(docker ps -a -q --filter="ancestor=broadcom-authentication:3.1.1") -f
+docker rm $(docker ps -a -q --filter="ancestor=broadcom-broadcomapp:4.1.1") -f
+
+docker rmi -f broadcom-namingserver:1.1.1
+docker rmi -f broadcom-apigateway:2.1.1
+docker rmi -f broadcom-authentication:3.1.1
+docker rmi -f broadcom-broadcomapp:4.1.1
+
+
+--
+
+<pre>
 
 DB insert for Auth DB:
 DROP DATABASE IF EXISTS `authentication`;
@@ -42,5 +99,6 @@ DELETE FROM `userinfo`;
 /*!40000 ALTER TABLE `userinfo` DISABLE KEYS */;
 INSERT INTO `userinfo` (`id`, `email`, `name`, `password`, `roles`) VALUES
 	(1, 'a@gmail.com', 'sagar', '$2a$10$zan24hGdotQG9VEOKNkQoO01Owv9GF5CIihhOGHgv5zNbF2HJrmBy', 'ROLE_ADMIN');
+<pre>
 
 Username : sagar , password : sagar
