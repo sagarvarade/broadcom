@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/buildDockerImages.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/docker_apigateway.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/docker_authentication.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/docker_broadcomapp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/docker_namingserver.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication/src/main/resources/application-dev.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication/src/main/resources/application-prod.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/resources/application-dev.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/resources/application-prod.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/URLS/CallsWithOtherServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/URLS/CallsWithOtherServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +72,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "jdk.selected.JAVA_MODULE": "17 (2)",
-    "last_opened_file_path": "E:/SpringIJ/BroadCom/namingserver/src/main/resources",
+    "last_opened_file_path": "E:/SpringIJ/BroadCom/broadcomapp/src/main/resources",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -82,11 +84,11 @@
       <recent name="com.Broadcomapp.user.beans" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\SpringIJ\BroadCom\broadcomapp\src\main\resources" />
+      <recent name="E:\SpringIJ\BroadCom\authentication\src\main\resources" />
       <recent name="E:\SpringIJ\BroadCom\namingserver\src\main\resources" />
       <recent name="E:\SpringIJ\BroadCom\apigateway\src\main\resources" />
       <recent name="E:\SpringIJ\BroadCom\namingserver" />
-      <recent name="E:\SpringIJ\BroadCom\broadcomapp" />
-      <recent name="E:\SpringIJ\BroadCom\authentication" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />

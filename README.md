@@ -81,16 +81,13 @@ docker rmi -f broadcom-broadcomapp:4.1.1
 
 docker-compose stop $(docker-compose ps --services | Select-String "broadcom" | ForEach-Object { $_.ToString() })
 
-# Stop all containers with "broadcom" in their name
+-- Powershell
 docker ps --filter "name=broadcom" --format "{{.ID}}" | ForEach-Object { docker stop $_ }
 
-# Remove all stopped containers
-docker container prune -f
+docker ps -a --filter "name=broadcom" --format "{{.ID}}" | ForEach-Object { docker rm $_ }
 
-# Remove all unused images, not just dangling ones
-docker image prune -a -f
-
-
+# Jenkins
+http://localhost:8011/login?from=%2F
 --
 
 <pre>

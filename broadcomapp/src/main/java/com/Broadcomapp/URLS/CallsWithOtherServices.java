@@ -18,7 +18,7 @@ public class CallsWithOtherServices {
 	//@Autowired
 	//private Environment env;
 	Token tk=new Token();
-	private final String SPRING_APP_TWO ="";// env.getProperty("multiapp.springapp2");
+	private final String SPRING_APP_TWO ="";// env.getProperty("broadcom.springapp2");
 
 	public HttpResponse<String> checkToken(String token) {
 		try {
