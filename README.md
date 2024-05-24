@@ -9,7 +9,7 @@ BraodCom App, Multi Module Spring Boot Project for learning purpose
 3. API Gateway Server   : 7000  
 4. Broadcom application : 7210
 
-
+<pre>
 Add below to your Java application run configuration to avoid certificate issue, In VM arguments :
 
 -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true
@@ -72,7 +72,7 @@ docker rmi -f broadcom-namingserver:1.1.1
 docker rmi -f broadcom-apigateway:2.1.1
 docker rmi -f broadcom-authentication:3.1.1
 docker rmi -f broadcom-broadcomapp:4.1.1
-
+</pre>
 
 --
 
