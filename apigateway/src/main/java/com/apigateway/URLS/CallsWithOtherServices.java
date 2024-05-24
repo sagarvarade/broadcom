@@ -24,7 +24,7 @@ public class CallsWithOtherServices {
 
 	@PostConstruct
 	private void postConstruct() {
-		this.AUTH_URL = env.getProperty("inventory.authentication_service_url");
+		this.AUTH_URL = env.getProperty("broadcom.authentication_service_url");
 	}
 
 	public HttpResponse<String> checkToken(String token) {

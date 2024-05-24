@@ -20,6 +20,7 @@ services:
       - broadcom-network
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7100/eureka/
+      - AUTHENTICATION_SERVICEURL=http://localhost:7200
 
   authentication:
     image: broadcom-authentication:3.1.1

@@ -18,6 +18,8 @@ To change the port of application, In VM arguments :
 -Dserver.port=8021
 
 
+
+
 Docker Build Commands :
 mvn clean install
 

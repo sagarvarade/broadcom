@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="RunBraoadComApp" type="CompoundRunConfigurationType">
+    <toRun name="ApiGatewayApplicationDev" type="Application" />
+    <toRun name="NamingServerApplicationDev" type="Application" />
+    <method v="2" />
+  </configuration>
+</component>

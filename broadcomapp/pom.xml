@@ -69,7 +69,7 @@
             <artifactId>slf4j-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>Inventory_Management</groupId>
+            <groupId>com.util</groupId>
             <artifactId>Util</artifactId>
             <version>1.0.0</version>
         </dependency>
