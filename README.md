@@ -18,6 +18,8 @@ To change the port of application, In VM arguments :
 -Dserver.port=8021
 
 
+spring.profiles.active=dev  : Add to run config to run specific profile
+
 
 
 Docker Build Commands :
@@ -75,6 +77,19 @@ docker rmi -f broadcom-apigateway:2.1.1
 docker rmi -f broadcom-authentication:3.1.1
 docker rmi -f broadcom-broadcomapp:4.1.1
 </pre>
+
+
+docker-compose stop $(docker-compose ps --services | Select-String "broadcom" | ForEach-Object { $_.ToString() })
+
+# Stop all containers with "broadcom" in their name
+docker ps --filter "name=broadcom" --format "{{.ID}}" | ForEach-Object { docker stop $_ }
+
+# Remove all stopped containers
+docker container prune -f
+
+# Remove all unused images, not just dangling ones
+docker image prune -a -f
+
 
 --
 

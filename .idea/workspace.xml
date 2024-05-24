@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/RunBraoadComApp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/RunBraoadComApp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/buildDockerImages.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/docker_apigateway.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/docker_authentication.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/docker_broadcomapp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/docker_namingserver.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +74,7 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "build.tools"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -103,7 +108,7 @@
       <command value="mvn --projects broadcomapp spring-boot:build-image" />
     </option>
   </component>
-  <component name="RunManager" selected="Multirun.RunBroadCom">
+  <component name="RunManager" selected="Multirun.buildDockerImages">
     <configuration name="All in Util" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="Util" />
       <option name="PACKAGE_NAME" value="" />
@@ -133,6 +138,11 @@
       <item itemvalue="Application.NamingServerApplicationProd" />
       <item itemvalue="JUnit.TokenTest" />
       <item itemvalue="JUnit.All in Util" />
+      <item itemvalue="Maven.docker-broadcomapp" />
+      <item itemvalue="Maven.docker-namingserver" />
+      <item itemvalue="Maven.docker-authentication" />
+      <item itemvalue="Maven.docker-apigateway" />
+      <item itemvalue="Multirun.buildDockerImages" />
       <item itemvalue="Multirun.RunBroadCom" />
     </list>
   </component>
