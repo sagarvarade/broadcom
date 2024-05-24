@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/ApiGatewayApplicationDev.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/ApiGatewayApplicationProd.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apigateway/src/main/resources/application-dev.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apigateway/src/main/resources/application-prod.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/namingserver/src/main/resources/application-dev.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/namingserver/src/main/resources/application-prod.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/RunBraoadComApp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/RunBraoadComApp.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Util/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/com/apigateway/URLS/CallsWithOtherServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/com/apigateway/URLS/CallsWithOtherServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/resources/applicationyml.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/namingserver/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/namingserver/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +69,7 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -116,7 +103,7 @@
       <command value="mvn --projects broadcomapp spring-boot:build-image" />
     </option>
   </component>
-  <component name="RunManager" selected="Compound.RunBraoadComApp">
+  <component name="RunManager" selected="Multirun.RunBroadCom">
     <configuration name="All in Util" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="Util" />
       <option name="PACKAGE_NAME" value="" />
@@ -144,9 +131,9 @@
       <item itemvalue="Application.Broadcomapp" />
       <item itemvalue="Application.NamingServerApplicationDev" />
       <item itemvalue="Application.NamingServerApplicationProd" />
-      <item itemvalue="Compound.RunBraoadComApp" />
       <item itemvalue="JUnit.TokenTest" />
       <item itemvalue="JUnit.All in Util" />
+      <item itemvalue="Multirun.RunBroadCom" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
