@@ -1,9 +1,5 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="buildDockerImages" type="Multirun" separateTabs="false" reuseTabsWithFailures="false" startOneByOne="true" markFailedProcess="true" hideSuccessProcess="false" delayTime="10.0">
-    <runConfiguration name="docker-namingserver" type="Maven" />
-    <runConfiguration name="docker-apigateway" type="Maven" />
-    <runConfiguration name="docker-authentication" type="Maven" />
-    <runConfiguration name="docker-broadcomapp" type="Maven" />
     <method v="2" />
   </configuration>
 </component>
