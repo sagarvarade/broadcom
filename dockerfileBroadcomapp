@@ -1,0 +1,30 @@
+# Stage 1: Build the application with Maven
+FROM maven:3.8.1-openjdk-17 AS builder
+# Set the working directory
+WORKDIR /app
+
+# Copy the root pom.xml and the broadcomapp module pom.xml
+COPY pom.xml /app/
+COPY broadcomapp/pom.xml /app/broadcomapp/
+
+# Download dependencies for the broadcomapp module
+RUN mvn -f /app/broadcomapp/pom.xml dependency:go-offline -B
+
+# Copy the source code of the broadcomapp module
+COPY broadcomapp/src /app/broadcomapp/src
+
+# Build the broadcomapp module
+RUN mvn -f /app/broadcomapp/pom.xml package -DskipTests
+
+# Stage 2: Create the final image
+FROM eclipse-temurin:17-jre-focal
+
+# Copy the built application from the builder stage
+COPY --from=builder /app/broadcomapp/target/*.jar /app/broadcomapp.jar
+
+# Set metadata labels
+LABEL org.opencontainers.image.name="broadcom-broadcomapp"
+LABEL org.opencontainers.image.version="1.0.0"
+
+# Set the entry point
+ENTRYPOINT ["java", "-jar", "/app/broadcomapp.jar"]

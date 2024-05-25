@@ -33,6 +33,20 @@ mvn --projects authentication spring-boot:build-image
 
 mvn --projects broadcomapp spring-boot:build-image
 
+Build image without downloading files all the time
+
+mvn --projects namingserver spring-boot:build-image -DskipTests -Dmaven.repo.local=~/.m2/repository
+
+mvn --projects apigateway spring-boot:build-image -DskipTests -Dmaven.repo.local=~/.m2/repository
+
+mvn --projects authentication spring-boot:build-image -DskipTests -Dmaven.repo.local=~/.m2/repository
+
+mvn --projects broadcomapp spring-boot:build-image -DskipTests -Dmaven.repo.local=~/.m2/repository
+
+
+
+
+
 To run images on docker :
 
 docker run -d --restart=always -p 7100:7100 broadcom-namingserver:1.1.1
@@ -80,6 +94,9 @@ docker rmi -f broadcom-broadcomapp:4.1.1
 
 
 docker-compose stop $(docker-compose ps --services | Select-String "broadcom" | ForEach-Object { $_.ToString() })
+
+-- Remove docker images
+docker rmi 467b1d4b07ae
 
 -- Powershell
 docker ps --filter "name=broadcom" --format "{{.ID}}" | ForEach-Object { docker stop $_ }

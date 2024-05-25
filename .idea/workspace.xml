@@ -5,15 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
-      <change afterPath="$PROJECT_DIR$/authentication/src/main/resources/application-dev.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/src/main/resources/application-prod.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/resources/application-dev.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/resources/application-prod.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apigateway/dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication/dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dockerfileApiGateway" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dockerfileAuthentication" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dockerfileBroadcomapp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dockerfileNamingserver" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/namingserver/dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/URLS/CallsWithOtherServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/URLS/CallsWithOtherServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,35 +62,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "jdk.selected.JAVA_MODULE": "17 (2)",
-    "last_opened_file_path": "E:/SpringIJ/BroadCom/broadcomapp/src/main/resources",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "build.tools"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17 (2)&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/SpringIJ/BroadCom&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;build.tools&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.Broadcomapp.user.beans" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\SpringIJ\BroadCom" />
+      <recent name="E:\SpringIJ\BroadCom\authentication" />
+      <recent name="E:\SpringIJ\BroadCom\namingserver" />
       <recent name="E:\SpringIJ\BroadCom\broadcomapp\src\main\resources" />
       <recent name="E:\SpringIJ\BroadCom\authentication\src\main\resources" />
-      <recent name="E:\SpringIJ\BroadCom\namingserver\src\main\resources" />
-      <recent name="E:\SpringIJ\BroadCom\apigateway\src\main\resources" />
-      <recent name="E:\SpringIJ\BroadCom\namingserver" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -108,9 +110,10 @@
       <command value="mvn --projects apigateway spring-boot:build-image" />
       <command value="mvn  --projects authentication spring-boot:build-image" />
       <command value="mvn --projects broadcomapp spring-boot:build-image" />
+      <command value="mvn --projects apigateway spring-boot:build-image -DskipTests -Dmaven.repo.local=~/.m2/repository" />
     </option>
   </component>
-  <component name="RunManager" selected="Multirun.buildDockerImages">
+  <component name="RunManager" selected="Docker.dockerfileNamingserver">
     <configuration name="All in Util" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="Util" />
       <option name="PACKAGE_NAME" value="" />
@@ -138,6 +141,10 @@
       <item itemvalue="Application.Broadcomapp" />
       <item itemvalue="Application.NamingServerApplicationDev" />
       <item itemvalue="Application.NamingServerApplicationProd" />
+      <item itemvalue="Docker.dockerfileApiGateway" />
+      <item itemvalue="Docker.dockerfileAuthentication" />
+      <item itemvalue="Docker.dockerfileBroadcomapp" />
+      <item itemvalue="Docker.dockerfileNamingserver" />
       <item itemvalue="JUnit.TokenTest" />
       <item itemvalue="JUnit.All in Util" />
       <item itemvalue="Maven.docker-broadcomapp" />
@@ -147,6 +154,12 @@
       <item itemvalue="Multirun.buildDockerImages" />
       <item itemvalue="Multirun.RunBroadCom" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.dockerfileBroadcomapp" />
+        <item itemvalue="Docker.dockerfileNamingserver" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

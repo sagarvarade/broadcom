@@ -1,0 +1,30 @@
+# Stage 1: Build the application with Maven
+FROM maven:3.8.1-openjdk-17 AS builder
+# Set the working directory
+WORKDIR /app
+
+# Copy the root pom.xml and the namingserver module pom.xml
+COPY pom.xml /app/
+COPY namingserver/pom.xml /app/namingserver/
+
+# Download dependencies for the namingserver module
+RUN mvn -f /app/namingserver/pom.xml dependency:go-offline -B
+
+# Copy the source code of the namingserver module
+COPY namingserver/src /app/namingserver/src
+
+# Build the namingserver module
+RUN mvn -f /app/namingserver/pom.xml package -DskipTests
+
+# Stage 2: Create the final image
+FROM eclipse-temurin:17-jre-focal
+
+# Copy the built application from the builder stage
+COPY --from=builder /app/namingserver/target/*.jar /app/namingserver.jar
+
+# Set metadata labels
+LABEL org.opencontainers.image.name="broadcom-namingserver"
+LABEL org.opencontainers.image.version="1.0.0"
+
+# Set the entry point
+ENTRYPOINT ["java", "-jar", "/app/namingserver.jar"]
