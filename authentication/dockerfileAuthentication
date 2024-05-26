@@ -1,5 +1,5 @@
 # Use a lightweight Java runtime
-# CMD command : docker build -t broadcom-broadcomapp:3.1.1 -f dockerfileAuthentication .
+# CMD command : docker build -t broadcom-authentication:3.1.1 -f dockerfileAuthentication .
 # Stage 2: Create the final image
 FROM eclipse-temurin:17-jre-focal
 

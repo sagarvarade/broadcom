@@ -23,31 +23,30 @@ spring.profiles.active=dev  : Add to run config to run specific profile
 
 
 Docker Build Commands :
-mvn clean install
-
-mvn --projects namingserver spring-boot:build-image
-
-mvn --projects apigateway spring-boot:build-image
-
-mvn --projects authentication spring-boot:build-image
-
-mvn --projects broadcomapp spring-boot:build-image
-
-Build image without downloading files all the time
-
-mvn --projects namingserver spring-boot:build-image -DskipTests -Dmaven.repo.local=~/.m2/repository
-
-mvn --projects apigateway spring-boot:build-image -DskipTests -Dmaven.repo.local=~/.m2/repository
-
-mvn --projects authentication spring-boot:build-image -DskipTests -Dmaven.repo.local=~/.m2/repository
-
-mvn --projects broadcomapp spring-boot:build-image -DskipTests -Dmaven.repo.local=~/.m2/repository
 
 
+1. Build Docker images :
 
+docker build -t broadcom-namingserver:1.1.1 -f dockerfileNamingsever .
+
+docker build -t broadcom-apigateway:2.1.1 -f dockerfileApigateway .
+
+docker build -t broadcom-authentication:3.1.1 -f dockerfileAuthentication .
+
+docker build -t broadcom-broadcomapp:4.1.1 -f dockerfileBroadcomapp .
 
 
 To run images on docker :
+
+Remove dangling images
+
+docker image prune
+
+Run by compose
+
+docker-compose down
+docker-compose up --build -d
+
 
 docker run -d --restart=always -p 7100:7100 broadcom-namingserver:1.1.1
 

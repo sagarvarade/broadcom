@@ -5,27 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
-      <change afterPath="$PROJECT_DIR$/apigateway/dockerfileApigateway" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/dockerfileAuthentication" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/broadcomapp/dockerfileBroadcomapp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/namingserver/dockerfileNamingsever" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/docker_apigateway.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/docker_authentication.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/docker_broadcomapp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/docker_namingserver.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/dockerfileApiGateway.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/dockerfileAuthentication.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/dockerfileBroadcomapp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/dockerfileNamingserver.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppRunner/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppRunner/src/main/java/app/runner/AppRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeRunnable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buildDockerImages.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dockerfileApiGateway" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dockerfileAuthentication" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dockerfileBroadcomapp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dockerfileNamingserver" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/namingserver/dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Util/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/dockerfileApigateway" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/dockerfileApigateway" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/dockerfileAuthentication" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/dockerfileAuthentication" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/namingserver/dockerfileNamingsever" beforeDir="false" afterPath="$PROJECT_DIR$/namingserver/dockerfileNamingsever" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,10 +77,12 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "jdk.selected.JAVA_MODULE": "17 (2)",
-    "last_opened_file_path": "E:/SpringIJ/BroadCom/namingserver",
+    "last_directory_selection": "E:/SpringIJ/BroadCom/AppRunner/src/main/java/app/runner",
+    "last_opened_file_path": "E:/SpringIJ/BroadCom",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "build.tools"
   }
 }]]></component>
@@ -96,10 +91,10 @@
       <recent name="com.Broadcomapp.user.beans" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\SpringIJ\BroadCom" />
       <recent name="E:\SpringIJ\BroadCom\namingserver" />
       <recent name="E:\SpringIJ\BroadCom\authentication" />
       <recent name="E:\SpringIJ\BroadCom\apigateway" />
-      <recent name="E:\SpringIJ\BroadCom" />
       <recent name="E:\SpringIJ\BroadCom\broadcomapp\src\main\resources" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -123,7 +118,20 @@
       <command value="mvn --projects apigateway spring-boot:build-image -DskipTests -Dmaven.repo.local=~/.m2/repository" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.AppRunner">
+    <configuration name="AppRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.runner.AppRunner" />
+      <module name="AppRunner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.runner.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in Util" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="Util" />
       <option name="PACKAGE_NAME" value="" />
@@ -151,11 +159,17 @@
       <item itemvalue="Application.Broadcomapp" />
       <item itemvalue="Application.NamingServerApplicationDev" />
       <item itemvalue="Application.NamingServerApplicationProd" />
+      <item itemvalue="Application.AppRunner" />
       <item itemvalue="JUnit.TokenTest" />
       <item itemvalue="JUnit.All in Util" />
       <item itemvalue="Multirun.buildDockerImages" />
       <item itemvalue="Multirun.RunBroadCom" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AppRunner" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -211,6 +225,17 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ok" />
     <option name="LAST_COMMIT_MESSAGE" value="ok" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/BroadCom$NamingServerApplication.ic" NAME="NamingServerApplication Coverage Results" MODIFIED="1716397618751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

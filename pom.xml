@@ -19,6 +19,7 @@
         <module>authentication</module>
         <module>Util</module>
         <module>broadcomapp</module>
+        <module>AppRunner</module>
     </modules>
 
     <properties>

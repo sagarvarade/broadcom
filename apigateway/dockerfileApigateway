@@ -1,5 +1,5 @@
 # Use a lightweight Java runtime
-# CMD command : docker build -t broadcom-broadcomapp:2.1.1 -f dockerfileApigateway .
+# CMD command : docker build -t broadcom-apigateway:2.1.1 -f dockerfileApigateway .
 # Stage 2: Create the final image
 FROM eclipse-temurin:17-jre-focal
 

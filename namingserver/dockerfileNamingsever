@@ -1,5 +1,5 @@
 # Use a lightweight Java runtime
-# CMD command : docker build -t broadcom-broadcomapp:1.1.1 -f dockerfileNamingsever .
+# CMD command : docker build -t broadcom-namingserver:1.1.1 -f dockerfileNamingsever .
 # Stage 2: Create the final image
 FROM eclipse-temurin:17-jre-focal
 
