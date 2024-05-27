@@ -21,4 +21,11 @@ cd broadcomapp
 
 docker build -t broadcom-broadcomapp:4.1.1 -f dockerfileBroadcomapp .
 
+
+cd broadcomUI
+
+docker build -t broadcom-broadcomaui:6.1.1 -f dockerfileBroadcomUI .
+
+
+
 pause

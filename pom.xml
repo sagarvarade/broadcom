@@ -20,6 +20,7 @@
         <module>Util</module>
         <module>broadcomapp</module>
         <module>AppRunner</module>
+        <module>broadcomUI</module>
     </modules>
 
     <properties>

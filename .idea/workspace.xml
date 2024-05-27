@@ -5,19 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppRunner/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppRunner/src/main/java/app/runner/AppRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeRunnable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/buildDockerImages.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/broadcomUI/dockerfileBroadcomUI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/broadcomUI/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/broadcomUI/src/main/java/com/broadcom/UI/BroadComUIController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/broadcomUI/src/main/java/com/broadcom/UI/BroadcomUIApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/broadcomUI/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Util/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/dockerfileApigateway" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/dockerfileApigateway" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/dockerfileAuthentication" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/dockerfileAuthentication" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/namingserver/dockerfileNamingsever" beforeDir="false" afterPath="$PROJECT_DIR$/namingserver/dockerfileNamingsever" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildDockerImages.bat" beforeDir="false" afterPath="$PROJECT_DIR$/buildDockerImages.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,37 +60,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "jdk.selected.JAVA_MODULE": "17 (2)",
-    "last_directory_selection": "E:/SpringIJ/BroadCom/AppRunner/src/main/java/app/runner",
-    "last_opened_file_path": "E:/SpringIJ/BroadCom",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "build.tools"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17 (2)&quot;,
+    &quot;last_directory_selection&quot;: &quot;E:/SpringIJ/BroadCom/broadcomUI/src/main/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/SpringIJ/BroadCom&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;build.tools&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.Broadcomapp.user.beans" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\SpringIJ\BroadCom\broadcomUI" />
       <recent name="E:\SpringIJ\BroadCom" />
       <recent name="E:\SpringIJ\BroadCom\namingserver" />
       <recent name="E:\SpringIJ\BroadCom\authentication" />
       <recent name="E:\SpringIJ\BroadCom\apigateway" />
-      <recent name="E:\SpringIJ\BroadCom\broadcomapp\src\main\resources" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -118,7 +113,7 @@
       <command value="mvn --projects apigateway spring-boot:build-image -DskipTests -Dmaven.repo.local=~/.m2/repository" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.AppRunner">
+  <component name="RunManager" selected="Application.ApiGatewayApplicationDev">
     <configuration name="AppRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.runner.AppRunner" />
       <module name="AppRunner" />
