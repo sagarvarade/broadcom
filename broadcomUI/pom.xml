@@ -60,6 +60,7 @@
                         <configuration>
                             <nodeVersion>v20.13.1</nodeVersion>
                             <npmVersion>8.3.1</npmVersion>
+                            <workingDirectory>frontend</workingDirectory>
                         </configuration>
                     </execution>
                     <execution>
