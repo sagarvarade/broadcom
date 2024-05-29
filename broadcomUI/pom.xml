@@ -18,10 +18,10 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <frontend-src-dir>${project.basedir}/src/main/frontend</frontend-src-dir>
+        <frontend-src-dir>${project.basedir}/frontend</frontend-src-dir>
         <node.version>v20.13.1</node.version>
-        <yarn.version>v1.22.22</yarn.version>
-        <frontend-maven-plugin.version>1.7.6</frontend-maven-plugin.version>
+        <npm.version>8.3.1</npm.version> <!-- Specify npm version -->
+        <frontend-maven-plugin.version>1.11.3</frontend-maven-plugin.version>
     </properties>
     <dependencies>
         <dependency>
@@ -46,81 +46,79 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
+            <!-- Plugin to handle frontend build -->
             <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
                 <version>${frontend-maven-plugin.version}</version>
-
-                <configuration>
-                    <nodeVersion>${node.version}</nodeVersion>
-                    <yarnVersion>${yarn.version}</yarnVersion>
-                    <workingDirectory>${frontend-src-dir}</workingDirectory>
-                    <installDirectory>${project.build.directory}</installDirectory>
-                </configuration>
-
                 <executions>
                     <execution>
-                        <id>install-frontend-tools</id>
+                        <id>install-node-and-npm</id>
                         <goals>
-                            <goal>install-node-and-yarn</goal>
+                            <goal>install-node-and-npm</goal>
                         </goals>
+                        <configuration>
+                            <nodeVersion>${node.version}</nodeVersion>
+                            <npmVersion>${npm.version}</npmVersion>
+                        </configuration>
                     </execution>
-
                     <execution>
-                        <id>yarn-install</id>
+                        <id>npm-install</id>
                         <goals>
-                            <goal>yarn</goal>
+                            <goal>npm</goal>
                         </goals>
                         <configuration>
                             <arguments>install</arguments>
+                            <workingDirectory>frontend</workingDirectory>
                         </configuration>
                     </execution>
-
                     <execution>
-                        <id>build-frontend</id>
+                        <id>npm-build</id>
                         <goals>
-                            <goal>yarn</goal>
+                            <goal>npm</goal>
                         </goals>
-                        <phase>prepare-package</phase>
                         <configuration>
-                            <arguments>build</arguments>
+                            <arguments>run build</arguments>
+                            <workingDirectory>frontend</workingDirectory>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- Plugin to copy the build files to the static directory -->
             <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.0.0</version>
                 <executions>
                     <execution>
-                        <id>position-react-build</id>
+                        <id>copy-resources</id>
+                        <phase>package</phase>
                         <goals>
-                            <goal>copy-resources</goal>
+                            <goal>run</goal>
                         </goals>
-                        <phase>prepare-package</phase>
                         <configuration>
-                            <outputDirectory>${project.build.outputDirectory}/static</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>${frontend-src-dir}/build</directory>
-                                    <filtering>false</filtering>
-                                </resource>
-                            </resources>
+                            <target>
+                                <copy todir="${project.build.outputDirectory}/static">
+                                    <fileset dir="frontend/build"/>
+                                </copy>
+                            </target>
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
 </project>
