@@ -51,6 +51,17 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:mysql://host.docker.internal:3306/broadcomapp?allowPublicKeyRetrieval=true&useSSL=false
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=admin
+  broadcomaui:
+    image: broadcom-broadcomaui:6.1.1
+    restart: always
+    ports:
+      - "7211:7211"
+    depends_on:
+      - authentication
+      - namingserver
+      - apigateway
+    networks:
+      - broadcom-network
 
 networks:
   broadcom-network:
