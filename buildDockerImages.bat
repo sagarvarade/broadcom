@@ -28,5 +28,6 @@ cd broadcomUI
 docker build -t broadcom-broadcomaui:7.1.1 -f dockerfileBroadcomUI .
 
 
+cd ..
 
 pause
