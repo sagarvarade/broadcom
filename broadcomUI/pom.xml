@@ -58,8 +58,8 @@
                             <goal>install-node-and-npm</goal>
                         </goals>
                         <configuration>
-                            <nodeVersion>${node.version}</nodeVersion>
-                            <npmVersion>${npm.version}</npmVersion>
+                            <nodeVersion>v20.13.1</nodeVersion>
+                            <npmVersion>8.3.1</npmVersion>
                         </configuration>
                     </execution>
                     <execution>
