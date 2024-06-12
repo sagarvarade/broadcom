@@ -228,6 +228,86 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "BroadComaPP",
+			"item": [
+				{
+					"name": "hello",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:7210/broadcomapp/hello",
+							"host": [
+								"localhost"
+							],
+							"port": "7210",
+							"path": [
+								"broadcomapp",
+								"hello"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john.doe@example.com\",\r\n  \"phoneNumber\": \"1234567890\",\r\n  \"fbId\": \"john.doe.fb\",\r\n  \"instagraid\": \"john.doe.ig\",\r\n  \"linkedinid\": \"john.doe.li\",\r\n  \"telegramid\": \"john.doe.tg\",\r\n  \"whatsappid\": \"john.doe.wa\",\r\n  \"gender\": \"Male\",\r\n  \"dateOfBirth\": \"1990-01-01\",\r\n  \"address\": {\r\n    \"address\": \"123 Main St\",\r\n    \"location\": \"Downtown\",\r\n    \"city\": \"Springfield\",\r\n    \"district\": \"Central\",\r\n    \"state\": \"Illinois\",\r\n    \"country\": \"USA\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:7210/broadcomapp/createuser",
+							"host": [
+								"localhost"
+							],
+							"port": "7210",
+							"path": [
+								"broadcomapp",
+								"createuser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userList",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"name\": \"John Doe\",\r\n    \"email\": \"john.doe@example.com\",\r\n    \"phoneNumber\": \"1234567890\",\r\n    \"fbId\": \"john.doe.fb\",\r\n    \"instagraid\": \"john.doe.ig\",\r\n    \"linkedinid\": \"john.doe.li\",\r\n    \"telegramid\": \"john.doe.tg\",\r\n    \"whatsappid\": \"john.doe.wa\",\r\n    \"gender\": \"Male\",\r\n    \"dateOfBirth\": \"1990-01-01\",\r\n    \"address\": {\r\n      \"address\": \"123 Main St\",\r\n      \"location\": \"Downtown\",\r\n      \"city\": \"Springfield\",\r\n      \"district\": \"Central\",\r\n      \"state\": \"Illinois\",\r\n      \"country\": \"USA\"\r\n    }\r\n  },\r\n  {\r\n    \"name\": \"Jane Smith\",\r\n    \"email\": \"jane.smith@example.com\",\r\n    \"phoneNumber\": \"0987654321\",\r\n    \"fbId\": \"jane.smith.fb\",\r\n    \"instagraid\": \"jane.smith.ig\",\r\n    \"linkedinid\": \"jane.smith.li\",\r\n    \"telegramid\": \"jane.smith.tg\",\r\n    \"whatsappid\": \"jane.smith.wa\",\r\n    \"gender\": \"Female\",\r\n    \"dateOfBirth\": \"1985-05-15\",\r\n    \"address\": {\r\n      \"address\": \"456 Elm St\",\r\n      \"location\": \"Uptown\",\r\n      \"city\": \"Metropolis\",\r\n      \"district\": \"Westside\",\r\n      \"state\": \"California\",\r\n      \"country\": \"USA\"\r\n    }\r\n  }\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:7210/broadcomapp/createuserlist",
+							"host": [
+								"localhost"
+							],
+							"port": "7210",
+							"path": [
+								"broadcomapp",
+								"createuserlist"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

@@ -10,11 +10,12 @@ import java.util.Set;
 public class User {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer userid;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String name;
-	@OneToMany(mappedBy="user")
-	private Set<Address> address;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "address_id", referencedColumnName = "id")
+	private Address address;
 	private String email;
 	private String phoneNumber;
 	private String fbId;
@@ -29,8 +30,12 @@ public class User {
 
 	}
 
-	public User setUserid(Integer userid) {
-		this.userid = userid;
+	public Long getUserid() {
+		return id;
+	}
+
+	public User setUserid(Long userid) {
+		this.id = userid;
 		return this;
 	}
 
@@ -43,12 +48,11 @@ public class User {
 		return this;
 	}
 
-
-	public Set<Address> getAddress() {
+	public Address getAddress() {
 		return address;
 	}
 
-	public User setAddress(Set<Address> address) {
+	public User setAddress(Address address) {
 		this.address = address;
 		return this;
 	}
@@ -139,20 +143,20 @@ public class User {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 		User user = (User) o;
-		return Objects.equals(userid, user.userid) && Objects.equals(getName(), user.getName()) && Objects.equals(getAddress(), user.getAddress()) && Objects.equals(getEmail(), user.getEmail()) && Objects.equals(getPhoneNumber(), user.getPhoneNumber()) && Objects.equals(getFbId(), user.getFbId()) && Objects.equals(getInstagraid(), user.getInstagraid()) && Objects.equals(getLinkedinid(), user.getLinkedinid()) && Objects.equals(getTelegramid(), user.getTelegramid()) && Objects.equals(getWhatsappid(), user.getWhatsappid()) && Objects.equals(getGender(), user.getGender()) && Objects.equals(getDateOfBirth(), user.getDateOfBirth());
+		return Objects.equals(getUserid(), user.getUserid()) && Objects.equals(getName(), user.getName()) && Objects.equals(getAddress(), user.getAddress()) && Objects.equals(getEmail(), user.getEmail()) && Objects.equals(getPhoneNumber(), user.getPhoneNumber()) && Objects.equals(getFbId(), user.getFbId()) && Objects.equals(getInstagraid(), user.getInstagraid()) && Objects.equals(getLinkedinid(), user.getLinkedinid()) && Objects.equals(getTelegramid(), user.getTelegramid()) && Objects.equals(getWhatsappid(), user.getWhatsappid()) && Objects.equals(getGender(), user.getGender()) && Objects.equals(getDateOfBirth(), user.getDateOfBirth());
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(userid, getName(), getAddress(), getEmail(), getPhoneNumber(), getFbId(), getInstagraid(), getLinkedinid(), getTelegramid(), getWhatsappid(), getGender(), getDateOfBirth());
+		return Objects.hash(getUserid(), getName(), getAddress(), getEmail(), getPhoneNumber(), getFbId(), getInstagraid(), getLinkedinid(), getTelegramid(), getWhatsappid(), getGender(), getDateOfBirth());
 	}
 
 	@Override
 	public String toString() {
 		return "User{" +
-				"id=" + userid +
+				"userid=" + id +
 				", name='" + name + '\'' +
-				", address='" + address + '\'' +
+				", address=" + address +
 				", email='" + email + '\'' +
 				", phoneNumber='" + phoneNumber + '\'' +
 				", fbId='" + fbId + '\'' +

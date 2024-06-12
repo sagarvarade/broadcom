@@ -1,5 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Broadcomapp" type="Application" factoryName="Application" nameIsGenerated="true">
+  <configuration default="false" name="BroadcomappDev" type="Application" factoryName="Application">
+    <envs>
+      <env name="spring.profiles.active" value="dev" />
+    </envs>
     <option name="MAIN_CLASS_NAME" value="com.Broadcomapp.Broadcomapp" />
     <module name="broadcomapp" />
     <extension name="coverage">

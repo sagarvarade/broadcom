@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/repository/AddressRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Broadcomapp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/BroadcomappDev.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buildDockerImages.bat" beforeDir="false" afterPath="$PROJECT_DIR$/buildDockerImages.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/Controller/Broadcomapp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/controller/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/controller/userController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +121,7 @@
       <command value="mvn com.github.eirslett:frontend-maven-plugin:1.11.3:install-node-and-npm" />
     </option>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml.broadcomaui: Compose Deployment">
+  <component name="RunManager" selected="Application.BroadcomappDev">
     <configuration name="AppRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.runner.AppRunner" />
       <module name="AppRunner" />
@@ -176,10 +182,10 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.BroadcomappDev" />
       <item itemvalue="Application.ApiGatewayApplicationDev" />
       <item itemvalue="Application.ApiGatewayApplicationProd" />
       <item itemvalue="Application.AuthApplication" />
-      <item itemvalue="Application.Broadcomapp" />
       <item itemvalue="Application.NamingServerApplicationDev" />
       <item itemvalue="Application.NamingServerApplicationProd" />
       <item itemvalue="Application.BroadcomUIApp" />

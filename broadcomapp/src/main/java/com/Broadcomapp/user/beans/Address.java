@@ -9,11 +9,10 @@ import java.util.Objects;
 public class Address {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer addressid;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @ManyToOne
-    @JoinColumn(name="userid", nullable=false)
+    @OneToOne(mappedBy = "address")
     private User user;
 
     private String address;
@@ -23,12 +22,12 @@ public class Address {
     private String state;
     private String country;
 
-    public Integer getId() {
-        return addressid;
+    public Long getId() {
+        return id;
     }
 
-    public Address setId(Integer id) {
-        this.addressid = id;
+    public Address setId(Long id) {
+        this.id = id;
         return this;
     }
 
@@ -111,7 +110,7 @@ public class Address {
     @Override
     public String toString() {
         return "Address{" +
-                "id=" + addressid +
+                "id=" + id +
                 ", user=" + user +
                 ", address='" + address + '\'' +
                 ", location='" + location + '\'' +
