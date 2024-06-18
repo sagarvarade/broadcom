@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -15,6 +16,12 @@ public class userController {
 
 	@Autowired
 	private UserService userService;
+
+	@GetMapping("/hello")
+	public String getHello(){
+		return  "Hello World";
+	}
+
 
 	@PostMapping(path = "createuser",
     consumes = MediaType.APPLICATION_JSON_VALUE, 
@@ -33,8 +40,12 @@ public class userController {
 		return "User Created";
 	}
 
-	@GetMapping("/hello")
-	public String getHello(){
-		return  "Hello World";
+	@GetMapping(path="get-user/{id}")
+	public User getUser(@PathVariable Long id){
+		return userService.getUser(id);
+	}
+	@GetMapping(path="get-all-user")
+	public List<User> getAllUser(@PathVariable Long id){
+		return userService.getAllUsers();
 	}
 }
