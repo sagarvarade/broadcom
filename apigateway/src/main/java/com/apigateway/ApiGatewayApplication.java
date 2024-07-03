@@ -5,11 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import io.netty.resolver.DefaultAddressResolverGroup;
 import reactor.netty.http.client.HttpClient;
-
-import java.net.http.HttpClient;
-
+import io.netty.resolver.DefaultAddressResolverGroup;
 @SpringBootApplication
 public class ApiGatewayApplication {
 

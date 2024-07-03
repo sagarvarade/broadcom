@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
+      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/BroadUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/com/apigateway/ApiGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/com/apigateway/ApiGatewayApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomUI/src/main/resources/static/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomUI/src/main/resources/static/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomUI/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomUI/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomUI/src/main/resources/static/static/css/main.b25d252e.css" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomUI/src/main/resources/static/static/css/main.b25d252e.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/controller/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/controller/userController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/service/BroadUserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,12 +75,12 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "jdk.selected.JAVA_MODULE": "17 (2)",
     "last_directory_selection": "E:/SpringIJ/BroadCom/broadcomUI/src/main/java",
-    "last_opened_file_path": "E:/SpringIJ/JAVA_2023",
+    "last_opened_file_path": "E:/SpringIJ/BroadCom",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "build.tools"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
