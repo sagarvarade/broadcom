@@ -1,25 +1,31 @@
 package com.Broadcomapp.user.beans;
 
 import jakarta.persistence.*;
-import lombok.*;
 
 import java.util.Date;
 
-@Entity
-@Table(name="broad_user")
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+@Builder
+@Entity
 public class BroadUser {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
 	private String name;
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "address_id", referencedColumnName = "id")
 	private Address address;
+
 	private String email;
 	private String phoneNumber;
 	private String fbId;

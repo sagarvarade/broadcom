@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
-      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/BroadUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/com/apigateway/ApiGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/com/apigateway/ApiGatewayApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/controller/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/controller/userController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/service/BroadUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/BroadUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/BroadUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/resources/application-dev.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
