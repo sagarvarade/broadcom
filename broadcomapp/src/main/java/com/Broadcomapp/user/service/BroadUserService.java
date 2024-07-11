@@ -1,7 +1,8 @@
 package com.Broadcomapp.user.service;
 
 import com.Broadcomapp.user.beans.BroadUser;
-import com.Broadcomapp.user.repository.UserRepository;
+import com.Broadcomapp.user.repository.BroadUserRepository;
+import com.Broadcomapp.user.repository.BroadUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,7 @@ import java.util.Optional;
 public class BroadUserService {
 
 	@Autowired
-	private UserRepository userRepo;
+	private BroadUserRepository userRepo;
 	public void createUser(BroadUser user) {
 		userRepo.save(user);
 	}
