@@ -5,12 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
-      <change afterPath="$PROJECT_DIR$/broadcomapp/src/test/java/com/Broadcomapp/user/repository/BroadUserRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/beans/BroadCastGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/controller/BroadCastGroupController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/repository/BroadCastGroupRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/broadcomapp/src/test/java/com/Broadcomapp/BLogic/repository/BroadCastGroupRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/BroadUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/BroadUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/repository/BroadUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/service/BroadUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/service/BroadUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeRunnable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/config/UserInfoUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/config/UserInfoUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/beans/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/BroadUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/beans/BroadUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/controller/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/controller/userController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/repository/AddressRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/repository/AddressRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/repository/BroadUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/repository/BroadUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/service/BroadUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/service/BroadUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/test/java/com/Broadcomapp/user/repository/BroadUserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/test/java/com/Broadcomapp/BLogic/repository/BroadUserRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -101,6 +112,10 @@
       <recent name="com.Broadcomapp.user.repository" />
       <recent name="com.util" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.Broadcomapp.user.repository" />
+      <recent name="com.Broadcomapp.user.beans" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -119,20 +134,7 @@
       <command value="mvn com.github.eirslett:frontend-maven-plugin:1.11.3:install-node-and-npm" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BroadUserRepositoryTest.getAllBroadUsers">
-    <configuration name="BroadcomUIApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.broadcom.UI.BroadcomUIApp" />
-      <module name="broadcomUI" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.broadcom.UI.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.BroadcomappDev">
     <configuration name="All in Util" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="Util" />
       <option name="PACKAGE_NAME" value="" />
@@ -145,13 +147,29 @@
       <module name="broadcomapp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.Broadcomapp.user.repository.*" />
+          <option name="PATTERN" value="com.Broadcomapp.BLogic.repository.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.Broadcomapp.user.repository" />
-      <option name="MAIN_CLASS_NAME" value="com.Broadcomapp.user.repository.BroadUserRepositoryTest" />
+      <option name="MAIN_CLASS_NAME" value="com.Broadcomapp.BLogic.repository.BroadUserRepositoryTest" />
       <option name="METHOD_NAME" value="getAllBroadUsers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BroadUserRepositoryTest.getById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="broadcomapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Broadcomapp.BLogic.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Broadcomapp.BLogic.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.Broadcomapp.BLogic.repository.BroadUserRepositoryTest" />
+      <option name="METHOD_NAME" value="getById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -161,12 +179,12 @@
       <module name="broadcomapp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.Broadcomapp.user.repository.*" />
+          <option name="PATTERN" value="com.Broadcomapp.BLogic.repository.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.Broadcomapp.user.repository" />
-      <option name="MAIN_CLASS_NAME" value="com.Broadcomapp.user.repository.BroadUserRepositoryTest" />
+      <option name="MAIN_CLASS_NAME" value="com.Broadcomapp.BLogic.repository.BroadUserRepositoryTest" />
       <option name="METHOD_NAME" value="saveUserWithAddress" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -177,12 +195,12 @@
       <module name="broadcomapp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.Broadcomapp.user.repository.*" />
+          <option name="PATTERN" value="com.Broadcomapp.BLogic.repository.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.Broadcomapp.user.repository" />
-      <option name="MAIN_CLASS_NAME" value="com.Broadcomapp.user.repository.BroadUserRepositoryTest" />
+      <option name="MAIN_CLASS_NAME" value="com.Broadcomapp.BLogic.repository.BroadUserRepositoryTest" />
       <option name="METHOD_NAME" value="testBroadSave" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -221,11 +239,11 @@
       <item itemvalue="Application.AuthApplication" />
       <item itemvalue="Application.NamingServerApplicationDev" />
       <item itemvalue="Application.NamingServerApplicationProd" />
-      <item itemvalue="Application.BroadcomUIApp" />
       <item itemvalue="Docker.docker-compose.yml.broadcomaui: Compose Deployment" />
       <item itemvalue="JUnit.TokenTest" />
       <item itemvalue="JUnit.All in Util" />
       <item itemvalue="JUnit.BroadUserRepositoryTest.getAllBroadUsers" />
+      <item itemvalue="JUnit.BroadUserRepositoryTest.getById" />
       <item itemvalue="JUnit.BroadUserRepositoryTest.saveUserWithAddress" />
       <item itemvalue="JUnit.BroadUserRepositoryTest.testBroadSave" />
       <item itemvalue="Multirun.buildDockerImages" />
@@ -233,11 +251,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BroadUserRepositoryTest.getAllBroadUsers" />
+        <item itemvalue="JUnit.BroadUserRepositoryTest.getById" />
         <item itemvalue="JUnit.BroadUserRepositoryTest.testBroadSave" />
+        <item itemvalue="JUnit.BroadUserRepositoryTest.getAllBroadUsers" />
         <item itemvalue="JUnit.BroadUserRepositoryTest.saveUserWithAddress" />
         <item itemvalue="Docker.docker-compose.yml.broadcomaui: Compose Deployment" />
-        <item itemvalue="Application.BroadcomUIApp" />
       </list>
     </recent_temporary>
   </component>

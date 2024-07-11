@@ -1,14 +1,13 @@
-package com.Broadcomapp.user.repository;
+package com.Broadcomapp.BLogic.repository;
 
-import com.Broadcomapp.user.beans.Address;
-import com.Broadcomapp.user.beans.BroadUser;
+import com.Broadcomapp.BLogic.beans.Address;
+import com.Broadcomapp.BLogic.beans.BroadUser;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class BroadUserRepositoryTest {
 
@@ -25,10 +24,18 @@ class BroadUserRepositoryTest {
           System.out.println(brd.getAddress());
       }
     }
+
+    @Test
+    public  void getById(){
+        BroadUser broadUser= broadUserRepository.findById(10l).get();
+        System.out.println(broadUser);
+        System.out.println(broadUser.getAddress());
+    }
+
     @Test
     public void testBroadSave(){
         Address address=Address.builder().city("Pune").state("MH").street("ABC").zipCode("1231").build();
-        BroadUser user=BroadUser.builder().fbId("fb@Id").email("abc@gmail.com").name("userName").instagraid("insta@insta.com").phoneNumber("12423").telegramid("234@telegram.com").whatsappid("123323@whatsapp.com").address(address).build();
+        BroadUser user=BroadUser.builder().email("abc@gmail.com").name("userName").phoneNumber("12423").whatsAppId("123323@whatsapp.com").address(address).build();
         broadUserRepository.save(user);
     }
 }

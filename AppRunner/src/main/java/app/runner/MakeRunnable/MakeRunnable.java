@@ -84,7 +84,7 @@ public class MakeRunnable {
     }
 
     private static String getCurrentFolderPath() {
-        return System.getProperty("user.dir");
+        return System.getProperty("BLogic.dir");
     }
 
     private static boolean copyJarsTodDeployDirectoryFolder(Map<String, String> jarsWithPath, String parentFolder) {

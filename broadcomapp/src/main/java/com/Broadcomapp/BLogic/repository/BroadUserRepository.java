@@ -1,6 +1,6 @@
-package com.Broadcomapp.user.repository;
+package com.Broadcomapp.BLogic.repository;
 
-import com.Broadcomapp.user.beans.BroadUser;
+import com.Broadcomapp.BLogic.beans.BroadUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

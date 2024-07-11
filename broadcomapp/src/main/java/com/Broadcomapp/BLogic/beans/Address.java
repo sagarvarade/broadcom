@@ -1,4 +1,4 @@
-package com.Broadcomapp.user.beans;
+package com.Broadcomapp.BLogic.beans;
 
 import jakarta.persistence.*;
 

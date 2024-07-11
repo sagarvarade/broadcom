@@ -1,4 +1,4 @@
-package com.Broadcomapp.user.beans;
+package com.Broadcomapp.BLogic.beans;
 
 import jakarta.persistence.*;
 
@@ -13,7 +13,6 @@ import lombok.*;
 @Builder
 @ToString(exclude = "address")
 public class BroadUser {
-
 	@Id
 	@SequenceGenerator(
 			name="broad_user_sequence",
@@ -25,19 +24,18 @@ public class BroadUser {
 			generator = "broad_user_sequence"
 	)
 	private Long broadUserId;
+	@Column(nullable = false)
 	private String name;
+	@Column(nullable = false)
 	private String email;
+	@Column(nullable = false)
 	private String phoneNumber;
-	private String fbId;
-	private String instagraid;
-	private String linkedinid;
-	private String telegramid;
-	private String whatsappid;
+	private String whatsAppId;
+	@Column(nullable = false)
 	private String gender;
 	private Date dateOfBirth;
 
-
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	@JoinColumn(name = "fk_add_id")
 	private Address address;
 }

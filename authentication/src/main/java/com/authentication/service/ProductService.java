@@ -45,6 +45,6 @@ public class ProductService {
 	public String addUser(UserInfo userInfo) {
 		userInfo.setPassword(passwordEncoder.encode(userInfo.getPassword()));
 		repository.save(userInfo);
-		return "user added to system ";
+		return "BLogic added to system ";
 	}
 }

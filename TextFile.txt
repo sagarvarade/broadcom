@@ -1,0 +1,37 @@
+
+private String name;
+private String email;
+private String phoneNumber;
+private String whatsappid;
+
+
+
+Broad User :  
+	Address
+	
+Group :
+	Users :
+
+1. Service types:
+	1. Whatsapp
+	2. Email
+	3. Mobile message
+
+API's
+BroaUsers
+1. Save Broad user with address
+2. Save list of broad users
+3. Update User 
+4. Delete user 
+
+
+2. Group 
+1. Create group with users Id
+2. Get group details with broad Users
+3. Update group
+4. delete group
+
+
+
+
+
