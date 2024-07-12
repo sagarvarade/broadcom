@@ -47,7 +47,7 @@ public class userController {
 		return userService.getUser(id);
 	}
 	@GetMapping(path="get-all")
-	public List<BroadUser> getAllUser(@PathVariable Long id){
+	public List<BroadUser> getAllUser(){
 		return userService.getAllUsers();
 	}
 

@@ -1,5 +1,6 @@
 package com.Broadcomapp.BLogic.beans;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -35,7 +36,8 @@ public class BroadUser {
 	private String gender;
 	private Date dateOfBirth;
 
-	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@JsonIgnore
+	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval=true)
 	@JoinColumn(name = "fk_add_id")
 	private Address address;
 }

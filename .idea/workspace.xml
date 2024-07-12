@@ -5,23 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
-      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/beans/BroadCastGroup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/controller/BroadCastGroupController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/repository/BroadCastGroupRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/broadcomapp/src/test/java/com/Broadcomapp/BLogic/repository/BroadCastGroupRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeRunnable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/config/UserInfoUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/config/UserInfoUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/beans/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/BroadUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/beans/BroadUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/controller/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/controller/userController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/repository/AddressRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/repository/AddressRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/repository/BroadUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/repository/BroadUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/service/BroadUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/service/BroadUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/test/java/com/Broadcomapp/user/repository/BroadUserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/test/java/com/Broadcomapp/BLogic/repository/BroadUserRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/beans/BroadUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/beans/BroadUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/controller/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/controller/userController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
