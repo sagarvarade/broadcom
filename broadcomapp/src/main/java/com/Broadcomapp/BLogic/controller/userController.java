@@ -56,7 +56,7 @@ public class userController {
 		return userService.updateUser(user.getBroadUserId(),user);
 	}
 
-	@GetMapping(path="delete/{id}")
+	@DeleteMapping(path="delete/{id}")
 	public ResponseEntity<String> deleteUser (@PathVariable("id") Long id){
 		try{
 			userService.deleteUserById(id);

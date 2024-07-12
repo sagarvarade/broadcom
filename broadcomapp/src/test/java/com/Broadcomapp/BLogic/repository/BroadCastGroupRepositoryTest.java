@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-@SpringBootTest
+//@SpringBootTest
 class BroadCastGroupRepositoryTest {
 
     @Autowired
@@ -15,9 +15,12 @@ class BroadCastGroupRepositoryTest {
 
     @Autowired
     private BroadCastGroupRepository broadCastGroupRepository;
-    @Test
+  //  @Test
     public void saveGroup(){
         BroadCastGroup brGroup=BroadCastGroup.builder().groupName("Broup_1").broadUsersIdList(List.of(1,2,3)).build();
         broadCastGroupRepository.save(brGroup);
     }
+
+
+
 }

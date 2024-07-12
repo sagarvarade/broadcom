@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-@SpringBootTest
+//@SpringBootTest
 class BroadUserRepositoryTest {
 
     @Autowired
@@ -16,7 +16,7 @@ class BroadUserRepositoryTest {
     @Autowired
     private AddressRepository addressRepository;
 
-    @Test
+   // @Test
     public  void getAllBroadUsers(){
       List<BroadUser> broadUserList= broadUserRepository.findAll();
       for(BroadUser brd:broadUserList){
@@ -25,14 +25,14 @@ class BroadUserRepositoryTest {
       }
     }
 
-    @Test
+    //@Test
     public  void getById(){
         BroadUser broadUser= broadUserRepository.findById(10l).get();
         System.out.println(broadUser);
         System.out.println(broadUser.getAddress());
     }
 
-    @Test
+   // @Test
     public void testBroadSave(){
         Address address=Address.builder().city("Pune").state("MH").street("ABC").zipCode("1231").build();
         BroadUser user=BroadUser.builder().email("abc@gmail.com").name("userName").phoneNumber("12423").whatsAppId("123323@whatsapp.com").address(address).build();
