@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
+      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/beans/FileStorage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/controller/TemplateController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/repository/FileStorageRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/service/FileStorageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -120,7 +123,7 @@
       <command value="mvn com.github.eirslett:frontend-maven-plugin:1.11.3:install-node-and-npm" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.AppRunner">
+  <component name="RunManager" selected="Application.BroadComApp">
     <configuration name="AppRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.runner.AppRunner" />
       <module name="AppRunner" />
@@ -234,9 +237,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BroadComApp" />
         <item itemvalue="Application.AppRunner" />
         <item itemvalue="JUnit.BroadCastGroupServiceTest.test" />
-        <item itemvalue="Application.BroadComApp" />
         <item itemvalue="JUnit.BroadUserRepositoryTest.getById" />
         <item itemvalue="JUnit.BroadUserRepositoryTest.testBroadSave" />
       </list>
