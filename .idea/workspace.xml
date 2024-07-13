@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
+      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/service/BroadCastGroupService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/broadcomapp/src/test/java/com/Broadcomapp/BLogic/service/BroadCastGroupServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/BroadUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/user/beans/BroadUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BroadComPostman.postman_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/BroadComPostman.postman_collection.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/controller/BroadCastGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/controller/BroadCastGroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/controller/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/controller/userController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/Broadcomapp.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BroadComApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/test/java/com/Broadcomapp/BLogic/repository/BroadCastGroupRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/test/java/com/Broadcomapp/BLogic/repository/BroadCastGroupRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/test/java/com/Broadcomapp/BLogic/repository/BroadUserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/test/java/com/Broadcomapp/BLogic/repository/BroadUserRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +50,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2gpZil8nixpodYTeTr5aDsUgKsB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -68,7 +73,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "jdk.selected.JAVA_MODULE": "17 (2)",
-    "last_directory_selection": "E:/SpringIJ/BroadCom/broadcomUI/src/main/java",
+    "last_directory_selection": "E:/SpringIJ/BroadCom/broadcomapp/src/test/java/com/Broadcomapp/BLogic",
     "last_opened_file_path": "E:/SpringIJ/BroadCom",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -96,7 +101,12 @@
       <recent name="E:\SpringIJ\BroadCom\broadcomUI" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.Broadcomapp.user.repository" />
       <recent name="com.util" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.Broadcomapp.user.repository" />
+      <recent name="com.Broadcomapp.user.beans" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -116,26 +126,13 @@
       <command value="mvn com.github.eirslett:frontend-maven-plugin:1.11.3:install-node-and-npm" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.BroadcomappDev">
-    <configuration name="AppRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="app.runner.AppRunner" />
-      <module name="AppRunner" />
+  <component name="RunManager" selected="JUnit.BroadCastGroupServiceTest.test">
+    <configuration name="BroadComApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.Broadcomapp.BroadComApp" />
+      <module name="broadcomapp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="app.runner.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BroadcomUIApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.broadcom.UI.BroadcomUIApp" />
-      <module name="broadcomUI" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.broadcom.UI.*" />
+          <option name="PATTERN" value="com.Broadcomapp.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -147,6 +144,70 @@
       <module name="Util" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BroadCastGroupServiceTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="broadcomapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Broadcomapp.BLogic.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Broadcomapp.BLogic.service" />
+      <option name="MAIN_CLASS_NAME" value="com.Broadcomapp.BLogic.service.BroadCastGroupServiceTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BroadUserRepositoryTest.getAllBroadUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="broadcomapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Broadcomapp.BLogic.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Broadcomapp.user.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.Broadcomapp.BLogic.repository.BroadUserRepositoryTest" />
+      <option name="METHOD_NAME" value="getAllBroadUsers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BroadUserRepositoryTest.getById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="broadcomapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Broadcomapp.BLogic.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Broadcomapp.BLogic.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.Broadcomapp.BLogic.repository.BroadUserRepositoryTest" />
+      <option name="METHOD_NAME" value="getById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BroadUserRepositoryTest.testBroadSave" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="broadcomapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Broadcomapp.BLogic.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Broadcomapp.user.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.Broadcomapp.BLogic.repository.BroadUserRepositoryTest" />
+      <option name="METHOD_NAME" value="testBroadSave" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -163,19 +224,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="docker-compose.yml.broadcomaui: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="broadcomaui" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Application.BroadcomappDev" />
       <item itemvalue="Application.ApiGatewayApplicationDev" />
@@ -183,19 +231,23 @@
       <item itemvalue="Application.AuthApplication" />
       <item itemvalue="Application.NamingServerApplicationDev" />
       <item itemvalue="Application.NamingServerApplicationProd" />
-      <item itemvalue="Application.BroadcomUIApp" />
-      <item itemvalue="Application.AppRunner" />
-      <item itemvalue="Docker.docker-compose.yml.broadcomaui: Compose Deployment" />
+      <item itemvalue="Application.BroadComApp" />
       <item itemvalue="JUnit.TokenTest" />
       <item itemvalue="JUnit.All in Util" />
+      <item itemvalue="JUnit.BroadCastGroupServiceTest.test" />
+      <item itemvalue="JUnit.BroadUserRepositoryTest.getAllBroadUsers" />
+      <item itemvalue="JUnit.BroadUserRepositoryTest.getById" />
+      <item itemvalue="JUnit.BroadUserRepositoryTest.testBroadSave" />
       <item itemvalue="Multirun.buildDockerImages" />
       <item itemvalue="Multirun.RunBroadCom" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yml.broadcomaui: Compose Deployment" />
-        <item itemvalue="Application.BroadcomUIApp" />
-        <item itemvalue="Application.AppRunner" />
+        <item itemvalue="JUnit.BroadCastGroupServiceTest.test" />
+        <item itemvalue="Application.BroadComApp" />
+        <item itemvalue="JUnit.BroadUserRepositoryTest.getById" />
+        <item itemvalue="JUnit.BroadUserRepositoryTest.testBroadSave" />
+        <item itemvalue="JUnit.BroadUserRepositoryTest.getAllBroadUsers" />
       </list>
     </recent_temporary>
   </component>
@@ -261,6 +313,16 @@
           <url>file://$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java</url>
           <line>14</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/service/BroadCastGroupService.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/service/BroadCastGroupService.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -33,11 +33,11 @@ public class SecurityConfig {
 //                .password(encoder.encode("Pwd1"))
 //                .roles("ADMIN")
 //                .build();
-//        UserDetails user = User.withUsername("John")
+//        UserDetails BLogic = User.withUsername("John")
 //                .password(encoder.encode("Pwd2"))
 //                .roles("USER","ADMIN","HR")
 //                .build();
-//        return new InMemoryUserDetailsManager(admin, user);
+//        return new InMemoryUserDetailsManager(admin, BLogic);
         return new UserInfoUserDetailsService();
     }
 

@@ -1,23 +1,28 @@
-package com.Broadcomapp.user.beans;
+package com.Broadcomapp.BLogic.beans;
 
 import jakarta.persistence.*;
 
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import lombok.*;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@ToString
 public class Address {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @SequenceGenerator(
+            name="address_sequence",
+            sequenceName = "address_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "address_sequence"
+    )
+    private Long addressId;
 
     @Column(nullable = false)
     private String street;

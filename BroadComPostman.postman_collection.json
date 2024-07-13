@@ -258,7 +258,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john.doe@example.com\",\r\n  \"phoneNumber\": \"1234567890\",\r\n  \"fbId\": \"john.doe.fb\",\r\n  \"instagraid\": \"john.doe.ig\",\r\n  \"linkedinid\": \"john.doe.li\",\r\n  \"telegramid\": \"john.doe.tg\",\r\n  \"whatsappid\": \"john.doe.wa\",\r\n  \"gender\": \"Male\",\r\n  \"dateOfBirth\": \"1990-01-01\",\r\n  \"address\": {\r\n    \"address\": \"123 Main St\",\r\n    \"location\": \"Downtown\",\r\n    \"city\": \"Springfield\",\r\n    \"district\": \"Central\",\r\n    \"state\": \"Illinois\",\r\n    \"country\": \"USA\"\r\n  }\r\n}",
+							"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john.doe@example.com\",\r\n  \"phoneNumber\": \"1234567890\",\r\n  \"whatsappid\": \"1234567890\",\r\n  \"gender\": \"Male\",\r\n  \"dateOfBirth\": \"1990-01-01\",\r\n  \"address\": {\r\n    \"street\": \"123 Main St\",\r\n    \"zipCode\": \"123455\",\r\n    \"city\": \"Springfield\",    \r\n    \"state\": \"Illinois\"\r\n  }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -266,14 +266,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:7210/broadcomapp/createuser",
+							"raw": "localhost:7210/broadcomapp/create",
 							"host": [
 								"localhost"
 							],
 							"port": "7210",
 							"path": [
 								"broadcomapp",
-								"createuser"
+								"create"
 							]
 						}
 					},
@@ -286,7 +286,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "[\r\n  {\r\n    \"name\": \"John Doe\",\r\n    \"email\": \"john.doe@example.com\",\r\n    \"phoneNumber\": \"1234567890\",\r\n    \"fbId\": \"john.doe.fb\",\r\n    \"instagraid\": \"john.doe.ig\",\r\n    \"linkedinid\": \"john.doe.li\",\r\n    \"telegramid\": \"john.doe.tg\",\r\n    \"whatsappid\": \"john.doe.wa\",\r\n    \"gender\": \"Male\",\r\n    \"dateOfBirth\": \"1990-01-01\",\r\n    \"address\": {\r\n      \"address\": \"123 Main St\",\r\n      \"location\": \"Downtown\",\r\n      \"city\": \"Springfield\",\r\n      \"district\": \"Central\",\r\n      \"state\": \"Illinois\",\r\n      \"country\": \"USA\"\r\n    }\r\n  },\r\n  {\r\n    \"name\": \"Jane Smith\",\r\n    \"email\": \"jane.smith@example.com\",\r\n    \"phoneNumber\": \"0987654321\",\r\n    \"fbId\": \"jane.smith.fb\",\r\n    \"instagraid\": \"jane.smith.ig\",\r\n    \"linkedinid\": \"jane.smith.li\",\r\n    \"telegramid\": \"jane.smith.tg\",\r\n    \"whatsappid\": \"jane.smith.wa\",\r\n    \"gender\": \"Female\",\r\n    \"dateOfBirth\": \"1985-05-15\",\r\n    \"address\": {\r\n      \"address\": \"456 Elm St\",\r\n      \"location\": \"Uptown\",\r\n      \"city\": \"Metropolis\",\r\n      \"district\": \"Westside\",\r\n      \"state\": \"California\",\r\n      \"country\": \"USA\"\r\n    }\r\n  }\r\n]\r\n",
+							"raw": "[\r\n  {\r\n    \"name\": \"Amit Sharma\",\r\n    \"email\": \"amit.sharma@example.com\",\r\n    \"phoneNumber\": \"9876543210\",\r\n    \"whatsappid\": \"9876543210\",\r\n    \"gender\": \"Male\",\r\n    \"dateOfBirth\": \"1990-01-01\",\r\n    \"address\": {\r\n      \"street\": \"123 MG Road\",\r\n      \"zipCode\": \"110001\",\r\n      \"city\": \"New Delhi\",\r\n      \"state\": \"Delhi\"\r\n    }\r\n  },\r\n  {\r\n    \"name\": \"Priya Singh\",\r\n    \"email\": \"priya.singh@example.com\",\r\n    \"phoneNumber\": \"9876543211\",\r\n    \"whatsappid\": \"9876543211\",\r\n    \"gender\": \"Female\",\r\n    \"dateOfBirth\": \"1991-02-02\",\r\n    \"address\": {\r\n      \"street\": \"456 Brigade Road\",\r\n      \"zipCode\": \"560001\",\r\n      \"city\": \"Bangalore\",\r\n      \"state\": \"Karnataka\"\r\n    }\r\n  },\r\n  {\r\n    \"name\": \"Rahul Verma\",\r\n    \"email\": \"rahul.verma@example.com\",\r\n    \"phoneNumber\": \"9876543212\",\r\n    \"whatsappid\": \"9876543212\",\r\n    \"gender\": \"Male\",\r\n    \"dateOfBirth\": \"1992-03-03\",\r\n    \"address\": {\r\n      \"street\": \"789 Linking Road\",\r\n      \"zipCode\": \"400001\",\r\n      \"city\": \"Mumbai\",\r\n      \"state\": \"Maharashtra\"\r\n    }\r\n  },\r\n  {\r\n    \"name\": \"Sneha Patel\",\r\n    \"email\": \"sneha.patel@example.com\",\r\n    \"phoneNumber\": \"9876543213\",\r\n    \"whatsappid\": \"9876543213\",\r\n    \"gender\": \"Female\",\r\n    \"dateOfBirth\": \"1993-04-04\",\r\n    \"address\": {\r\n      \"street\": \"101 Nehru Street\",\r\n      \"zipCode\": \"600001\",\r\n      \"city\": \"Chennai\",\r\n      \"state\": \"Tamil Nadu\"\r\n    }\r\n  },\r\n  {\r\n    \"name\": \"Vikram Gupta\",\r\n    \"email\": \"vikram.gupta@example.com\",\r\n    \"phoneNumber\": \"9876543214\",\r\n    \"whatsappid\": \"9876543214\",\r\n    \"gender\": \"Male\",\r\n    \"dateOfBirth\": \"1994-05-05\",\r\n    \"address\": {\r\n      \"street\": \"202 Ashok Marg\",\r\n      \"zipCode\": \"226001\",\r\n      \"city\": \"Lucknow\",\r\n      \"state\": \"Uttar Pradesh\"\r\n    }\r\n  },\r\n  {\r\n    \"name\": \"Anjali Mehta\",\r\n    \"email\": \"anjali.mehta@example.com\",\r\n    \"phoneNumber\": \"9876543215\",\r\n    \"whatsappid\": \"9876543215\",\r\n    \"gender\": \"Female\",\r\n    \"dateOfBirth\": \"1995-06-06\",\r\n    \"address\": {\r\n      \"street\": \"303 SG Highway\",\r\n      \"zipCode\": \"380001\",\r\n      \"city\": \"Ahmedabad\",\r\n      \"state\": \"Gujarat\"\r\n    }\r\n  },\r\n  {\r\n    \"name\": \"Karan Reddy\",\r\n    \"email\": \"karan.reddy@example.com\",\r\n    \"phoneNumber\": \"9876543216\",\r\n    \"whatsappid\": \"9876543216\",\r\n    \"gender\": \"Male\",\r\n    \"dateOfBirth\": \"1996-07-07\",\r\n    \"address\": {\r\n      \"street\": \"404 Banjara Hills\",\r\n      \"zipCode\": \"500034\",\r\n      \"city\": \"Hyderabad\",\r\n      \"state\": \"Telangana\"\r\n    }\r\n  },\r\n  {\r\n    \"name\": \"Ritu Desai\",\r\n    \"email\": \"ritu.desai@example.com\",\r\n    \"phoneNumber\": \"9876543217\",\r\n    \"whatsappid\": \"9876543217\",\r\n    \"gender\": \"Female\",\r\n    \"dateOfBirth\": \"1997-08-08\",\r\n    \"address\": {\r\n      \"street\": \"505 FC Road\",\r\n      \"zipCode\": \"411004\",\r\n      \"city\": \"Pune\",\r\n      \"state\": \"Maharashtra\"\r\n    }\r\n  },\r\n  {\r\n    \"name\": \"Manish Kumar\",\r\n    \"email\": \"manish.kumar@example.com\",\r\n    \"phoneNumber\": \"9876543218\",\r\n    \"whatsappid\": \"9876543218\",\r\n    \"gender\": \"Male\",\r\n    \"dateOfBirth\": \"1998-09-09\",\r\n    \"address\": {\r\n      \"street\": \"606 Boring Road\",\r\n      \"zipCode\": \"800001\",\r\n      \"city\": \"Patna\",\r\n      \"state\": \"Bihar\"\r\n    }\r\n  },\r\n  {\r\n    \"name\": \"Sana Kapoor\",\r\n    \"email\": \"sana.kapoor@example.com\",\r\n    \"phoneNumber\": \"9876543219\",\r\n    \"whatsappid\": \"9876543219\",\r\n    \"gender\": \"Female\",\r\n    \"dateOfBirth\": \"1999-10-10\",\r\n    \"address\": {\r\n      \"street\": \"707 Park Street\",\r\n      \"zipCode\": \"700016\",\r\n      \"city\": \"Kolkata\",\r\n      \"state\": \"West Bengal\"\r\n    }\r\n  }\r\n]\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -294,20 +294,234 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:7210/broadcomapp/createuserlist",
+							"raw": "localhost:7210/broadcomapp/create-list",
 							"host": [
 								"localhost"
 							],
 							"port": "7210",
 							"path": [
 								"broadcomapp",
-								"createuserlist"
+								"create-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:7210/broadcomapp/get/1",
+							"host": [
+								"localhost"
+							],
+							"port": "7210",
+							"path": [
+								"broadcomapp",
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userUpdate",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"broadUserId\": \"1\",\r\n    \"name\": \"John Doe_1\",\r\n    \"email\": \"john.doe@example.com\",\r\n    \"phoneNumber\": \"1234567890\",\r\n    \"whatsappid\": \"1234567890\",\r\n    \"gender\": \"Male\",\r\n    \"dateOfBirth\": \"1990-01-01\",\r\n    \"address\": {\r\n        \"street\": \"123 Main St\",\r\n        \"zipCode\": \"123455\",\r\n        \"city\": \"Springfield\",\r\n        \"state\": \"Illinois\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:7210/broadcomapp/update",
+							"host": [
+								"localhost"
+							],
+							"port": "7210",
+							"path": [
+								"broadcomapp",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"broadUserId\": \"2\",\r\n    \"name\": \"John Doe_1\",\r\n    \"email\": \"john.doe@example.com\",\r\n    \"phoneNumber\": \"1234567890\",\r\n    \"whatsappid\": \"1234567890\",\r\n    \"gender\": \"Male\",\r\n    \"dateOfBirth\": \"1990-01-01\",\r\n    \"address\": {\r\n        \"street\": \"123 Main St\",\r\n        \"zipCode\": \"123455\",\r\n        \"city\": \"Springfield\",\r\n        \"state\": \"Illinois\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:7210/broadcomapp/delete/1",
+							"host": [
+								"localhost"
+							],
+							"port": "7210",
+							"path": [
+								"broadcomapp",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:7210/broadcomapp/get-all",
+							"host": [
+								"localhost"
+							],
+							"port": "7210",
+							"path": [
+								"broadcomapp",
+								"get-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createGrp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"groupName\":\"ABC_1\",\r\n    \"broadUsersIdList\":[1,2]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:7210/broad-user-group/create",
+							"host": [
+								"localhost"
+							],
+							"port": "7210",
+							"path": [
+								"broad-user-group",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getGroup",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"groupName\":\"ABC_1\",\r\n    \"createdDate\":\"1990-01-01\",\r\n    \"expiryDate\":\"1990-01-02\",\r\n    \"listOfUsers\":[1,2]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:7210/broad-user-group/get-by-id/1",
+							"host": [
+								"localhost"
+							],
+							"port": "7210",
+							"path": [
+								"broad-user-group",
+								"get-by-id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getGroupList",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"groupName\":\"ABC_1\",\r\n    \"createdDate\":\"1990-01-01\",\r\n    \"expiryDate\":\"1990-01-02\",\r\n    \"listOfUsers\":[1,2]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:7210/broad-user-group/delete-by-id/1",
+							"host": [
+								"localhost"
+							],
+							"port": "7210",
+							"path": [
+								"broad-user-group",
+								"delete-by-id",
+								"1"
 							]
 						}
 					},
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Mysql",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": \"jdbc:mysql://localhost:3306/world?allowPublicKeyRetrieval=true&useSSL=false\",\r\n    \"username\": \"root\",\r\n    \"password\": \"admin\",\r\n    \"driverClassName\": \"org.hibernate.dialect.MySQLDialect\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7070/api/database/check",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"api",
+						"database",
+						"check"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
