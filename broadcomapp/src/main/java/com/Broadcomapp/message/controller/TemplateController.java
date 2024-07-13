@@ -1,13 +1,17 @@
 package com.Broadcomapp.message.controller;
 
+import com.Broadcomapp.message.Util.TemplateResolverService;
 import com.Broadcomapp.message.beans.FileStorage;
+import com.Broadcomapp.message.beans.Template;
 import com.Broadcomapp.message.service.FileStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -16,6 +20,9 @@ public class TemplateController {
 
     @Autowired
     private FileStorageService fileStorageService;
+
+    @Autowired
+    private TemplateResolverService templateResolverService;
 
     @PostMapping("/upload")
     public String uploadFile(@RequestParam("file") MultipartFile file) {
@@ -59,4 +66,11 @@ public class TemplateController {
             return "Failed to update file!";
         }
     }
+
+    @PostMapping("/render-test")
+    public String renderTemplate(@RequestBody Template template) {
+        System.out.println(template.getTemplateName()+"  "+template.getVariable());
+        return templateResolverService.processTemplate(template.getTemplateName(), template.getVariable());
+    }
+
 }

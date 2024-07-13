@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
-      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/beans/FileStorage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/controller/TemplateController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/repository/FileStorageRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/service/FileStorageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/config/ThymeleafConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/Util/TemplateResolverService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/beans/Template.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BroadComApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BroadComApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/controller/TemplateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/controller/TemplateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/repository/FileStorageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/repository/FileStorageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/service/FileStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/service/FileStorageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emailTemplate_2.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/emailTemplate_2.ftl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,6 +156,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TemplateResolver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.Broadcomapp.message.Util.TemplateResolver" />
+      <module name="broadcomapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Broadcomapp.message.Util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in Util" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="Util" />
       <option name="PACKAGE_NAME" value="" />
@@ -190,22 +209,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BroadUserRepositoryTest.testBroadSave" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="broadcomapp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Broadcomapp.BLogic.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.Broadcomapp.user.repository" />
-      <option name="MAIN_CLASS_NAME" value="com.Broadcomapp.BLogic.repository.BroadUserRepositoryTest" />
-      <option name="METHOD_NAME" value="testBroadSave" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TokenTest" type="JUnit" factoryName="JUnit">
       <module name="Util" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -225,23 +228,23 @@
       <item itemvalue="Application.AuthApplication" />
       <item itemvalue="Application.NamingServerApplicationDev" />
       <item itemvalue="Application.NamingServerApplicationProd" />
+      <item itemvalue="Application.TemplateResolver" />
       <item itemvalue="Application.AppRunner" />
       <item itemvalue="Application.BroadComApp" />
       <item itemvalue="JUnit.TokenTest" />
       <item itemvalue="JUnit.All in Util" />
       <item itemvalue="JUnit.BroadCastGroupServiceTest.test" />
       <item itemvalue="JUnit.BroadUserRepositoryTest.getById" />
-      <item itemvalue="JUnit.BroadUserRepositoryTest.testBroadSave" />
       <item itemvalue="Multirun.buildDockerImages" />
       <item itemvalue="Multirun.RunBroadCom" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.BroadComApp" />
+        <item itemvalue="Application.TemplateResolver" />
         <item itemvalue="Application.AppRunner" />
         <item itemvalue="JUnit.BroadCastGroupServiceTest.test" />
         <item itemvalue="JUnit.BroadUserRepositoryTest.getById" />
-        <item itemvalue="JUnit.BroadUserRepositoryTest.testBroadSave" />
       </list>
     </recent_temporary>
   </component>

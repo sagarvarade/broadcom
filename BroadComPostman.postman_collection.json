@@ -376,6 +376,34 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "render-test_1",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"templateName\":\"emailTemplate.txt\",\r\n    \"groupId\":1,\r\n    \"variable\":{\r\n        \"name\":\"sagar_varade\",\r\n        \"sur_name\":\"Bank Manager\",\r\n        \"message\":\"Check your bank account now !\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:7210/template/render-test",
+									"host": [
+										"localhost"
+									],
+									"port": "7210",
+									"path": [
+										"template",
+										"render-test"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
