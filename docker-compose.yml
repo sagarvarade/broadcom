@@ -8,11 +8,15 @@ services:
     volumes:
       - zookeeper_data:/data
       - zookeeper_datalog:/datalog
+    networks:
+      - broadcom-network
 
   kafka:
     image: wurstmeister/kafka:latest
     ports:
       - "9092:9092"
+    depends_on:
+      - zookeeper
     expose:
       - "9093"
     environment:
@@ -24,20 +28,33 @@ services:
       KAFKA_CREATE_TOPICS: "my-topic:1:1"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - broadcom-network
+
   db:
     image: mysql:8.0
     container_name: mysql-container
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: authentication
     ports:
       - "3307:3306"
     volumes:
       - mysql-data:/var/lib/mysql
+    networks:
+      - broadcom-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
 
   namingserver:
     image: broadcom-namingserver:1.1.1
     restart: always
+    depends_on:
+      - db
     ports:
       - "7100:7100"
     networks:
@@ -54,7 +71,7 @@ services:
       - broadcom-network
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7100/eureka/
-      - AUTHENTICATION_SERVICEURL=http://localhost:7200
+      - AUTHENTICATION_SERVICEURL=http://authentication:7200
 
   authentication:
     image: broadcom-authentication:3.1.1
@@ -67,7 +84,7 @@ services:
       - broadcom-network
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7100/eureka/
-      - SPRING_DATASOURCE_URL=jdbc:jdbc:mysql://db:3307/authentication?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/authentication?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=admin
     volumes:
@@ -84,7 +101,7 @@ services:
       - broadcom-network
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7100/eureka/
-      - SPRING_DATASOURCE_URL=jdbc:jdbc:mysql://db:3307/broadcomapp?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/broadcomapp?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=admin
 
