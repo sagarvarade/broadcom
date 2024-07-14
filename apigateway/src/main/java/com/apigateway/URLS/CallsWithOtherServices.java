@@ -24,7 +24,7 @@ public class CallsWithOtherServices {
 
 	@PostConstruct
 	private void postConstruct() {
-		this.AUTH_URL = env.getProperty("broadcom.authentication_service_url");
+		this.AUTH_URL = env.getProperty("authentication_service_url");
 	}
 
 	public HttpResponse<String> checkToken(String token) {
@@ -33,7 +33,9 @@ public class CallsWithOtherServices {
 			HttpRequest request = HttpRequest.newBuilder().uri(new URI(AUTH_URL + "/auth/testtoken"))
 					.header("Authorization", "Bearer " + token).GET().build();
 			HttpClient httpClient = HttpClient.newHttpClient();
+			System.out.println("Body Header : "+java.net.http.HttpResponse.BodyHandlers.ofString());
 			HttpResponse<String> resp = httpClient.send(request, java.net.http.HttpResponse.BodyHandlers.ofString());
+			System.out.println("Response :"+resp);
 			return resp;
 		} catch (Exception e) {
 			e.printStackTrace();

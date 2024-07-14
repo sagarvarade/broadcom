@@ -13,7 +13,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/broadcomapp")
+@RequestMapping("/broad-user")
 public class userController {
 
 	@Autowired

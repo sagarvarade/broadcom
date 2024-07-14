@@ -6,8 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AllDbSql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/AllDbSql.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/com/apigateway/URLS/CallsWithOtherServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/com/apigateway/URLS/CallsWithOtherServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/resources/application-prod.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomUI/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomUI/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/controller/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/controller/userController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emailTemplate.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emailTemplate_2.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/namingserver/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/namingserver/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +131,7 @@
       <command value="mvn com.github.eirslett:frontend-maven-plugin:1.11.3:install-node-and-npm" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.BroadComApp">
+  <component name="RunManager" selected="Application.ApiGatewayApplicationDev">
     <configuration name="AppRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.runner.AppRunner" />
       <module name="AppRunner" />

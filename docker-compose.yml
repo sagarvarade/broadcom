@@ -30,6 +30,11 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - broadcom-network
+    healthcheck:
+      test: [ "CMD", "kafka-topics.sh", "--list", "--zookeeper", "zookeeper:2181" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   db:
     image: mysql:8.0
@@ -45,7 +50,7 @@ services:
     networks:
       - broadcom-network
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
       interval: 10s
       timeout: 5s
       retries: 3
@@ -54,11 +59,17 @@ services:
     image: broadcom-namingserver:1.1.1
     restart: always
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     ports:
       - "7100:7100"
     networks:
       - broadcom-network
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:7100/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   apigateway:
     image: broadcom-apigateway:2.1.1
@@ -71,7 +82,8 @@ services:
       - broadcom-network
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7100/eureka/
-      - AUTHENTICATION_SERVICEURL=http://authentication:7200
+      - AUTHENTICATION_SERVICE_URL=http://authentication:7200
+      - BROADCOMAPP_SERVICEURL=http://broadcomapp:7210
 
   authentication:
     image: broadcom-authentication:3.1.1
@@ -87,8 +99,6 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/authentication?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=admin
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
 
   broadcomapp:
     image: broadcom-broadcomapp:4.1.1
