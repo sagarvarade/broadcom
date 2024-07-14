@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
-      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/config/ThymeleafConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/Util/TemplateResolverService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/beans/Template.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BroadComApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BroadComApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/controller/TemplateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/controller/TemplateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/repository/FileStorageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/repository/FileStorageRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/service/FileStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/service/FileStorageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/resources/application-prod.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/resources/application-prod.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emailTemplate_2.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/emailTemplate_2.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafkaDockerDev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/kafkaDockerDev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
