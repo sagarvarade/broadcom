@@ -5,6 +5,12 @@ private String phoneNumber;
 private String whatsappid;
 
 
+    private String street;
+    private String city;
+    private String state;
+    private String zipCode;
+
+
 
 Broad User :  
 	Address
@@ -32,6 +38,11 @@ BroaUsers
 4. delete group
 
 
+http://localhost:7100/actuator/health :naming server
+http://localhost:7000/actuator/health :Api gateway
+http://localhost:7200/actuator/health : Auth
+http://localhost:7210/actuator/health : broad com app
+http://localhost:7214/actuator/health : UI 
 
 
 

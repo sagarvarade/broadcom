@@ -77,13 +77,19 @@ services:
     ports:
       - "7000:7000"
     depends_on:
-      - namingserver
+      namingserver:
+        condition: service_healthy
     networks:
       - broadcom-network
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7100/eureka/
       - AUTHENTICATION_SERVICE_URL=http://authentication:7200
       - BROADCOMAPP_SERVICEURL=http://broadcomapp:7210
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:7000/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   authentication:
     image: broadcom-authentication:3.1.1
@@ -91,7 +97,10 @@ services:
     ports:
       - "7200:7200"
     depends_on:
-      - apigateway
+      apigateway:
+        condition: service_healthy
+      namingserver:
+        condition: service_healthy
     networks:
       - broadcom-network
     environment:
@@ -99,6 +108,11 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/authentication?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=admin
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:7200/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   broadcomapp:
     image: broadcom-broadcomapp:4.1.1
@@ -106,7 +120,12 @@ services:
     ports:
       - "7210:7210"
     depends_on:
-      - authentication
+      apigateway:
+        condition: service_healthy
+      namingserver:
+        condition: service_healthy
+      authentication:
+        condition: service_healthy
     networks:
       - broadcom-network
     environment:
@@ -114,6 +133,11 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/broadcomapp?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=admin
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:7100/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   broadcomaui:
     image: broadcom-broadcomaui:7.1.1
@@ -126,6 +150,11 @@ services:
       - apigateway
     networks:
       - broadcom-network
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:7214" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
 networks:
   broadcom-network:
