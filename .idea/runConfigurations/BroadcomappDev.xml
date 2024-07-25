@@ -3,7 +3,7 @@
     <envs>
       <env name="spring.profiles.active" value="dev" />
     </envs>
-    <option name="MAIN_CLASS_NAME" value="com.Broadcomapp.Broadcomapp" />
+    <option name="MAIN_CLASS_NAME" value="com.Broadcomapp.BroadComApp" />
     <module name="broadcomapp" />
     <extension name="coverage">
       <pattern>

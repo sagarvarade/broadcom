@@ -1,13 +1,75 @@
 version: '3.8'
 
 services:
+  zookeeper:
+    image: wurstmeister/zookeeper:latest
+    ports:
+      - "2181:2181"
+    volumes:
+      - zookeeper_data:/data
+      - zookeeper_datalog:/datalog
+    networks:
+      - broadcom-network
+
+  kafka:
+    image: wurstmeister/kafka:latest
+    ports:
+      - "9092:9092"
+    depends_on:
+      - zookeeper
+    expose:
+      - "9093"
+    environment:
+      KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka:9093,OUTSIDE://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
+      KAFKA_LISTENERS: INSIDE://0.0.0.0:9093,OUTSIDE://0.0.0.0:9092
+      KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_CREATE_TOPICS: "my-topic:1:1"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - broadcom-network
+    healthcheck:
+      test: [ "CMD", "kafka-topics.sh", "--list", "--zookeeper", "zookeeper:2181" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  db:
+    image: mysql:8.0
+    container_name: mysql-container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: authentication
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - broadcom-network
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
   namingserver:
     image: broadcom-namingserver:1.1.1
     restart: always
+    depends_on:
+      db:
+        condition: service_healthy
     ports:
       - "7100:7100"
     networks:
       - broadcom-network
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:7100/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   apigateway:
     image: broadcom-apigateway:2.1.1
@@ -15,12 +77,19 @@ services:
     ports:
       - "7000:7000"
     depends_on:
-      - namingserver
+      namingserver:
+        condition: service_healthy
     networks:
       - broadcom-network
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7100/eureka/
-      - AUTHENTICATION_SERVICEURL=http://localhost:7200
+      - AUTHENTICATION_SERVICE_URL=http://authentication:7200
+      - BROADCOMAPP_SERVICEURL=http://broadcomapp:7210
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:7000/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   authentication:
     image: broadcom-authentication:3.1.1
@@ -28,14 +97,22 @@ services:
     ports:
       - "7200:7200"
     depends_on:
-      - apigateway
+      apigateway:
+        condition: service_healthy
+      namingserver:
+        condition: service_healthy
     networks:
       - broadcom-network
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7100/eureka/
-      - SPRING_DATASOURCE_URL=jdbc:mysql://host.docker.internal:3306/authentication?allowPublicKeyRetrieval=true&useSSL=false
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/authentication?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=admin
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:7200/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   broadcomapp:
     image: broadcom-broadcomapp:4.1.1
@@ -43,14 +120,24 @@ services:
     ports:
       - "7210:7210"
     depends_on:
-      - authentication
+      apigateway:
+        condition: service_healthy
+      namingserver:
+        condition: service_healthy
+      authentication:
+        condition: service_healthy
     networks:
       - broadcom-network
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7100/eureka/
-      - SPRING_DATASOURCE_URL=jdbc:mysql://host.docker.internal:3306/broadcomapp?allowPublicKeyRetrieval=true&useSSL=false
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/broadcomapp?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=admin
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:7100/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   broadcomaui:
     image: broadcom-broadcomaui:7.1.1
@@ -63,7 +150,18 @@ services:
       - apigateway
     networks:
       - broadcom-network
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:7214" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
 networks:
   broadcom-network:
     driver: bridge
+
+volumes:
+  zookeeper_data:
+  zookeeper_datalog:
+  kafka_data:
+  mysql-data:

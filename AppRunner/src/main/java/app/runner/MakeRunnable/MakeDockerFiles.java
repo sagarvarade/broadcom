@@ -16,7 +16,7 @@ public class MakeDockerFiles {
 
     }
     private static String getCurrentFolderPath() {
-        return System.getProperty("BLogic.dir");
+        return System.getProperty("user.dir");
     }
 
 

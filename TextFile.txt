@@ -5,6 +5,12 @@ private String phoneNumber;
 private String whatsappid;
 
 
+    private String street;
+    private String city;
+    private String state;
+    private String zipCode;
+
+
 
 Broad User :  
 	Address
@@ -32,6 +38,23 @@ BroaUsers
 4. delete group
 
 
+http://localhost:7100/actuator/health :naming server
+http://localhost:7000/actuator/health :Api gateway
+http://localhost:7200/actuator/health : Auth
+http://localhost:7210/actuator/health : broad com app
+http://localhost:7214/actuator/health : UI 
+
+
+
+26/07/2024 :
+App will be user base , no admin or priviled rights all are same .
+
+1. Secure all mycroservices with request header passing from gateway
+2. Check request header in all mircoserivices and if token is present then only allow to service
+3. Update user with other access roles as well 
+4. Add some more info to token
+5. Change logic to deflate token
+6. All the date passed by request must have user info , update all sqls to fetch for user
 
 
 
