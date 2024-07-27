@@ -26,7 +26,7 @@ import javax.annotation.PostConstruct;
 @Component
 public class LoggingFilter implements GlobalFilter {
 
-	private Logger logger = LoggerFactory.getLogger(LoggingFilter.class);
+	private final Logger logger = LoggerFactory.getLogger(LoggingFilter.class);
 	@Autowired
 	private Environment env;
 
@@ -43,6 +43,14 @@ public class LoggingFilter implements GlobalFilter {
 	@Override
 	public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
 		logger.info("Path ,{} ", exchange.getRequest().getPath());
+		String tokenForMicroCommunication= exchange.getRequest().getHeaders().get("broadcom_communication_token").get(0);
+
+		logger.info("Token From Call ,{} ", tokenForMicroCommunication);
+		logger.info("Token Set For All microservices Call ,{} ", broadcom_communication_token);
+
+		if (!tokenForMicroCommunication.equals(broadcom_communication_token)) {
+			throw new RuntimeException("You are not allow to communicate to this services {} " + tokenForMicroCommunication);
+		}
 
 		if (exchange.getRequest().getPath().toString().indexOf("auth/authenticate") > 0) {
 			logger.info("Skipping this URL for authorization : ,{} ", exchange.getRequest().getPath());
@@ -67,11 +75,11 @@ public class LoggingFilter implements GlobalFilter {
 		}
 
 		exchange.getRequest().mutate()
-				.header("user_id", tokenParts.get("user_id"))
-				.header("exp", tokenParts.get("exp"))
-				.header("iat", tokenParts.get("iat"))
-				.header("roles", tokenParts.get("roles"))
-				.header("sub", tokenParts.get("sub"))
+				.header("user_id", String.valueOf(tokenParts.get("user_id")))
+				.header("exp", String.valueOf(tokenParts.get("exp")))
+				.header("iat", String.valueOf(tokenParts.get("iat")))
+				.header("roles", String.valueOf(tokenParts.get("roles")))
+				.header("sub", String.valueOf(tokenParts.get("sub")))
 				.header("broadcom_communication_token", broadcom_communication_token)
 				.build();
 
