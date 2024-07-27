@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/AuthApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/AuthApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/config/UserInfoUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/config/UserInfoUserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/com/apigateway/WebConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/dto/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/service/UserAuthService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +72,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "jdk.selected.JAVA_MODULE": "17 (2)",
     "last_directory_selection": "E:/SpringIJ/BroadCom/broadcomapp/src/test/java/com/Broadcomapp/BLogic",
-    "last_opened_file_path": "E:/SpringIJ/BroadCom",
+    "last_opened_file_path": "E:/SpringIJ/BroadCom/authentication",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -121,6 +122,8 @@
       <command value="mvn npm-build" />
       <command value="mvn com.github.eirslett:install-node-and-npm" />
       <command value="mvn com.github.eirslett:frontend-maven-plugin:1.11.3:install-node-and-npm" />
+      <command value="mvn clean install -f" />
+      <command value="mvn clean:install -f" />
     </option>
   </component>
   <component name="RunManager" selected="Application.AuthApplicationDev">
