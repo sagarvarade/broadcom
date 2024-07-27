@@ -3,6 +3,8 @@ package com.Broadcomapp.message.beans;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -29,4 +31,10 @@ public class FileStorage {
     @Lob
     private byte[] data;
     private String filePath;
+
+    private String createdBy;
+    private LocalDateTime createdDate;
+
+    private String updatedBy;
+    private LocalDateTime updatedDate;
 }

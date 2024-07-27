@@ -3,6 +3,7 @@ package com.Broadcomapp.BLogic.beans;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -26,6 +27,12 @@ public class BroadCastGroup {
     private Long broadCastGroupId;
 
     private String groupName;
+
+    private String createdBy;
+    private LocalDateTime createdDate;
+
+    private String updatedBy;
+    private LocalDateTime updatedDate;
 
     @ElementCollection
     private List<Integer> broadUsersIdList;

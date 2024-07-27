@@ -3,6 +3,7 @@ package com.Broadcomapp.BLogic.beans;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import lombok.*;
@@ -35,6 +36,12 @@ public class BroadUser {
 	@Column(nullable = false)
 	private String gender;
 	private Date dateOfBirth;
+
+	private String createdBy;
+	private LocalDateTime createdDate;
+
+	private String updatedBy;
+	private LocalDateTime updatedDate;
 
 	@JsonIgnore
 	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval=true)

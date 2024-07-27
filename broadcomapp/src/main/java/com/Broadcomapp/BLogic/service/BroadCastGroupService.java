@@ -36,7 +36,7 @@ public class BroadCastGroupService {
     public HashMap<BroadCastGroup, List<BroadUser>> getGroupDetails(Long id) {
         BroadCastGroup broadCastGroup = null;
         HashMap<BroadCastGroup, List<BroadUser>> map = new HashMap<>();
-        if (!broadCastGroupRepository.findById(id).isEmpty()) {
+        if (broadCastGroupRepository.findById(id).isPresent()) {
             broadCastGroup = broadCastGroupRepository.findById(id).get();
             List<BroadUser> userList = new ArrayList<>();
             for (Integer l : broadCastGroup.getBroadUsersIdList()) {
@@ -48,5 +48,13 @@ public class BroadCastGroupService {
             return map;
         }
         return map;
+    }
+
+    public List<BroadCastGroup> findGroupByNameAndUpdatedByUser(String name, String userID) {
+        return broadCastGroupRepository.findByGroupNameAndUpdatedBy(name,userID);
+    }
+
+    public List<BroadCastGroup> findGroupByIdAndUpdatedByUser(Long id, String userID) {
+        return broadCastGroupRepository.findByBroadCastGroupIdAndUpdatedBy(id,userID);
     }
 }
