@@ -13,6 +13,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -27,7 +28,8 @@ public class FileStorageService {
     @Autowired
     private TemplateEngine templateEngine;
 
-    public void saveFile(MultipartFile file) throws IOException {
+    public void saveFile(MultipartFile file,String userID) throws IOException {
+        LocalDateTime now=LocalDateTime.now();
         String fileName = file.getOriginalFilename();
         Path filePath = Paths.get(uploadDir, fileName);
         Files.createDirectories(filePath.getParent());
@@ -37,12 +39,20 @@ public class FileStorageService {
         fileEntity.setData(file.getBytes());
         fileEntity.setActive(true);
         fileEntity.setFilePath(filePath.toString());
+        fileEntity.setCreatedBy(userID);
+        fileEntity.setUpdatedBy(userID);
+        fileEntity.setCreatedDate(now);
+        fileEntity.setUpdatedDate(now);
         fileStorageRepository.save(fileEntity);
     }
 
 
     public Optional<FileStorage> getFile(Long id) {
         return fileStorageRepository.findById(id);
+    }
+
+    public Optional<FileStorage> getFileByFileNameAndUpdatedBy(Long id,String userId) {
+        return fileStorageRepository.findByFileStorageIdAndUpdatedBy(id,userId);
     }
 
     public List<FileStorage> getActiveFiles() {
@@ -53,7 +63,7 @@ public class FileStorageService {
         fileStorageRepository.deleteById(id);
     }
 
-    public void updateFile(Long id, MultipartFile file, boolean isActive) throws IOException {
+    public void updateFile(Long id, MultipartFile file, boolean isActive,String userID) throws IOException {
         Optional<FileStorage> existingFileOpt = fileStorageRepository.findById(id);
         if (existingFileOpt.isPresent()) {
             FileStorage existingFile = existingFileOpt.get();
@@ -66,12 +76,14 @@ public class FileStorageService {
             String fileName = file.getOriginalFilename();
             Path newFilePath = Paths.get(uploadDir, fileName);
             Files.write(newFilePath, file.getBytes());
-
+            LocalDateTime now=LocalDateTime.now();
             // Update file metadata in database
             existingFile.setFileName(fileName);
             existingFile.setFilePath(newFilePath.toString());
             existingFile.setActive(isActive);
             existingFile.setData(file.getBytes());
+            existingFile.setUpdatedBy(userID);
+            existingFile.setUpdatedDate(now);
             fileStorageRepository.save(existingFile);
         }
     }

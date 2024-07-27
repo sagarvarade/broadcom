@@ -16,7 +16,6 @@ public class BroadCastGroupServiceTest {
 
     //@Test
     public void test(){
-        HashMap<BroadCastGroup, List<BroadUser>> fb= broadCastGroupService.getGroupDetails(1l);
-        System.out.println(fb);
+
     }
 }

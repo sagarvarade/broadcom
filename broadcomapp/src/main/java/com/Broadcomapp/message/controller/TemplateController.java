@@ -5,11 +5,12 @@ import com.Broadcomapp.message.beans.FileStorage;
 import com.Broadcomapp.message.beans.Template;
 import com.Broadcomapp.message.service.FileStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -25,28 +26,30 @@ public class TemplateController {
     private TemplateResolverService templateResolverService;
 
     @PostMapping("/upload")
-    public String uploadFile(@RequestParam("file") MultipartFile file) {
+    public ResponseEntity<Map<String, String>> uploadFile(@RequestParam("file") MultipartFile file, @RequestHeader("user_id") String userID) {
+        Map<String,String> response = new HashMap<String, String>();
         try {
-            fileStorageService.saveFile(file);
-            return "File uploaded successfully!";
+            fileStorageService.saveFile(file,userID);
+            response.put("ok", "File uploaded successfully!");
         } catch (IOException e) {
-            e.printStackTrace();
-            return "Failed to upload file!";
+            response.put("error", "an error expected on processing file");
+            return ResponseEntity.badRequest().body(response);
         }
+        return null;
     }
 
     @GetMapping("get-file/{id}")
-    public Optional<FileStorage> getFile(@PathVariable Long id) {
-        return fileStorageService.getFile(id);
+    public Optional<FileStorage> getFile(@PathVariable Long id,@RequestHeader("user_id") String userID) {
+        return fileStorageService.getFileByFileNameAndUpdatedBy(id,userID);
     }
 
     @GetMapping("/get-active-files")
-    public List<FileStorage> getActiveFiles() {
+    public List<FileStorage> getActiveFiles(@RequestHeader("user_id") String userID) {
         return fileStorageService.getActiveFiles();
     }
 
     @DeleteMapping("/delete/{id}")
-    public String deleteFile(@PathVariable Long id) {
+    public String deleteFile(@PathVariable Long id,@RequestHeader("user_id") String userID) {
         try {
             fileStorageService.deleteFile(id);
             return "File deleted successfully!";
@@ -57,9 +60,9 @@ public class TemplateController {
     }
 
     @PutMapping("/update/{id}")
-    public String updateFile(@PathVariable Long id, @RequestParam("file") MultipartFile file, @RequestParam("isActive") boolean isActive) {
+    public String updateFile(@PathVariable Long id, @RequestParam("file") MultipartFile file, @RequestParam("isActive") boolean isActive,@RequestHeader("user_id") String userID) {
         try {
-            fileStorageService.updateFile(id, file, isActive);
+            fileStorageService.updateFile(id, file, isActive,userID);
             return "File updated successfully!";
         } catch (IOException e) {
             e.printStackTrace();
