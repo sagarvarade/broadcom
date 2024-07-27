@@ -45,10 +45,12 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         System.out.println(" Auth app header received , iat    : "+request.getHeader("iat"));
         System.out.println(" Auth app header received , roles  : "+request.getHeader("roles"));
         System.out.println(" Auth app header received , sub    : "+request.getHeader("sub"));
-        System.out.println(" Auth app header received , broadcom_communication_token: "+request.getHeader("broadcom_communication_token"));
-        System.out.println(" Auth this service token  :broadcom_communication_token : "+broadcom_communication_token);
-
-
+        System.out.println(" Auth app header received , broadcom_communication_token : "+request.getHeader("broadcom_communication_token"));
+        System.out.println(" Auth this service token  , broadcom_communication_token : "+broadcom_communication_token);
+        String tokenForMicroCommunication= request.getHeader("broadcom_communication_token");
+        if (!tokenForMicroCommunication.equals(broadcom_communication_token)) {
+            throw new RuntimeException("You are not allow to communicate to this services {} " + tokenForMicroCommunication);
+        }
 
         String authHeader = request.getHeader("Authorization");
         String token = null;
