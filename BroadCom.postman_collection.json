@@ -23,7 +23,18 @@
 									"type": "noauth"
 								},
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "broadcom_communication_token",
+										"value": "ABCD_1234",
+										"type": "text"
+									},
+									{
+										"key": "user_id",
+										"value": "svarade",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\r\n    \"username\":\"sagar\",\r\n    \"password\":\"sagar\"\r\n}",
@@ -99,13 +110,19 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJyb2xlcyI6IlJPTEVfQURNSU4iLCJlbWFpbCI6ImFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJzYWdhciIsInN1YiI6InNhZ2FyIiwiaWF0IjoxNzIyMDg2NTU4LCJleHAiOjE3MjIwODgzNTh9.4s8o4IVZ0Zx39gtvyUYidnWX55fPhaFFC8Iy7xp2QFk",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJyb2xlcyI6IlJPTEVfQURNSU4iLCJlbWFpbCI6ImFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJzYWdhciIsInN1YiI6InNhZ2FyIiwiaWF0IjoxNzIyMDg5NjUxLCJleHAiOjE3MjIwOTE0NTF9.WtBrM_lLWBX6C3Dpu-3_W1cDHJ9MiS2knqNKcrohHs4",
 											"type": "string"
 										}
 									]
 								},
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "broadcom_communication_token",
+										"value": "ABCD_1234",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "",
@@ -142,13 +159,19 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJyb2xlcyI6IlJPTEVfQURNSU4iLCJlbWFpbCI6ImFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJzYWdhciIsInN1YiI6InNhZ2FyIiwiaWF0IjoxNzIyMDg1MTA4LCJleHAiOjE3MjIwODY5MDh9.eUXQgqi9hFQAgpSsImZ65jn34e7DUP73utARTr48QSY",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJyb2xlcyI6IlJPTEVfQURNSU4iLCJlbWFpbCI6ImFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJzYWdhciIsInN1YiI6InNhZ2FyIiwiaWF0IjoxNzIyMDg5NjUxLCJleHAiOjE3MjIwOTE0NTF9.WtBrM_lLWBX6C3Dpu-3_W1cDHJ9MiS2knqNKcrohHs4",
 											"type": "string"
 										}
 									]
 								},
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "broadcom_communication_token",
+										"value": "ABCD_1234",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\r\n    \r\n}",
@@ -335,6 +358,27 @@
 						}
 					},
 					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.request.headers.add({key: 'broadcom_communication_token', value: 'ABCD_1234' });",
+							"pm.request.headers.add({key:'user_id',value:'svarade'});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			]
 		},
@@ -655,7 +699,20 @@
 					"name": "hello",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "broadcom_communication_token",
+								"value": "ABCD_1234",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "user_id",
+								"value": "svarade",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"url": {
 							"raw": "localhost:7210/broad-user/hello",
 							"host": [
@@ -674,7 +731,20 @@
 					"name": "user",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "broadcom_communication_token",
+								"value": "ABCD_1234",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "user_id",
+								"value": "svarade",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john.doe@example.com\",\r\n  \"phoneNumber\": \"1234567890\",\r\n  \"whatsappid\": \"1234567890\",\r\n  \"gender\": \"Male\",\r\n  \"dateOfBirth\": \"1990-01-01\",\r\n  \"address\": {\r\n    \"street\": \"123 Main St\",\r\n    \"zipCode\": \"123455\",\r\n    \"city\": \"Springfield\",    \r\n    \"state\": \"Illinois\"\r\n  }\r\n}",
@@ -685,14 +755,13 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:7210/broad-user/comapp/create",
+							"raw": "localhost:7210/broad-user/create",
 							"host": [
 								"localhost"
 							],
 							"port": "7210",
 							"path": [
 								"broad-user",
-								"comapp",
 								"create"
 							]
 						}
@@ -703,7 +772,20 @@
 					"name": "userList",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "broadcom_communication_token",
+								"value": "ABCD_1234",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "user_id",
+								"value": "svarade",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "[\r\n  {\r\n    \"name\": \"Amit Sharma\",\r\n    \"email\": \"amit.sharma@example.com\",\r\n    \"phoneNumber\": \"9876543210\",\r\n    \"whatsappid\": \"9876543210\",\r\n    \"gender\": \"Male\",\r\n    \"dateOfBirth\": \"1990-01-01\",\r\n    \"address\": {\r\n      \"street\": \"123 MG Road\",\r\n      \"zipCode\": \"110001\",\r\n      \"city\": \"New Delhi\",\r\n      \"state\": \"Delhi\"\r\n    }\r\n  },\r\n  {\r\n    \"name\": \"Priya Singh\",\r\n    \"email\": \"priya.singh@example.com\",\r\n    \"phoneNumber\": \"9876543211\",\r\n    \"whatsappid\": \"9876543211\",\r\n    \"gender\": \"Female\",\r\n    \"dateOfBirth\": \"1991-02-02\",\r\n    \"address\": {\r\n      \"street\": \"456 Brigade Road\",\r\n      \"zipCode\": \"560001\",\r\n      \"city\": \"Bangalore\",\r\n      \"state\": \"Karnataka\"\r\n    }\r\n  },\r\n  {\r\n    \"name\": \"Rahul Verma\",\r\n    \"email\": \"rahul.verma@example.com\",\r\n    \"phoneNumber\": \"9876543212\",\r\n    \"whatsappid\": \"9876543212\",\r\n    \"gender\": \"Male\",\r\n    \"dateOfBirth\": \"1992-03-03\",\r\n    \"address\": {\r\n      \"street\": \"789 Linking Road\",\r\n      \"zipCode\": \"400001\",\r\n      \"city\": \"Mumbai\",\r\n      \"state\": \"Maharashtra\"\r\n    }\r\n  },\r\n  {\r\n    \"name\": \"Sneha Patel\",\r\n    \"email\": \"sneha.patel@example.com\",\r\n    \"phoneNumber\": \"9876543213\",\r\n    \"whatsappid\": \"9876543213\",\r\n    \"gender\": \"Female\",\r\n    \"dateOfBirth\": \"1993-04-04\",\r\n    \"address\": {\r\n      \"street\": \"101 Nehru Street\",\r\n      \"zipCode\": \"600001\",\r\n      \"city\": \"Chennai\",\r\n      \"state\": \"Tamil Nadu\"\r\n    }\r\n  },\r\n  {\r\n    \"name\": \"Vikram Gupta\",\r\n    \"email\": \"vikram.gupta@example.com\",\r\n    \"phoneNumber\": \"9876543214\",\r\n    \"whatsappid\": \"9876543214\",\r\n    \"gender\": \"Male\",\r\n    \"dateOfBirth\": \"1994-05-05\",\r\n    \"address\": {\r\n      \"street\": \"202 Ashok Marg\",\r\n      \"zipCode\": \"226001\",\r\n      \"city\": \"Lucknow\",\r\n      \"state\": \"Uttar Pradesh\"\r\n    }\r\n  },\r\n  {\r\n    \"name\": \"Anjali Mehta\",\r\n    \"email\": \"anjali.mehta@example.com\",\r\n    \"phoneNumber\": \"9876543215\",\r\n    \"whatsappid\": \"9876543215\",\r\n    \"gender\": \"Female\",\r\n    \"dateOfBirth\": \"1995-06-06\",\r\n    \"address\": {\r\n      \"street\": \"303 SG Highway\",\r\n      \"zipCode\": \"380001\",\r\n      \"city\": \"Ahmedabad\",\r\n      \"state\": \"Gujarat\"\r\n    }\r\n  },\r\n  {\r\n    \"name\": \"Karan Reddy\",\r\n    \"email\": \"karan.reddy@example.com\",\r\n    \"phoneNumber\": \"9876543216\",\r\n    \"whatsappid\": \"9876543216\",\r\n    \"gender\": \"Male\",\r\n    \"dateOfBirth\": \"1996-07-07\",\r\n    \"address\": {\r\n      \"street\": \"404 Banjara Hills\",\r\n      \"zipCode\": \"500034\",\r\n      \"city\": \"Hyderabad\",\r\n      \"state\": \"Telangana\"\r\n    }\r\n  },\r\n  {\r\n    \"name\": \"Ritu Desai\",\r\n    \"email\": \"ritu.desai@example.com\",\r\n    \"phoneNumber\": \"9876543217\",\r\n    \"whatsappid\": \"9876543217\",\r\n    \"gender\": \"Female\",\r\n    \"dateOfBirth\": \"1997-08-08\",\r\n    \"address\": {\r\n      \"street\": \"505 FC Road\",\r\n      \"zipCode\": \"411004\",\r\n      \"city\": \"Pune\",\r\n      \"state\": \"Maharashtra\"\r\n    }\r\n  },\r\n  {\r\n    \"name\": \"Manish Kumar\",\r\n    \"email\": \"manish.kumar@example.com\",\r\n    \"phoneNumber\": \"9876543218\",\r\n    \"whatsappid\": \"9876543218\",\r\n    \"gender\": \"Male\",\r\n    \"dateOfBirth\": \"1998-09-09\",\r\n    \"address\": {\r\n      \"street\": \"606 Boring Road\",\r\n      \"zipCode\": \"800001\",\r\n      \"city\": \"Patna\",\r\n      \"state\": \"Bihar\"\r\n    }\r\n  },\r\n  {\r\n    \"name\": \"Sana Kapoor\",\r\n    \"email\": \"sana.kapoor@example.com\",\r\n    \"phoneNumber\": \"9876543219\",\r\n    \"whatsappid\": \"9876543219\",\r\n    \"gender\": \"Female\",\r\n    \"dateOfBirth\": \"1999-10-10\",\r\n    \"address\": {\r\n      \"street\": \"707 Park Street\",\r\n      \"zipCode\": \"700016\",\r\n      \"city\": \"Kolkata\",\r\n      \"state\": \"West Bengal\"\r\n    }\r\n  }\r\n]\r\n",
@@ -754,7 +836,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"broadUserId\": \"1\",\r\n    \"name\": \"John Doe_1\",\r\n    \"email\": \"john.doe@example.com\",\r\n    \"phoneNumber\": \"1234567890\",\r\n    \"whatsappid\": \"1234567890\",\r\n    \"gender\": \"Male\",\r\n    \"dateOfBirth\": \"1990-01-01\",\r\n    \"address\": {\r\n        \"street\": \"123 Main St\",\r\n        \"zipCode\": \"123455\",\r\n        \"city\": \"Springfield\",\r\n        \"state\": \"Illinois\"\r\n    }\r\n}",
+							"raw": "{\r\n    \"broadUserId\": \"1\",\r\n    \"name\": \"John Doe_1\",\r\n    \"email\": \"john.doe@dddd.com\",\r\n    \"phoneNumber\": \"1234567890\",\r\n    \"whatsappid\": \"1234567890\",\r\n    \"gender\": \"Male\",\r\n    \"dateOfBirth\": \"1990-01-01\",\r\n    \"address\": {\r\n        \"street\": \"123 Main St\",\r\n        \"zipCode\": \"123455\",\r\n        \"city\": \"Springfield\",\r\n        \"state\": \"Illinois\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -790,7 +872,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:7210/broad-user/delete/1",
+							"raw": "localhost:7210/broad-user/delete/2",
 							"host": [
 								"localhost"
 							],
@@ -798,7 +880,7 @@
 							"path": [
 								"broad-user",
 								"delete",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -827,7 +909,14 @@
 					"name": "createGrp",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "user_id",
+								"value": "svarade",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n    \"groupName\":\"ABC_1\",\r\n    \"broadUsersIdList\":[1,2,3,4,5]\r\n}",
@@ -869,15 +958,47 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:7210/broad-user-group/get-by-id/1",
+							"raw": "localhost:7210/broad-user-group/get-group-by-id/1",
 							"host": [
 								"localhost"
 							],
 							"port": "7210",
 							"path": [
 								"broad-user-group",
-								"get-by-id",
+								"get-group-by-id",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getGroupByName",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"groupName\":\"ABC_1\",\r\n    \"createdDate\":\"1990-01-01\",\r\n    \"expiryDate\":\"1990-01-02\",\r\n    \"listOfUsers\":[1,2]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:7210/broad-user-group/get-by-group-name/ABC_1",
+							"host": [
+								"localhost"
+							],
+							"port": "7210",
+							"path": [
+								"broad-user-group",
+								"get-by-group-name",
+								"ABC_1"
 							]
 						}
 					},
@@ -933,19 +1054,40 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:7210/broad-user-group/get-group-with-users/1",
+							"raw": "localhost:7210/broad-user-group/get-group-details-by-group-name/ABC_1",
 							"host": [
 								"localhost"
 							],
 							"port": "7210",
 							"path": [
 								"broad-user-group",
-								"get-group-with-users",
-								"1"
+								"get-group-details-by-group-name",
+								"ABC_1"
 							]
 						}
 					},
 					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.request.headers.add({key: 'broadcom_communication_token', value: 'ABCD_1234' });",
+							"pm.request.headers.add({key:'user_id',value:'svarade'});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			]
 		},
