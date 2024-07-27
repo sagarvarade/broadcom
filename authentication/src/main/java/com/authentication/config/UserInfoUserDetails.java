@@ -1,5 +1,6 @@
 package com.authentication.config;
 
+import java.io.Serial;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -12,12 +13,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.authentication.entity.UserInfo;
 
 public class UserInfoUserDetails implements UserDetails {
-
-
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = -232659121356165014L;
+	@Serial
+    private static final long serialVersionUID = -232659121356165014L;
 	private String name;
     private String password;
     private List<GrantedAuthority> authorities;

@@ -62,7 +62,6 @@ public class AuthController {
         return service.getProduct(id);
     }
 
-
     @PostMapping("/authenticate")
     @CrossOrigin(origins = "*")
     public Map<String, Object> authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
