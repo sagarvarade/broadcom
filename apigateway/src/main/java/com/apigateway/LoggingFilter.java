@@ -2,12 +2,17 @@ package com.apigateway;
 
 import java.net.http.HttpResponse;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.util.Token;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
@@ -16,10 +21,21 @@ import com.apigateway.URLS.CallsWithOtherServices;
 
 import reactor.core.publisher.Mono;
 
+import javax.annotation.PostConstruct;
+
 @Component
 public class LoggingFilter implements GlobalFilter {
 
 	private Logger logger = LoggerFactory.getLogger(LoggingFilter.class);
+	@Autowired
+	private Environment env;
+
+	private String broadcom_communication_token;
+	@PostConstruct
+	private void postConstruct() {
+		this.broadcom_communication_token = env.getProperty("broadcom_communication_token");
+	}
+
 
 	@Autowired
 	private CallsWithOtherServices URLS;
@@ -29,12 +45,37 @@ public class LoggingFilter implements GlobalFilter {
 		logger.info("Path ,{} ", exchange.getRequest().getPath());
 
 		if (exchange.getRequest().getPath().toString().indexOf("auth/authenticate") > 0) {
-			logger.info("Skiping this URL for authorozation : ,{} ", exchange.getRequest().getPath());
+			logger.info("Skipping this URL for authorization : ,{} ", exchange.getRequest().getPath());
+
+			exchange.getRequest().mutate()
+					.header("broadcom_communication_token", broadcom_communication_token)
+					.build();
+
 			return chain.filter(exchange);
 		}
 		String authHeader = exchange.getRequest().getHeaders().get(HttpHeaders.AUTHORIZATION).get(0);
 		String[] parts = authHeader.split(" ");
 		System.out.println("Parts : " + Arrays.toString(parts));
+
+		System.out.println("Bearer : "+parts[0]);
+		System.out.println("Token :  "+parts[1]);
+		Map<String, String> tokenParts=new HashMap<>();
+		try {
+			tokenParts=Token.getDecompressToken(parts[1]);
+		} catch (JsonProcessingException e) {
+			throw new RuntimeException(e);
+		}
+
+		exchange.getRequest().mutate()
+				.header("user_id", tokenParts.get("user_id"))
+				.header("exp", tokenParts.get("exp"))
+				.header("iat", tokenParts.get("iat"))
+				.header("roles", tokenParts.get("roles"))
+				.header("sub", tokenParts.get("sub"))
+				.header("broadcom_communication_token", broadcom_communication_token)
+				.build();
+
+
 		if (parts.length != 2 || !"Bearer".equals(parts[0])) {
 			throw new RuntimeException("Incorrect authorization structure");
 		}

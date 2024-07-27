@@ -6,10 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/com/apigateway/WebConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/dto/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/service/UserAuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/src/main/java/com/util/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/com/util/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/com/apigateway/LoggingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/com/apigateway/LoggingFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/com/apigateway/URLS/CallsWithOtherServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/com/apigateway/URLS/CallsWithOtherServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/com/apigateway/util/Util.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomUI/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomUI/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/namingserver/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/namingserver/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +132,7 @@
       <command value="mvn clean:install -f" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.AuthApplicationDev">
+  <component name="RunManager" selected="JUnit.TokenTest">
     <configuration name="AppRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.runner.AppRunner" />
       <module name="AppRunner" />
@@ -200,22 +206,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BroadCastGroupServiceTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="broadcomapp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Broadcomapp.BLogic.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.Broadcomapp.BLogic.service" />
-      <option name="MAIN_CLASS_NAME" value="com.Broadcomapp.BLogic.service.BroadCastGroupServiceTest" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TokenTest" type="JUnit" factoryName="JUnit">
       <module name="Util" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -224,6 +214,22 @@
       <option name="MAIN_CLASS_NAME" value="com.util.TokenTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TokenTest.main" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Util" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.util" />
+      <option name="MAIN_CLASS_NAME" value="com.util.TokenTest" />
+      <option name="METHOD_NAME" value="main" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -242,17 +248,17 @@
       <item itemvalue="Application.TemplateResolver" />
       <item itemvalue="JUnit.All in Util" />
       <item itemvalue="JUnit.TokenTest" />
-      <item itemvalue="JUnit.BroadCastGroupServiceTest.test" />
+      <item itemvalue="JUnit.TokenTest.main" />
       <item itemvalue="Multirun.buildDockerImages" />
       <item itemvalue="Multirun.RunBroadCom" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TokenTest.main" />
         <item itemvalue="Application.BroadcomUIApp" />
         <item itemvalue="Application.BroadComApp" />
         <item itemvalue="Application.TemplateResolver" />
         <item itemvalue="Application.AppRunner" />
-        <item itemvalue="JUnit.BroadCastGroupServiceTest.test" />
       </list>
     </recent_temporary>
   </component>
