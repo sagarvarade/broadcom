@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BroadUserService {
@@ -18,19 +19,21 @@ public class BroadUserService {
 	public void saveAll(List<BroadUser> users) {
 		userRepo.saveAll(users);
 	}
-	public BroadUser getUser(Long id){
-		return  userRepo.findById(id).get();
+	public Optional<BroadUser> getUserByIdAndUpdatedBy(Long id, String user){
+		return  userRepo.findByBroadUserIdAndUpdatedBy(id,user);
 	}
-	public List<BroadUser> getAllUsers(){
-		return userRepo.findAll();
+	public List<BroadUser> getAllUsersForUpdatedBy(String user){
+		return userRepo.findAllByUpdatedBy(user);
 	}
 
 	public BroadUser updateUser(Long id, BroadUser updatedUser) {
-		return userRepo.findById(id).map(user -> {
+		return userRepo.findByBroadUserIdAndUpdatedBy(id,updatedUser.getUpdatedBy()).map(user -> {
 			user.setName(updatedUser.getName());
 			user.setEmail(updatedUser.getEmail());
 			user.setPhoneNumber(updatedUser.getPhoneNumber());
 			user.setAddress(updatedUser.getAddress());
+			user.setUpdatedBy(updatedUser.getUpdatedBy());
+			user.setUpdatedDate(updatedUser.getUpdatedDate());
 			return userRepo.save(user);
 		}).orElseGet(() -> {
 			updatedUser.setBroadUserId(id);
@@ -38,7 +41,7 @@ public class BroadUserService {
 		});
 	}
 
-	public void deleteUserById(Long id) {
-		 userRepo.deleteById(id);
+	public void deleteUserByIdAndUpdatedBy(Long id,String user) {
+		 userRepo.deleteByBroadUserIdAndUpdatedBy(id,user);
 	}
 }

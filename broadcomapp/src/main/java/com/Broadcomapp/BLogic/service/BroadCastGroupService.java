@@ -33,20 +33,29 @@ public class BroadCastGroupService {
         broadCastGroupRepository.deleteById(id);
     }
 
-    public HashMap<BroadCastGroup, List<BroadUser>> getGroupDetails(Long id) {
+    public HashMap<String, List<BroadUser>> getGroupDetails(String name,String user) {
         BroadCastGroup broadCastGroup = null;
-        HashMap<BroadCastGroup, List<BroadUser>> map = new HashMap<>();
-        if (!broadCastGroupRepository.findById(id).isEmpty()) {
-            broadCastGroup = broadCastGroupRepository.findById(id).get();
+        HashMap<String, List<BroadUser>> map = new HashMap<>();
+        Optional<BroadCastGroup>  brGroup= broadCastGroupRepository.findByGroupNameAndUpdatedBy(name,user);
+        if (brGroup.isPresent()) {
+            broadCastGroup = brGroup.get();
             List<BroadUser> userList = new ArrayList<>();
             for (Integer l : broadCastGroup.getBroadUsersIdList()) {
                 userList.add(broadUserRepository.findById(Long.valueOf(l)).get());
             }
             System.out.println(broadCastGroup);
             System.out.println(userList);
-            map.put(broadCastGroup, userList);
+            map.put(broadCastGroup.getGroupName(), userList);
             return map;
         }
         return map;
+    }
+
+    public Optional<BroadCastGroup> findGroupByNameAndUpdatedByUser(String name, String userID) {
+        return broadCastGroupRepository.findByGroupNameAndUpdatedBy(name,userID);
+    }
+
+    public Optional<BroadCastGroup> findGroupByIdAndUpdatedByUser(Long id, String userID) {
+        return broadCastGroupRepository.findByBroadCastGroupIdAndUpdatedBy(id,userID);
     }
 }

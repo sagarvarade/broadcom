@@ -27,7 +27,7 @@ public class TemplateResolverService {
             String templateContent = new String(templateContentBytes, StandardCharsets.UTF_8);
             Context context = new Context();
             context.setVariables(variables);
-            System.out.println("tempalte :"+templateOpt.get().getFileName()+"  "+context);
+            System.out.println("template :"+templateOpt.get().getFileName()+"  "+context);
             System.out.println("Variable : "+variables);
 
             System.out.println(templateContent+"  "+context);
