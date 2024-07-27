@@ -49,12 +49,12 @@ http://localhost:7214/actuator/health : UI
 26/07/2024 :
 App will be user base , no admin or priviled rights all are same .
 
-1. Secure all mycroservices with request header passing from gateway
-2. Check request header in all mircoserivices and if token is present then only allow to service
-3. Update user with other access roles as well 
-4. Add some more info to token
-5. Change logic to deflate token
-6. All the date passed by request must have user info , update all sqls to fetch for user
+1. Secure all mycroservices with request header passing from gateway  = Done
+2. Check request header in all mircoserivices and if token is present then only allow to service =done
+3. Update user with other access roles as well  =done role can be pass by postman
+4. Add some more info to token  = not required , by postman you can send role
+5. Change logic to deflate token = token set to all required microservices
+6. All the date passed by request must have user info , update all sqls to fetch for user  = Need to update in broadcom app
 
 
 

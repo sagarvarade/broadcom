@@ -60,10 +60,10 @@ public class userController {
 	public ResponseEntity<String> deleteUser (@PathVariable("id") Long id){
 		try{
 			userService.deleteUserById(id);
-			return new ResponseEntity("Deleted", HttpStatus.OK);
+			return new ResponseEntity<String>("Deleted", HttpStatus.OK);
 		}
 		catch (Exception e){
-			return new ResponseEntity("Not Deleted", HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<String>("Not Deleted", HttpStatus.BAD_REQUEST);
 		}
 	}
 }

@@ -85,6 +85,7 @@ services:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7100/eureka/
       - AUTHENTICATION_SERVICE_URL=http://authentication:7200
       - BROADCOMAPP_SERVICEURL=http://broadcomapp:7210
+      - broadcom_communication_token=ABCD_1234
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:7000/actuator/health" ]
       interval: 30s
@@ -108,6 +109,7 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/authentication?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=admin
+      - broadcom_communication_token=ABCD_1234
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:7200/actuator/health" ]
       interval: 30s
@@ -133,6 +135,7 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/broadcomapp?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=admin
+      - broadcom_communication_token=ABCD_1234
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:7100/actuator/health" ]
       interval: 30s

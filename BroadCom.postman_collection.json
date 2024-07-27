@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "fc9b1bb1-1001-4d20-bb81-717f56adb07f",
-		"name": "BroadComPostman",
+		"name": "BroadCom",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "1783708"
 	},
@@ -10,113 +10,327 @@
 			"name": "Gateway",
 			"item": [
 				{
-					"name": "1_Login_GT",
-					"protocolProfileBehavior": {
-						"strictSSL": false,
-						"followRedirects": false
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"username\":\"sagar\",\r\n    \"password\":\"sagar\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+					"name": "authApp",
+					"item": [
+						{
+							"name": "1_LoginAdmin",
+							"protocolProfileBehavior": {
+								"strictSSL": false,
+								"followRedirects": false
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"sagar\",\r\n    \"password\":\"sagar\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/authentication/auth/authenticate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"authentication",
+										"auth",
+										"authenticate"
+									]
 								}
-							}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "http://localhost:7000/authentication/auth/authenticate",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "7000",
-							"path": [
-								"authentication",
-								"auth",
-								"authenticate"
-							]
+						{
+							"name": "1_LoginUser",
+							"protocolProfileBehavior": {
+								"strictSSL": false,
+								"followRedirects": false
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"sagar\",\r\n    \"password\":\"sagar\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/authentication/auth/authenticate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"authentication",
+										"auth",
+										"authenticate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2_Test_token_GT",
+							"protocolProfileBehavior": {
+								"strictSSL": false,
+								"followRedirects": false,
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJyb2xlcyI6IlJPTEVfQURNSU4iLCJlbWFpbCI6ImFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJzYWdhciIsInN1YiI6InNhZ2FyIiwiaWF0IjoxNzIyMDg2NTU4LCJleHAiOjE3MjIwODgzNTh9.4s8o4IVZ0Zx39gtvyUYidnWX55fPhaFFC8Iy7xp2QFk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/authentication/auth/test-token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"authentication",
+										"auth",
+										"test-token"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "welcome",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJyb2xlcyI6IlJPTEVfQURNSU4iLCJlbWFpbCI6ImFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJzYWdhciIsInN1YiI6InNhZ2FyIiwiaWF0IjoxNzIyMDg1MTA4LCJleHAiOjE3MjIwODY5MDh9.eUXQgqi9hFQAgpSsImZ65jn34e7DUP73utARTr48QSY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/authentication/auth/welcome",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"authentication",
+										"auth",
+										"welcome"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddUser",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJyb2xlcyI6IlJPTEVfQURNSU4iLCJlbWFpbCI6ImFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJzYWdhciIsInN1YiI6InNhZ2FyIiwiaWF0IjoxNzIyMDgxNTI3LCJleHAiOjE3MjIwODMzMjd9.-dEirIkUUhA1HpXMe6kREWYZ0N3ai4aviABeUJwULh0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"vilmse\",\r\n    \"email\":\"vilmse@gmail.com\",\r\n    \"password\":\"vilmse\",\r\n    \"roles\":\"ROLE_READ_ONLY\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/authentication/auth/new",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"authentication",
+										"auth",
+										"new"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CheckRoleadmin",
+							"protocolProfileBehavior": {
+								"strictSSL": false,
+								"followRedirects": false,
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJyb2xlcyI6IlJPTEVfQURNSU4iLCJlbWFpbCI6ImFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJzYWdhciIsInN1YiI6InNhZ2FyIiwiaWF0IjoxNzIyMDg2NTU4LCJleHAiOjE3MjIwODgzNTh9.4s8o4IVZ0Zx39gtvyUYidnWX55fPhaFFC8Iy7xp2QFk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/authentication/auth/check-role-admin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"authentication",
+										"auth",
+										"check-role-admin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CheckRoleuser",
+							"protocolProfileBehavior": {
+								"strictSSL": false,
+								"followRedirects": false,
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJyb2xlcyI6IlJPTEVfVVNFUiIsImVtYWlsIjoiekBnbWFpbC5jb20iLCJ1c2VybmFtZSI6Im1haGVzaCIsInN1YiI6Im1haGVzaCIsImlhdCI6MTcyMjA4NjY2MiwiZXhwIjoxNzIyMDg4NDYyfQ.Ji-_ROZDEf-qsEN9zYcqckj0-vfhZ9xPp0TqARaulCg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/authentication/auth/check-role-user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"authentication",
+										"auth",
+										"check-role-user"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "2_Test_token_GT",
-					"protocolProfileBehavior": {
-						"strictSSL": false,
-						"followRedirects": false,
-						"disableBodyPruning": true
-					},
+					"name": "testToken",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJyb2xlcyI6IlJPTEVfQURNSU4iLCJlbWFpbCI6ImFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJzYWdhciIsInN1YiI6InNhZ2FyIiwiaWF0IjoxNzE2Mzk5ODAxLCJleHAiOjE3MTY0MDE2MDF9.M41u2rgBtO8amxerNBmVbiB6A2PD3y7HJKgH3IM3v_M",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJyb2xlcyI6IlJPTEVfQURNSU4iLCJlbWFpbCI6ImFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJzYWdhciIsInN1YiI6InNhZ2FyIiwiaWF0IjoxNzIwOTM5MzYxLCJleHAiOjE3MjA5NDExNjF9.slANvZPkY-J4FCR5g2gIJ3Szq6GgJiVC34c1FLchOUo",
 									"type": "string"
 								}
 							]
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "http://localhost:7000/authentication/auth/testtoken",
+							"raw": "http://localhost:7200/auth/testtoken",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "7000",
+							"port": "7200",
 							"path": [
-								"authentication",
 								"auth",
 								"testtoken"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "BroadComAppHelloGT",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJyb2xlcyI6IlJPTEVfQURNSU4iLCJlbWFpbCI6ImFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJzYWdhciIsInN1YiI6InNhZ2FyIiwiaWF0IjoxNzE2NDAxMjQzLCJleHAiOjE3MTY0MDMwNDN9.D20zR6WAfEqtfz1rIbVck9vmG_PNjE4dyVZnbcOMz-I",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:7000/broadcomapp/helloworld/hello1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "7000",
-							"path": [
-								"broadcomapp",
-								"helloworld",
-								"hello1"
 							]
 						}
 					},
@@ -176,7 +390,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJyb2xlcyI6IlJPTEVfQURNSU4iLCJlbWFpbCI6ImFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJzYWdhciIsInN1YiI6InNhZ2FyIiwiaWF0IjoxNzE2Mzk5ODAxLCJleHAiOjE3MTY0MDE2MDF9.M41u2rgBtO8amxerNBmVbiB6A2PD3y7HJKgH3IM3v_M",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJyb2xlcyI6IlJPTEVfQURNSU4iLCJlbWFpbCI6ImFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJzYWdhciIsInN1YiI6InNhZ2FyIiwiaWF0IjoxNzIyMDgzOTUyLCJleHAiOjE3MjIwODU3NTJ9._Oc1IAvGsJY_FqwF-IcpXozZqw5O3IgL2qFuoG-Zfk4",
 									"type": "string"
 								}
 							]
@@ -193,7 +407,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:7200/auth/testtoken",
+							"raw": "http://localhost:7200/auth/test-token",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -201,7 +415,7 @@
 							"port": "7200",
 							"path": [
 								"auth",
-								"testtoken"
+								"test-token"
 							]
 						}
 					},
@@ -222,6 +436,36 @@
 							"path": [
 								"helloworld",
 								"hello1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJyb2xlcyI6IlJPTEVfQURNSU4iLCJlbWFpbCI6ImFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJzYWdhciIsInN1YiI6InNhZ2FyIiwiaWF0IjoxNzIyMDg0MzI0LCJleHAiOjE3MjIwODYxMjR9.jnOanenpiQs2jM585eYxK8pf211bUGTXZWsjjYY3Mrg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7200/auth/welcome",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7200",
+							"path": [
+								"auth",
+								"welcome"
 							]
 						}
 					},
@@ -413,13 +657,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:7210/broadcomapp/hello",
+							"raw": "localhost:7210/broad-user/hello",
 							"host": [
 								"localhost"
 							],
 							"port": "7210",
 							"path": [
-								"broadcomapp",
+								"broad-user",
 								"hello"
 							]
 						}
@@ -441,13 +685,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:7210/broadcomapp/create",
+							"raw": "localhost:7210/broad-user/comapp/create",
 							"host": [
 								"localhost"
 							],
 							"port": "7210",
 							"path": [
-								"broadcomapp",
+								"broad-user",
+								"comapp",
 								"create"
 							]
 						}
@@ -469,13 +714,13 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:7210/broadcomapp/create-list",
+							"raw": "localhost:7210/broad-user/create-list",
 							"host": [
 								"localhost"
 							],
 							"port": "7210",
 							"path": [
-								"broadcomapp",
+								"broad-user",
 								"create-list"
 							]
 						}
@@ -488,13 +733,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:7210/broadcomapp/get/1",
+							"raw": "localhost:7210/broad-user/get/1",
 							"host": [
 								"localhost"
 							],
 							"port": "7210",
 							"path": [
-								"broadcomapp",
+								"broad-user",
 								"get",
 								"1"
 							]
@@ -517,13 +762,13 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:7210/broadcomapp/update",
+							"raw": "localhost:7210/broad-user/update",
 							"host": [
 								"localhost"
 							],
 							"port": "7210",
 							"path": [
-								"broadcomapp",
+								"broad-user",
 								"update"
 							]
 						}
@@ -545,13 +790,13 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:7210/broadcomapp/delete/1",
+							"raw": "localhost:7210/broad-user/delete/1",
 							"host": [
 								"localhost"
 							],
 							"port": "7210",
 							"path": [
-								"broadcomapp",
+								"broad-user",
 								"delete",
 								"1"
 							]
@@ -585,7 +830,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"groupName\":\"ABC_1\",\r\n    \"broadUsersIdList\":[1,2]\r\n}",
+							"raw": "{\r\n    \"groupName\":\"ABC_1\",\r\n    \"broadUsersIdList\":[1,2,3,4,5]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -697,6 +942,88 @@
 								"broad-user-group",
 								"get-group-with-users",
 								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Kafka",
+			"item": [
+				{
+					"name": "KafkaProducer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9191/kafka-rest/publish/topic-2/sv/sagard/100000",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"kafka-rest",
+								"publish",
+								"topic-2",
+								"sv",
+								"sagard",
+								"100000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "KafkaProducer_2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9191/kafka-rest/publish/test-topic/sv/sagard/10",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"kafka-rest",
+								"publish",
+								"test-topic",
+								"sv",
+								"sagard",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "KafkaProducer_Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"sagar\",\r\n    \"clazz\":\"12\",\r\n    \"city\":\"Pune\",\r\n    \"email\":\"aa@gjhf.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9191/kafka-rest/publish/student/student-topic/std_key",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"kafka-rest",
+								"publish",
+								"student",
+								"student-topic",
+								"std_key"
 							]
 						}
 					},

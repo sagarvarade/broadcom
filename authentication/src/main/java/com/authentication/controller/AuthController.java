@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -21,17 +22,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.authentication.config.UserInfoUserDetailsService;
 import com.authentication.dto.AuthRequest;
-import com.authentication.dto.Product;
 import com.authentication.entity.UserInfo;
 import com.authentication.service.JwtService;
-import com.authentication.service.ProductService;
+import com.authentication.service.UserAuthService;
 
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
 
     @Autowired
-    private ProductService service;
+    private UserAuthService service;
     @Autowired
     private JwtService jwtService;
     @Autowired
@@ -50,18 +50,18 @@ public class AuthController {
         return service.addUser(userInfo);
     }
 
-    @GetMapping("/all")
+
+    @GetMapping("/check-role-admin")
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    public List<Product> getAllTheProducts() {
-        return service.getProducts();
+    public ResponseEntity<String> checkRoleAdmin() {
+        return ResponseEntity.ok("Access By role Admin");
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/check-role-user")
     @PreAuthorize("hasAuthority('ROLE_USER')")
-    public Product getProductById(@PathVariable int id) {
-        return service.getProduct(id);
+    public ResponseEntity<String> checkRoleUser() {
+        return ResponseEntity.ok("Access By ROLE_USER");
     }
-
 
     @PostMapping("/authenticate")
     @CrossOrigin(origins = "*")
@@ -87,7 +87,7 @@ public class AuthController {
         }
     }
     
-    @GetMapping("/testtoken")
+    @GetMapping("/test-token")
     public String index() {
     	Authentication auth=SecurityContextHolder.getContext().getAuthentication();
     	if(!(auth instanceof AnonymousAuthenticationToken)) {

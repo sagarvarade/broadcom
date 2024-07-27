@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CallsWithOtherServices {
-	private Logger logger = LoggerFactory.getLogger(CallsWithOtherServices.class);
+	private final Logger log = LoggerFactory.getLogger(CallsWithOtherServices.class);
 
 	@Autowired
 	private Environment env;
@@ -29,13 +29,13 @@ public class CallsWithOtherServices {
 
 	public HttpResponse<String> checkToken(String token) {
 		try {
-			logger.info("Checking token , {} ", token);
-			HttpRequest request = HttpRequest.newBuilder().uri(new URI(AUTH_URL + "/auth/testtoken"))
+			log.info("Checking token , {} ", token);
+			HttpRequest request = HttpRequest.newBuilder().uri(new URI(AUTH_URL + "/auth/test-token"))
 					.header("Authorization", "Bearer " + token).GET().build();
 			HttpClient httpClient = HttpClient.newHttpClient();
 			System.out.println("Body Header : "+java.net.http.HttpResponse.BodyHandlers.ofString());
 			HttpResponse<String> resp = httpClient.send(request, java.net.http.HttpResponse.BodyHandlers.ofString());
-			System.out.println("Response :"+resp);
+			log.info("Response : {} ", resp);
 			return resp;
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 public class Token {
-	public Map<String, String> getDecompressToken(String token) throws JsonMappingException, JsonProcessingException {
+	public static Map<String, String> getDecompressToken(String token) throws JsonMappingException, JsonProcessingException {
 		String[] chunks = token.split("\\.");
 		Base64.Decoder decoder = Base64.getUrlDecoder();
 
