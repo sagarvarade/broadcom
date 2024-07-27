@@ -5,12 +5,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface BroadCastGroupRepository extends JpaRepository<BroadCastGroup,Long> {
 
-    List<BroadCastGroup> findByBroadCastGroupIdAndUpdatedBy(Long id, String userID);
-    List<BroadCastGroup> findByGroupNameAndUpdatedBy(String groupName, String updatedBy);
+    Optional<BroadCastGroup> findByBroadCastGroupIdAndUpdatedBy(Long id, String userID);
 
-
+    Optional<BroadCastGroup> findByGroupNameAndUpdatedBy(String groupName, String updatedBy);
 }

@@ -30,24 +30,16 @@ public class BroadCastGroupController {
         return  broadCastGroupService.saveGroup(broadCastGroup);
     }
 
-    @GetMapping("get-by-id/{id}")
-    public List<BroadCastGroup> getGroupById(@PathVariable ("id") Long id,@RequestHeader("user_id") String userID){
-        List<BroadCastGroup>  optionalBroadCastGroup = broadCastGroupService.findGroupByIdAndUpdatedByUser(id,userID);
-        if(optionalBroadCastGroup.isEmpty()){
-            return  List.of();
-        }else{
-            return  optionalBroadCastGroup;
-        }
+    @GetMapping("get-group-by-id/{id}")
+    public BroadCastGroup getGroupById(@PathVariable ("id") Long id,@RequestHeader("user_id") String userID){
+        Optional<BroadCastGroup> optionalBroadCastGroup = broadCastGroupService.findGroupByIdAndUpdatedByUser(id,userID);
+        return optionalBroadCastGroup.orElseGet(BroadCastGroup::new);
     }
 
     @GetMapping("get-by-group-name/{name}")
-    public List<BroadCastGroup> getGroupById(@PathVariable ("name") String name,@RequestHeader("user_id") String userID){
-        List<BroadCastGroup>  optionalBroadCastGroup = broadCastGroupService.findGroupByNameAndUpdatedByUser(name,userID);
-        if(optionalBroadCastGroup.isEmpty()){
-            return  List.of();
-        }else{
-            return  optionalBroadCastGroup;
-        }
+    public BroadCastGroup getGroupById(@PathVariable ("name") String name,@RequestHeader("user_id") String userID){
+        Optional<BroadCastGroup> optionalBroadCastGroup = broadCastGroupService.findGroupByNameAndUpdatedByUser(name,userID);
+        return optionalBroadCastGroup.orElseGet(BroadCastGroup::new);
     }
 
     @DeleteMapping("delete-by-id/{id}")
@@ -59,9 +51,9 @@ public class BroadCastGroupController {
             return new ResponseEntity<String>("Not Deleted", HttpStatus.BAD_REQUEST);
         }
     }
-    @GetMapping("get-group-with-users/{id}")
-    public HashMap<BroadCastGroup, List<BroadUser>> getGroupWithUsers(@PathVariable ("id") Long id,@RequestHeader("user_id") String userID){
-        HashMap<BroadCastGroup, List<BroadUser>> bg = broadCastGroupService.getGroupDetails(id);
+    @GetMapping("get-group-details-by-group-name/{name}")
+    public HashMap<String, List<BroadUser>> getGroupWithUsers(@PathVariable ("name") String name,@RequestHeader("user_id") String userID){
+        HashMap<String, List<BroadUser>> bg = broadCastGroupService.getGroupDetails(name,userID);
         if(bg.isEmpty()){
             return  null;
         }else{
