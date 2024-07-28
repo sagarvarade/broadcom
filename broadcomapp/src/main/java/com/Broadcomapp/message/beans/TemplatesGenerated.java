@@ -1,7 +1,10 @@
 package com.Broadcomapp.message.beans;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
@@ -10,32 +13,29 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name="file_storage")
-public class FileStorage {
+@Table(name="template_generated")
+public class TemplatesGenerated {
+
     @Id
     @SequenceGenerator(
-            name="file_storage_sequence",
-            sequenceName = "file_storage_sequence",
+            name="template_generated_sequence",
+            sequenceName = "template_generated_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "file_storage_sequence"
+            generator = "template_generated_sequence"
     )
-    private Long fileStorageId;
+    private Long templateId;
 
-    private String fileName;
-
-    private boolean isActive;
+    private String templateName;
+    private String groupName;
 
     @Lob
     @Column(name = "data", columnDefinition = "LONGBLOB")
     private byte[] data;
-    private String filePath;
 
     private String createdBy;
     private LocalDateTime createdDate;
 
-    private String updatedBy;
-    private LocalDateTime updatedDate;
 }

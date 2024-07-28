@@ -76,4 +76,9 @@ public class TemplateController {
         return templateResolverService.processTemplate(template.getTemplateName(), template.getVariable());
     }
 
+    @PostMapping("/render-for-group/{group-name}")
+    public String renderTemplateForGroup(@PathVariable("group-name") String groupName,@RequestBody Template template,@RequestHeader("user_id") String userID) {
+        return templateResolverService.processTemplateWithGroup(groupName,template,userID);
+    }
+
 }

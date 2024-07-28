@@ -6,12 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
       <changelist_data name="sagar_varade" email="varade.sagar12@gmail.com" />
+      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/beans/TemplatesGenerated.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/repository/TemplateGeneratedRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/service/TemplateGenerateService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/Util/TemplateResolverService.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/Util/TemplateResolverService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/beans/FileStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/beans/FileStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/controller/TemplateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/controller/TemplateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/repository/FileStorageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/repository/FileStorageRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/service/FileStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/service/FileStorageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/test/java/com/Broadcomapp/BLogic/service/BroadCastGroupServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/test/java/com/Broadcomapp/BLogic/service/BroadCastGroupServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/emailTemplate.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/emailTemplate_2.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/emailTemplate_2.ftl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
