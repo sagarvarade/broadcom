@@ -7,10 +7,12 @@
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
       <changelist_data name="sagar_varade" email="varade.sagar12@gmail.com" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util/src/main/java/com/util/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/com/util/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BroadCom.postman_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/BroadCom.postman_collection.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Util/src/test/java/com/util/TokenTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/test/java/com/util/TokenTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/com/apigateway/LoggingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/com/apigateway/LoggingFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/com/apigateway/URLS/CallsWithOtherServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/com/apigateway/URLS/CallsWithOtherServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/filter/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/filter/JwtAuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/controller/BroadUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/controller/BroadUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/filter/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/filter/JwtAuthFilter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +44,107 @@
         <option name="url" value="https://github.com/sagarvarade/broadcom.git" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="GotoFileConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="Directory" />
+      <filtered-out-file-type name="AIDL" />
+      <filtered-out-file-type name="Android RenderScript" />
+      <filtered-out-file-type name="Android Room SQL" />
+      <filtered-out-file-type name="AndroidDataBinding" />
+      <filtered-out-file-type name="AspectJ" />
+      <filtered-out-file-type name="AUTO_DETECTED" />
+      <filtered-out-file-type name="Bat" />
+      <filtered-out-file-type name="Batch" />
+      <filtered-out-file-type name="C#" />
+      <filtered-out-file-type name="C++" />
+      <filtered-out-file-type name="Cmd" />
+      <filtered-out-file-type name="CSS" />
+      <filtered-out-file-type name="DGM" />
+      <filtered-out-file-type name="Dictionary" />
+      <filtered-out-file-type name="Dockerfile" />
+      <filtered-out-file-type name="DTD" />
+      <filtered-out-file-type name="Eclipse" />
+      <filtered-out-file-type name="EditorConfig" />
+      <filtered-out-file-type name="gdsl" />
+      <filtered-out-file-type name="GitExclude file" />
+      <filtered-out-file-type name="GitIgnore file" />
+      <filtered-out-file-type name="Gradle" />
+      <filtered-out-file-type name="Groovy" />
+      <filtered-out-file-type name="GUI_DESIGNER_FORM" />
+      <filtered-out-file-type name="Haskell" />
+      <filtered-out-file-type name="HgIgnore file" />
+      <filtered-out-file-type name="HTML" />
+      <filtered-out-file-type name="IDEA_MODULE" />
+      <filtered-out-file-type name="IDEA_PROJECT" />
+      <filtered-out-file-type name="IDEA_WORKSPACE" />
+      <filtered-out-file-type name="IDL" />
+      <filtered-out-file-type name="IgnoreLang file" />
+      <filtered-out-file-type name="JQL" />
+      <filtered-out-file-type name="JSHELL" />
+      <filtered-out-file-type name="JSON" />
+      <filtered-out-file-type name="JSON-lines" />
+      <filtered-out-file-type name="JSON5" />
+      <filtered-out-file-type name="JSP" />
+      <filtered-out-file-type name="Kotlin" />
+      <filtered-out-file-type name="Kotlin/Native Def" />
+      <filtered-out-file-type name="logback" />
+      <filtered-out-file-type name="Logcat Filter File" />
+      <filtered-out-file-type name="LOMBOK_CONFIG" />
+      <filtered-out-file-type name="Manifest" />
+      <filtered-out-file-type name="Markdown" />
+      <filtered-out-file-type name="MavenConfig" />
+      <filtered-out-file-type name="MultiDexKeep" />
+      <filtered-out-file-type name="PATCH" />
+      <filtered-out-file-type name="Perl" />
+      <filtered-out-file-type name="PHP" />
+      <filtered-out-file-type name="PLAIN_TEXT" />
+      <filtered-out-file-type name="Properties" />
+      <filtered-out-file-type name="protobuf" />
+      <filtered-out-file-type name="prototext" />
+      <filtered-out-file-type name="RegExp" />
+      <filtered-out-file-type name="RNG Compact" />
+      <filtered-out-file-type name="SARIF" />
+      <filtered-out-file-type name="Shell Script" />
+      <filtered-out-file-type name="Shrinker Config File" />
+      <filtered-out-file-type name="Smali" />
+      <filtered-out-file-type name="SPI" />
+      <filtered-out-file-type name="SQL" />
+      <filtered-out-file-type name="SVG" />
+      <filtered-out-file-type name="textmate" />
+      <filtered-out-file-type name="TOML" />
+      <filtered-out-file-type name="XHTML" />
+      <filtered-out-file-type name="XML" />
+      <filtered-out-file-type name="XPath" />
+      <filtered-out-file-type name="XPath2" />
+      <filtered-out-file-type name="YAML" />
+      <filtered-out-file-type name="AAB" />
+      <filtered-out-file-type name="AAR" />
+      <filtered-out-file-type name="Adobe Photoshop" />
+      <filtered-out-file-type name="Android 9-Patch" />
+      <filtered-out-file-type name="AndroidProfilerCpuCapture" />
+      <filtered-out-file-type name="AndroidProfilerMemoryAllocation" />
+      <filtered-out-file-type name="AndroidProfilerMemoryCapture" />
+      <filtered-out-file-type name="APK" />
+      <filtered-out-file-type name="ARCHIVE" />
+      <filtered-out-file-type name="CLASS" />
+      <filtered-out-file-type name="DEX" />
+      <filtered-out-file-type name="Font" />
+      <filtered-out-file-type name="HeapProfd" />
+      <filtered-out-file-type name="Image" />
+      <filtered-out-file-type name="KJSM" />
+      <filtered-out-file-type name="KNM" />
+      <filtered-out-file-type name="kotlin_builtins" />
+      <filtered-out-file-type name="kotlin_module" />
+      <filtered-out-file-type name="Layout Inspector" />
+      <filtered-out-file-type name="Native" />
+      <filtered-out-file-type name="PerfettoCapture" />
+      <filtered-out-file-type name="ResourceBundle" />
+      <filtered-out-file-type name="script-definition-marker" />
+      <filtered-out-file-type name="SQLite" />
+      <filtered-out-file-type name="TensorFlow Lite Model" />
+      <filtered-out-file-type name="UNKNOWN" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -135,7 +238,7 @@
       <command value="mvn clean:install -f" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.AuthApplicationDev">
+  <component name="RunManager" selected="JUnit.TokenTest.main">
     <configuration name="AppRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.runner.AppRunner" />
       <module name="AppRunner" />

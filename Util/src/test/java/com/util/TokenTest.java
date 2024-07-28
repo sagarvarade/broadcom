@@ -11,10 +11,9 @@ public class TokenTest {
         var tokenParts=t.getDecompressToken(token);
         System.out.println(tokenParts);
 
-        System.out.println(" Userid : "+String.valueOf(tokenParts.get("user_id")));
+        System.out.println("Userid : "+String.valueOf(tokenParts.get("sub")));
         System.out.println("exp   :" +String.valueOf(tokenParts.get("exp")));
         System.out.println("iat   :" +String.valueOf(tokenParts.get("iat")));
         System.out.println("roles :" +String.valueOf(tokenParts.get("roles")));
-        System.out.println("sub   :" +String.valueOf(tokenParts.get("sub")));
     }
 }

@@ -75,18 +75,16 @@ public class LoggingFilter implements GlobalFilter {
 		}
 		System.out.println(" Mutating request:  with data "+tokenParts);
 		exchange.getRequest().mutate()
-				.header("user_id", String.valueOf(tokenParts.get("user_id")))
+				.header("user_id", String.valueOf(tokenParts.get("sub")))
 				.header("exp", String.valueOf(tokenParts.get("exp")))
 				.header("iat", String.valueOf(tokenParts.get("iat")))
 				.header("roles", String.valueOf(tokenParts.get("roles")))
-				.header("sub", String.valueOf(tokenParts.get("sub")))
 				.header("broadcom_communication_token", broadcom_communication_token)
 				.build();
-		System.out.println(" Userid : "+String.valueOf(tokenParts.get("user_id")));
+		System.out.println("Userid : "+String.valueOf(tokenParts.get("sub")));
 		System.out.println("exp   :" +String.valueOf(tokenParts.get("exp")));
 		System.out.println("iat   :" +String.valueOf(tokenParts.get("iat")));
 		System.out.println("roles :" +String.valueOf(tokenParts.get("roles")));
-		System.out.println("sub   :" +String.valueOf(tokenParts.get("sub")));
 
 		if (parts.length != 2 || !"Bearer".equals(parts[0])) {
 			throw new RuntimeException("Incorrect authorization structure");
