@@ -13,9 +13,7 @@ BraodCom App, Multi Module Spring Boot Project for learning purpose
 6. Email sender         : 7230
 7. Sms sender           : 7231
 
-<pre>
 
-<pre>
 
 # Necessary commands 
 
