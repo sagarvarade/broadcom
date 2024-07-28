@@ -20,17 +20,20 @@ public class CallsWithOtherServices {
 	@Autowired
 	private Environment env;
 
+	private String broadcom_communication_token;
 	private String AUTH_URL;
 
 	@PostConstruct
 	private void postConstruct() {
 		this.AUTH_URL = env.getProperty("authentication_service_url");
+		this.broadcom_communication_token = env.getProperty("broadcom_communication_token");
 	}
 
 	public HttpResponse<String> checkToken(String token) {
 		try {
 			log.info("Checking token , {} ", token);
 			HttpRequest request = HttpRequest.newBuilder().uri(new URI(AUTH_URL + "/auth/test-token"))
+					.header("broadcom_communication_token", broadcom_communication_token)
 					.header("Authorization", "Bearer " + token).GET().build();
 			HttpClient httpClient = HttpClient.newHttpClient();
 			System.out.println("Body Header : "+java.net.http.HttpResponse.BodyHandlers.ofString());
