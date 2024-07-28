@@ -25,6 +25,9 @@ BraodCom App, Multi Module Spring Boot Project for learning purpose
 
 3. Run docker compose file to run docker images
   > docker compose down
+ 
+	--
+ 
   > docker compose up -d
   
 This docker file has all the dependecis requird like ,zookeeper , kafka,mysql , and all required docker images config.
