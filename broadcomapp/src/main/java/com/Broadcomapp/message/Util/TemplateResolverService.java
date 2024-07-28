@@ -55,7 +55,7 @@ public class TemplateResolverService {
         }
     }
 
-    public String processTemplateWithGroup(String groupName,Template template,String loggedUser) {
+    public String processTemplateWithGroupEmail(String groupName,Template template,String loggedUser) {
         HashMap<String, List<BroadUser>> groupWithUsers= broadCastGroupService.getGroupDetails(groupName,loggedUser);
         String templateName=template.getTemplateName();
         Map<String, Object> variables=template.getVariable();
@@ -88,6 +88,44 @@ public class TemplateResolverService {
                         .build();
                 templateGenerateService.save(tempGen);
                 kafkaTemplatesProducer.sendStudentToTopic("broad-email-topic","email",tempGen);
+            }
+            return "check log";
+        } else {
+            return "Not Found";
+        }
+    }
+
+    public String processTemplateWithGroupSMS(String groupName,Template template,String loggedUser) {
+        HashMap<String, List<BroadUser>> groupWithUsers= broadCastGroupService.getGroupDetails(groupName,loggedUser);
+        String templateName=template.getTemplateName();
+        Map<String, Object> variables=template.getVariable();
+        Optional<FileStorage> templateOpt = fileStorageService.findByFileNameAndIsActive(templateName, true);
+
+        if (templateOpt.isPresent()) {
+            List<BroadUser> broadUsersList=groupWithUsers.get(groupName);
+            byte[] templateContentBytes = templateOpt.get().getData();
+            String templateContent = new String(templateContentBytes, StandardCharsets.UTF_8);
+            Context context = new Context();
+
+            for(BroadUser br:broadUsersList){
+                variables.put("userName",br.getName());
+                variables.put("userEmail",br.getEmail());
+                variables.put("userPhoneNumber",br.getPhoneNumber());
+                variables.put("userDateOfBirth",br.getDateOfBirth());
+                variables.put("userGender",br.getGender());
+                context.setVariables(variables);
+                String renderedTemplate=templateEngine.process(templateContent, context);
+
+                TemplatesGenerated tempGen=TemplatesGenerated.builder()
+                        .groupName(groupName)
+                        .createdBy(loggedUser)
+                        .templateName(templateName)
+                        .data(renderedTemplate)
+                        .createdDate(LocalDateTime.now())
+                        .sendToPhoneNumber(br.getPhoneNumber())
+                        .sendToEmail(br.getEmail())
+                        .build();
+                templateGenerateService.save(tempGen);
                 kafkaTemplatesProducer.sendStudentToTopic("broad-sms-topic","sms",tempGen);
             }
             return "check log";

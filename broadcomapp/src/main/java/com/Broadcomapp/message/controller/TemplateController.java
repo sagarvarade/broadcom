@@ -76,9 +76,14 @@ public class TemplateController {
         return templateResolverService.processTemplate(template.getTemplateName(), template.getVariable());
     }
 
-    @PostMapping("/render-for-group/{group-name}")
-    public String renderTemplateForGroup(@PathVariable("group-name") String groupName,@RequestBody Template template,@RequestHeader("user_id") String userID) {
-        return templateResolverService.processTemplateWithGroup(groupName,template,userID);
+    @PostMapping("/render-for-group-email/{group-name}")
+    public String renderTemplateForGroupWithEmail(@PathVariable("group-name") String groupName,@RequestBody Template template,@RequestHeader("user_id") String userID) {
+        return templateResolverService.processTemplateWithGroupEmail(groupName,template,userID);
+    }
+
+    @PostMapping("/render-for-group-sms/{group-name}")
+    public String renderTemplateForGroupWithSMS(@PathVariable("group-name") String groupName,@RequestBody Template template,@RequestHeader("user_id") String userID) {
+        return templateResolverService.processTemplateWithGroupSMS(groupName,template,userID);
     }
 
 }
