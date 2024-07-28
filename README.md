@@ -17,14 +17,14 @@ BraodCom App, Multi Module Spring Boot Project for learning purpose
 
 # Necessary commands 
 
-1.> mvn clean install
-
-	will install all apps and create jar files in target folder.
+1.  will install all apps and create jar files in target folder.
+  > mvn clean install
 
 2. buildDockerImages.bat will pick above jar files from target folder and will create a docker images for them
   > buildDockerImages.bat
 
 3. Run docker compose file to run docker images
+  > docker compose down
   > docker compose up -d
   
 This docker file has all the dependecis requird like ,zookeeper , kafka,mysql , and all required docker images config.
