@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
       <changelist_data name="sagar_varade" email="varade.sagar12@gmail.com" />
-      <change afterPath="$PROJECT_DIR$/emailsender/src/main/java/com/emailsender/TemplatesGenerated.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emailsender/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emailsender/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/emailsender/src/main/java/com/emailsender/KafkaMessageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/emailsender/src/main/java/com/emailsender/KafkaMessageListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emailsender/src/main/java/com/emailsender/TemplatesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/emailsender/src/main/java/com/Broadcomapp/message/beans/TemplatesGenerated.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +176,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "jdk.selected.JAVA_MODULE": "17 (2)",
-    "last_directory_selection": "E:/SpringIJ/BroadCom/broadcomapp/src/test/java/com/Broadcomapp/BLogic",
+    "last_directory_selection": "E:/SpringIJ/BroadCom/emailsender/src/main/java/com",
     "last_opened_file_path": "E:/SpringIJ/BroadCom/emailsender",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",

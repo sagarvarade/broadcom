@@ -1,10 +1,9 @@
 package com.emailsender;
 
 
+import com.Broadcomapp.message.beans.TemplatesGenerated;
 import org.springframework.stereotype.Component;
 import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.kafka.support.Acknowledgment;
-import org.springframework.messaging.handler.annotation.Payload;
 
 @Component
 public class KafkaMessageListener {

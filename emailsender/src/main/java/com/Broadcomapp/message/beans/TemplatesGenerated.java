@@ -1,4 +1,4 @@
-package com.emailsender;
+package com.Broadcomapp.message.beans;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
