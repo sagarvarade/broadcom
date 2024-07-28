@@ -88,6 +88,7 @@ public class TemplateResolverService {
                         .build();
                 templateGenerateService.save(tempGen);
                 kafkaTemplatesProducer.sendStudentToTopic("broad-email-topic","email",tempGen);
+                kafkaTemplatesProducer.sendStudentToTopic("broad-sms-topic","sms",tempGen);
             }
             return "check log";
         } else {

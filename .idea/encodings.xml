@@ -7,8 +7,11 @@
     <file url="file://$PROJECT_DIR$/authentication/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/broadcomUI/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/broadcomapp/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emailsender/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/namingserver/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/namingserver/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smssender/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smssender/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>

@@ -10,6 +10,11 @@ services:
       - zookeeper_datalog:/datalog
     networks:
       - broadcom-network
+    healthcheck:
+      test: [ "CMD", "sh", "-c", "echo ruok | nc localhost 2181 | grep imok" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   kafka:
     image: wurstmeister/kafka:latest
@@ -111,7 +116,7 @@ services:
       - SPRING_DATASOURCE_PASSWORD=admin
       - broadcom_communication_token=ABCD_1234
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:7200/actuator/health" ]
+      test: [ "CMD", "curl", "-f", "-H", "broadcom_communication_token:ABCD_1234", "http://localhost:7200/actuator/health" ]
       interval: 30s
       timeout: 10s
       retries: 5
@@ -137,7 +142,7 @@ services:
       - SPRING_DATASOURCE_PASSWORD=admin
       - broadcom_communication_token=ABCD_1234
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:7100/actuator/health" ]
+      test: [ "CMD", "curl", "-f","-H", "broadcom_communication_token:ABCD_1234", "http://localhost:7100/actuator/health" ]
       interval: 30s
       timeout: 10s
       retries: 5

@@ -27,6 +27,17 @@ cd broadcomUI
 
 docker build -t broadcom-broadcomaui:7.1.1 -f dockerfileBroadcomUI .
 
+cd ..
+
+cd emailsender
+
+docker build -t broadcom-emailsender:8.1.1 -f dockerfileBroadEmailSender .
+
+cd ..
+
+cd smssender
+
+docker build -t broadcom-smssender:9.1.1 -f dockerfileBroadSMSSender .
 
 cd ..
 

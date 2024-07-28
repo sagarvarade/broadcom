@@ -6,13 +6,31 @@
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
       <changelist_data name="sagar_varade" email="varade.sagar12@gmail.com" />
+      <change afterPath="$PROJECT_DIR$/emailsender/dockerfileBroadcomapp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emailsender/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emailsender/src/main/java/com/emailsender/EmailApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emailsender/src/main/java/com/emailsender/KafkaConsumerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emailsender/src/main/java/com/emailsender/KafkaMessageListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emailsender/src/main/resources/application-dev.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emailsender/src/main/resources/application-prod.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emailsender/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smssender/dockerfileBroadcomapp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smssender/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smssender/src/main/java/com/smssender/KafkaConsumerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smssender/src/main/java/com/smssender/KafkaMessageListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smssender/src/main/java/com/smssender/SmsApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smssender/src/main/resources/application-dev.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smssender/src/main/resources/application-prod.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smssender/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/buildDockerImages.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BroadCom.postman_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/BroadCom.postman_collection.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util/src/test/java/com/util/TokenTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/test/java/com/util/TokenTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/com/apigateway/LoggingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/com/apigateway/LoggingFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/filter/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/filter/JwtAuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/controller/BroadUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/controller/BroadUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/filter/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/filter/JwtAuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/Util/TemplateResolverService.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/message/Util/TemplateResolverService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomapp/src/test/java/com/Broadcomapp/BLogic/repository/BroadUserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/test/java/com/Broadcomapp/BLogic/repository/BroadUserRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildDockerImages.bat" beforeDir="false" afterPath="$PROJECT_DIR$/buildDockerImages.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +199,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "jdk.selected.JAVA_MODULE": "17 (2)",
     "last_directory_selection": "E:/SpringIJ/BroadCom/broadcomapp/src/test/java/com/Broadcomapp/BLogic",
-    "last_opened_file_path": "E:/SpringIJ/Java_Learning/kafka_learning",
+    "last_opened_file_path": "E:/SpringIJ/BroadCom/emailsender",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -194,11 +212,11 @@
       <recent name="com.Broadcomapp.user.beans" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\SpringIJ\BroadCom\broadcomUI\frontend\node" />
-      <recent name="E:\SpringIJ\BroadCom\broadcomUI" />
-      <recent name="E:\SpringIJ\BroadCom" />
-      <recent name="E:\SpringIJ\BroadCom\namingserver" />
-      <recent name="E:\SpringIJ\BroadCom\authentication" />
+      <recent name="E:\SpringIJ\BroadCom\emailsender" />
+      <recent name="E:\SpringIJ\BroadCom\smssender" />
+      <recent name="E:\SpringIJ\BroadCom\smssender\src\main\java\com\smssender" />
+      <recent name="E:\SpringIJ\BroadCom\smssender\src\main\resources" />
+      <recent name="E:\SpringIJ\BroadCom\emailsender\src\main\resources" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -212,11 +230,11 @@
       <recent name="com.util" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.smssender" />
       <recent name="com.Broadcomapp.config" />
       <recent name="com.Broadcomapp.message.KafkaProducer" />
       <recent name="com.Broadcomapp.filter" />
       <recent name="com.Broadcomapp.user.repository" />
-      <recent name="com.Broadcomapp.user.beans" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -238,39 +256,13 @@
       <command value="mvn clean:install -f" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TokenTest.main">
-    <configuration name="AppRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="app.runner.AppRunner" />
-      <module name="AppRunner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="app.runner.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.EmailApp">
     <configuration name="AuthApplicationDev" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.authentication.AuthApplication" />
       <module name="authentication" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.authentication.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BroadComApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.Broadcomapp.BroadComApp" />
-      <module name="broadcomapp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Broadcomapp.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -291,12 +283,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TemplateResolver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.Broadcomapp.message.Util.TemplateResolver" />
-      <module name="broadcomapp" />
+    <configuration name="EmailApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.emailsender.EmailApp" />
+      <module name="emailsender" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.Broadcomapp.message.Util.*" />
+          <option name="PATTERN" value="com.emailsender.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -348,23 +340,18 @@
       <item itemvalue="Application.BroadcomappDev" />
       <item itemvalue="Application.NamingServerApplicationDev" />
       <item itemvalue="Application.NamingServerApplicationProd" />
-      <item itemvalue="Application.AppRunner" />
-      <item itemvalue="Application.BroadComApp" />
+      <item itemvalue="Application.EmailApp" />
       <item itemvalue="Application.BroadcomUIApp" />
-      <item itemvalue="Application.TemplateResolver" />
       <item itemvalue="JUnit.All in Util" />
       <item itemvalue="JUnit.TokenTest" />
       <item itemvalue="JUnit.TokenTest.main" />
-      <item itemvalue="Multirun.buildDockerImages" />
       <item itemvalue="Multirun.RunBroadCom" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.EmailApp" />
         <item itemvalue="JUnit.TokenTest.main" />
         <item itemvalue="Application.BroadcomUIApp" />
-        <item itemvalue="Application.BroadComApp" />
-        <item itemvalue="Application.TemplateResolver" />
-        <item itemvalue="Application.AppRunner" />
       </list>
     </recent_temporary>
   </component>
