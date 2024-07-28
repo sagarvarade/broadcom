@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
       <changelist_data name="sagar_varade" email="varade.sagar12@gmail.com" />
+      <change afterPath="$PROJECT_DIR$/smssender/src/main/java/com/Broadcomapp/message/beans/TemplatesGenerated.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emailsender/src/main/java/com/emailsender/KafkaMessageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/emailsender/src/main/java/com/emailsender/KafkaMessageListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emailsender/src/main/java/com/emailsender/TemplatesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/emailsender/src/main/java/com/Broadcomapp/message/beans/TemplatesGenerated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smssender/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/smssender/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smssender/src/main/java/com/smssender/KafkaConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/smssender/src/main/java/com/smssender/KafkaConsumerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smssender/src/main/java/com/smssender/KafkaMessageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/smssender/src/main/java/com/smssender/KafkaMessageListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,8 +178,8 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "jdk.selected.JAVA_MODULE": "17 (2)",
-    "last_directory_selection": "E:/SpringIJ/BroadCom/emailsender/src/main/java/com",
-    "last_opened_file_path": "E:/SpringIJ/BroadCom/emailsender",
+    "last_directory_selection": "E:/SpringIJ/BroadCom/smssender/src/main/java/com",
+    "last_opened_file_path": "E:/SpringIJ/BroadCom/smssender/src/main/java/com/smssender",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -190,9 +192,9 @@
       <recent name="com.Broadcomapp.user.beans" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\SpringIJ\BroadCom\smssender\src\main\java\com\smssender" />
       <recent name="E:\SpringIJ\BroadCom\emailsender" />
       <recent name="E:\SpringIJ\BroadCom\smssender" />
-      <recent name="E:\SpringIJ\BroadCom\smssender\src\main\java\com\smssender" />
       <recent name="E:\SpringIJ\BroadCom\smssender\src\main\resources" />
       <recent name="E:\SpringIJ\BroadCom\emailsender\src\main\resources" />
     </key>
@@ -208,11 +210,11 @@
       <recent name="com.util" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="beans" />
       <recent name="com.emailsender" />
       <recent name="com.smssender" />
       <recent name="com.Broadcomapp.config" />
       <recent name="com.Broadcomapp.message.KafkaProducer" />
-      <recent name="com.Broadcomapp.filter" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -234,7 +236,7 @@
       <command value="mvn clean:install -f" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.EmailApp">
+  <component name="RunManager" selected="Application.SmsApp">
     <configuration name="AuthApplicationDev" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.authentication.AuthApplication" />
       <module name="authentication" />
@@ -267,6 +269,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.emailsender.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SmsApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.smssender.SmsApp" />
+      <module name="smssender" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.smssender.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -318,6 +333,7 @@
       <item itemvalue="Application.ApiGatewayApplicationProd" />
       <item itemvalue="Application.AuthApplication" />
       <item itemvalue="Application.NamingServerApplicationProd" />
+      <item itemvalue="Application.SmsApp" />
       <item itemvalue="Application.EmailApp" />
       <item itemvalue="Application.BroadcomUIApp" />
       <item itemvalue="JUnit.All in Util" />
@@ -327,6 +343,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SmsApp" />
         <item itemvalue="Application.EmailApp" />
         <item itemvalue="JUnit.TokenTest.main" />
         <item itemvalue="Application.BroadcomUIApp" />
