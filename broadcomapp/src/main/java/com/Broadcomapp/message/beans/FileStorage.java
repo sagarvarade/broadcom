@@ -29,6 +29,7 @@ public class FileStorage {
     private boolean isActive;
 
     @Lob
+    @Column(name = "data", columnDefinition = "LONGBLOB")
     private byte[] data;
     private String filePath;
 

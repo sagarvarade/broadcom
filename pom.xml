@@ -21,6 +21,8 @@
         <module>broadcomapp</module>
         <module>AppRunner</module>
         <module>broadcomUI</module>
+        <module>emailsender</module>
+        <module>smssender</module>
     </modules>
 
     <properties>

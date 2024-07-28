@@ -55,7 +55,7 @@ public class BroadUserController {
 	}
 
 	@GetMapping(path="get/{id}")
-	public ResponseEntity<BroadUser> getUser(@PathVariable Long id,@RequestHeader("user_id") String userID){
+	public ResponseEntity<BroadUser> getUser(@PathVariable("id") Long id,@RequestHeader("user_id") String userID){
 		if(userService.getUserByIdAndUpdatedBy(id,userID).isPresent()){
 			return ResponseEntity.ok(userService.getUserByIdAndUpdatedBy(id,userID).get());
 		}

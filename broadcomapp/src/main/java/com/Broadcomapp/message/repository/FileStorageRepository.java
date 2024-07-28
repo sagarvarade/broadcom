@@ -15,4 +15,6 @@ public interface FileStorageRepository extends JpaRepository<FileStorage,Long> {
 
     Optional<FileStorage> findByFileNameAndIsActive(String name, boolean isAct);
 
+    Optional<FileStorage> findByFileStorageIdAndUpdatedBy(Long id, String userid);
+
 }

@@ -26,7 +26,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
-        System.out.println(" Auth app header received ,user_id : "+request.getHeader("user_id"));
+        System.out.println(" Auth app header received , user_id : "+request.getHeader("sub"));
         System.out.println(" Auth app header received , exp    : "+request.getHeader("exp"));
         System.out.println(" Auth app header received , iat    : "+request.getHeader("iat"));
         System.out.println(" Auth app header received , roles  : "+request.getHeader("roles"));

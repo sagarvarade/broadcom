@@ -8,7 +8,9 @@ BraodCom App, Multi Module Spring Boot Project for learning purpose
 2. Naming Server        : 7100
 3. API Gateway Server   : 7000  
 4. Broadcom application : 7210
-5. BroadCom UI          : c
+5. BroadCom UI          : 
+6. Email sender         : 7230
+7. Sms sender           : 7231
 
 <pre>
 Add below to your Java application run configuration to avoid certificate issue, In VM arguments :
