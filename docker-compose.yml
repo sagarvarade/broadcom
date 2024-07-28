@@ -164,6 +164,40 @@ services:
       timeout: 10s
       retries: 5
 
+  emailsender:
+      image: broadcom-emailsender:8.1.1
+      restart: always
+      ports:
+        - "7230:7230"
+      depends_on:
+        - authentication
+        - namingserver
+        - apigateway
+      networks:
+        - broadcom-network
+      healthcheck:
+        test: [ "CMD", "curl", "-f", "http://localhost:7230/actuator/health" ]
+        interval: 30s
+        timeout: 10s
+        retries: 5
+
+  smssender:
+    image: broadcom-smssender:9.1.1
+    restart: always
+    ports:
+      - "7231:7231"
+    depends_on:
+      - authentication
+      - namingserver
+      - apigateway
+    networks:
+      - broadcom-network
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:7231/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
 networks:
   broadcom-network:
     driver: bridge
