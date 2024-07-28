@@ -27,9 +27,11 @@ public class TemplatesGenerated {
             generator = "template_generated_sequence"
     )
     private Long templateId;
-
     private String templateName;
     private String groupName;
+
+    private String sendToPhoneNumber;
+    private String sendToEmail;
 
     @Lob
     @Column(name = "data", columnDefinition = "LONGTEXT")

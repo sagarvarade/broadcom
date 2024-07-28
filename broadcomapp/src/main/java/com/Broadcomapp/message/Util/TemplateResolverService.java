@@ -83,6 +83,8 @@ public class TemplateResolverService {
                         .templateName(templateName)
                         .data(renderedTemplate)
                         .createdDate(LocalDateTime.now())
+                        .sendToPhoneNumber(br.getPhoneNumber())
+                        .sendToEmail(br.getEmail())
                         .build();
                 templateGenerateService.save(tempGen);
                 kafkaTemplatesProducer.sendStudentToTopic("broad-email-topic","email",tempGen);

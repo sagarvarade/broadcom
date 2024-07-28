@@ -32,7 +32,6 @@ public class BroadUser {
 	private String email;
 	@Column(nullable = false)
 	private String phoneNumber;
-	private String whatsAppId;
 	@Column(nullable = false)
 	private String gender;
 	private Date dateOfBirth;
