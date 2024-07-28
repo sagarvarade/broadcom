@@ -1,60 +1,125 @@
-
-private String name;
-private String email;
-private String phoneNumber;
-private String whatsappid;
-
-
-    private String street;
-    private String city;
-    private String state;
-    private String zipCode;
+Databse need to for first Login :
 
 
 
-Broad User :  
-	Address
-	
-Group :
-	Users :
+-- Dumping database structure for authentication
+DROP DATABASE IF EXISTS `authentication`;
+CREATE DATABASE IF NOT EXISTS `authentication` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `authentication`;
 
-1. Service types:
-	1. Whatsapp
-	2. Email
-	3. Mobile message
+DROP TABLE IF EXISTS `UserInfo`;
+CREATE TABLE IF NOT EXISTS `UserInfo` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `roles` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
-API's
-BroaUsers
-1. Save Broad user with address
-2. Save list of broad users
-3. Update User 
-4. Delete user 
-
-
-2. Group 
-1. Create group with users Id
-2. Get group details with broad Users
-3. Update group
-4. delete group
-
-
-http://localhost:7100/actuator/health :naming server
-http://localhost:7000/actuator/health :Api gateway
-http://localhost:7200/actuator/health : Auth
-http://localhost:7210/actuator/health : broad com app
-http://localhost:7214/actuator/health : UI 
+DELETE FROM `userinfo` WHERE `id`=1;
+INSERT INTO `userinfo` (`id`, `email`, `name`, `password`, `roles`) VALUES (1, 'a@gmail.com', 'sagar', '$2a$10$zan24hGdotQG9VEOKNkQoO01Owv9GF5CIihhOGHgv5zNbF2HJrmBy', 'ROLE_ADMIN');
+DELETE FROM `userinfo` WHERE `id`=2;
+INSERT INTO `userinfo` (`id`, `email`, `name`, `password`, `roles`) VALUES (2, 'z@gmail.com', 'mahesh', '$2a$10$YyGGgc2V6u0CBoe1ir51T.bOBca57yOMSDGWZ8NAM0oBPJUQlTMr.', 'ROLE_USER');
+DELETE FROM `userinfo` WHERE `id`=3;
+INSERT INTO `userinfo` (`id`, `email`, `name`, `password`, `roles`) VALUES (3, 'ramesh@gmail.com', 'ramesh', '$2a$10$YiLkZTb6H8GyBRqWxtAIbu9aLIIIlWXK4XXlQJYF291LUfVDrhRPK', 'ROLE_ADMIN');
+DELETE FROM `userinfo` WHERE `id`=4;
+INSERT INTO `userinfo` (`id`, `email`, `name`, `password`, `roles`) VALUES (4, 'ramesh@gmail.com', 'ramesh', '$2a$10$L8FVP7BqQVKf/pYC3iVbgeD4enOUbc11xzlQtpunGaCakcHpRaT/O', 'ROLE_READ_ONLY');
 
 
+Username : sagar , password : sagar
 
-26/07/2024 :
-App will be user base , no admin or priviled rights all are same .
-
-1. Secure all mycroservices with request header passing from gateway  = Done
-2. Check request header in all mircoserivices and if token is present then only allow to service =done
-3. Update user with other access roles as well  =done role can be pass by postman
-4. Add some more info to token  = not required , by postman you can send role
-5. Change logic to deflate token = token set to all required microservices
-6. All the date passed by request must have user info , update all sqls to fetch for user  = Need to update in broadcom app
+-- Docker commands :
 
 
+Docker Build Commands :
 
+
+1. Build Docker images :
+
+docker build -t broadcom-namingserver:1.1.1 -f dockerfileNamingsever .
+
+docker build -t broadcom-apigateway:2.1.1 -f dockerfileApigateway .
+
+docker build -t broadcom-authentication:3.1.1 -f dockerfileAuthentication .
+
+docker build -t broadcom-broadcomapp:4.1.1 -f dockerfileBroadcomapp .
+
+
+To run images on docker :
+
+Remove dangling images
+
+docker image prune
+
+Run by compose
+
+docker-compose down
+docker-compose up --build -d
+
+
+docker run -d --restart=always -p 7100:7100 broadcom-namingserver:1.1.1
+
+docker run -d --restart=always -p 7000:7000 broadcom-apigateway:2.1.1
+
+docker run -d --restart=always -p 7200:7200 broadcom-authentication:3.1.1
+
+docker run -d --restart=always -p 7210:7210 broadcom-broadcomapp:4.1.1
+
+
+Docker stop all containers :
+
+docker stop $(docker ps -q)
+
+Remove all container :
+
+docker rm $(docker ps -a -q)
+
+Stop and remove all containers :
+docker stop $(docker ps -q) && docker rm $(docker ps -a -q)
+
+docker-compose down
+docker-compose up --build -d
+
+docker-compose logs apigateway
+docker-compose up -d
+--
+
+docker stop $(docker ps -a -q --filter="ancestor=broadcom-namingserver:1.1.1") -f
+docker stop $(docker ps -a -q --filter="ancestor=broadcom-apigateway:2.1.1") -f
+docker stop $(docker ps -a -q --filter="ancestor=broadcom-authentication:3.1.1") -f
+docker stop $(docker ps -a -q --filter="ancestor=broadcom-broadcomapp:4.1.1") -f
+
+docker rm $(docker ps -a -q --filter="ancestor=broadcom-namingserver:1.1.1") -f
+docker rm $(docker ps -a -q --filter="ancestor=broadcom-apigateway:2.1.1") -f
+docker rm $(docker ps -a -q --filter="ancestor=broadcom-authentication:3.1.1") -f
+docker rm $(docker ps -a -q --filter="ancestor=broadcom-broadcomapp:4.1.1") -f
+
+docker rmi -f broadcom-namingserver:1.1.1
+docker rmi -f broadcom-apigateway:2.1.1
+docker rmi -f broadcom-authentication:3.1.1
+docker rmi -f broadcom-broadcomapp:4.1.1
+</pre>
+
+
+docker-compose stop $(docker-compose ps --services | Select-String "broadcom" | ForEach-Object { $_.ToString() })
+
+-- Remove docker images
+docker rmi 467b1d4b07ae
+
+-- Powershell
+docker ps --filter "name=broadcom" --format "{{.ID}}" | ForEach-Object { docker stop $_ }
+
+docker ps -a --filter "name=broadcom" --format "{{.ID}}" | ForEach-Object { docker rm $_ }
+
+
+--------------
+
+
+spring.profiles.active=dev  : Add to run config to run specific profile
+
+# Jenkins
+http://localhost:8011/login?from=%2F
+--
+
+--------------------------------------------------------------------

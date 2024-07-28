@@ -31,13 +31,13 @@ cd ..
 
 cd emailsender
 
-docker build -t broadcom-emailsender:8.1.1 -f dockerfileBroadEmailSender .
+docker build -t broadcom-emailsender:8.1.1 -f dockerfileEmailSender .
 
 cd ..
 
 cd smssender
 
-docker build -t broadcom-smssender:9.1.1 -f dockerfileBroadSMSSender .
+docker build -t broadcom-smssender:9.1.1 -f dockerfileSmsSender .
 
 cd ..
 
