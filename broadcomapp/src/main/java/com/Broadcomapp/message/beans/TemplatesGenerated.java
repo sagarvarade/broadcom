@@ -32,8 +32,8 @@ public class TemplatesGenerated {
     private String groupName;
 
     @Lob
-    @Column(name = "data", columnDefinition = "LONGBLOB")
-    private byte[] data;
+    @Column(name = "data", columnDefinition = "LONGTEXT")
+    private String data;
 
     private String createdBy;
     private LocalDateTime createdDate;
