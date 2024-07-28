@@ -10,13 +10,7 @@ import org.springframework.messaging.handler.annotation.Payload;
 public class KafkaMessageListener {
 
     @KafkaListener(topics = "broad-email-topic", containerFactory = "kafkaListenerContainerFactory")
-    public void listen(@Payload String message, Acknowledgment acknowledgment) {
-        try {
-            System.out.println("Received message: " + message);
-            acknowledgment.acknowledge();
-        } catch (Exception e) {
-            System.err.println("Error processing message: " + message + ", error: " + e.getMessage());
-            throw e;
-        }
+    public void consumeStudent(TemplatesGenerated templatesGenerated){
+        System.out.println("Consumer:5 consume the student : "+templatesGenerated.toString());
     }
 }
