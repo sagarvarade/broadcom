@@ -27,22 +27,30 @@ public class BroadUserController {
 
 
 	@PostMapping(path = "create",
-    consumes = MediaType.APPLICATION_JSON_VALUE, 
-    produces = MediaType.APPLICATION_JSON_VALUE)
-	public String createUser(@RequestBody BroadUser user,@RequestHeader("user_id") String userID) {
-		LocalDateTime now=LocalDateTime.now();
-		user.setCreatedBy(userID);
-		user.setUpdatedBy(userID);
-		user.setCreatedDate(now);
-		user.setUpdatedDate(now);
-		userService.createUser(user);
-		return "User Created";
+    consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<String> createUser(@RequestBody BroadUser user, @RequestHeader("user_id") String userID) {
+		System.out.println(" Create user : "+user);
+		try{
+			LocalDateTime now=LocalDateTime.now();
+			user.setCreatedBy(userID);
+			user.setUpdatedBy(userID);
+			user.setCreatedDate(now);
+			user.setUpdatedDate(now);
+			userService.createUser(user);
+			return ResponseEntity.ok("User added successfully");
+		}
+		catch (Exception e){
+			e.printStackTrace();
+		}
+
+		return ResponseEntity.ok("Internal Server error.");
 	}
 
 	@PostMapping(path = "create-list",
-			consumes = MediaType.APPLICATION_JSON_VALUE,
-			produces = MediaType.APPLICATION_JSON_VALUE)
-	public String createUser(@RequestBody List<BroadUser> users,@RequestHeader("user_id") String userID) {
+			consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<String> createUser(@RequestBody List<BroadUser> users,@RequestHeader("user_id") String userID) {
+		System.out.println(" Create user List : ");
+		try{
 		LocalDateTime now=LocalDateTime.now();
 		for(BroadUser br:users){
 			br.setCreatedBy(userID);
@@ -51,7 +59,13 @@ public class BroadUserController {
 			br.setUpdatedDate(now);
 		}
 		userService.saveAll(users);
-		return "User Created";
+			return ResponseEntity.ok("Users added successfully");
+		}
+		catch (Exception e){
+			e.printStackTrace();
+		}
+
+		return ResponseEntity.ok("Internal Server error.");
 	}
 
 	@GetMapping(path="get/{id}")
