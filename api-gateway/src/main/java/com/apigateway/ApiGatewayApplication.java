@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import org.springframework.web.client.RestTemplate;
 import reactor.netty.http.client.HttpClient;
 import io.netty.resolver.DefaultAddressResolverGroup;
 @SpringBootApplication
@@ -14,7 +15,7 @@ public class ApiGatewayApplication {
 		SpringApplication.run(ApiGatewayApplication.class, args);
 	}
 	@Bean
-	public HttpClient httpClient() {
-	    return HttpClient.create().resolver(DefaultAddressResolverGroup.INSTANCE);
+	public RestTemplate restTemplate(){
+		return new RestTemplate();
 	}
 }
