@@ -1,11 +1,11 @@
 @echo off
-cd namingserver
+cd naming-server
 
 docker build -t broadcom-namingserver:1.1.1 -f dockerfileNamingsever .
 
 cd ..
 
-cd apigateway
+cd api-gateway
 
 docker build -t broadcom-apigateway:2.1.1 -f dockerfileApigateway .
 
@@ -17,7 +17,7 @@ docker build -t broadcom-authentication:3.1.1 -f dockerfileAuthentication .
 
 cd ..
 
-cd broadcomapp
+cd broad-com-app
 
 docker build -t broadcom-broadcomapp:4.1.1 -f dockerfileBroadcomapp .
 
@@ -29,13 +29,13 @@ docker build -t broadcom-broadcomaui:7.1.1 -f dockerfileBroadcomUI .
 
 cd ..
 
-cd emailsender
+cd email-sender
 
 docker build -t broadcom-emailsender:8.1.1 -f dockerfileEmailSender .
 
 cd ..
 
-cd smssender
+cd sms-sender
 
 docker build -t broadcom-smssender:9.1.1 -f dockerfileSmsSender .
 

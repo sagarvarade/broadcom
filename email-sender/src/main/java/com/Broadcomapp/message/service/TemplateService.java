@@ -10,7 +10,7 @@ public class TemplateService {
     @Autowired
     private TemplateRepo templateRepo;
 
-    public TemplatesGenerated save(TemplatesGenerated temp){
-        return templateRepo.save(temp);
+    public void save(TemplatesGenerated temp){
+        templateRepo.save(temp);
     }
 }
