@@ -2,7 +2,7 @@ package com.Broadcomapp.message.Util;
 
 import com.Broadcomapp.BLogic.beans.BroadUser;
 import com.Broadcomapp.BLogic.service.BroadCastGroupService;
-import com.Broadcomapp.message.KafkaProducer.KafkaTemplatesProducer;
+import com.Broadcomapp.message.KafkaProducer.KafkaTemplateProducer;
 import com.Broadcomapp.message.beans.FileStorage;
 import com.Broadcomapp.message.beans.Template;
 import com.Broadcomapp.message.beans.TemplatesGenerated;
@@ -35,7 +35,7 @@ public class TemplateResolverService {
     private TemplateGenerateService templateGenerateService;
 
     @Autowired
-    private KafkaTemplatesProducer kafkaTemplatesProducer;
+    private KafkaTemplateProducer kafkaTemplatesProducer;
 
     public String processTemplate(String templateName, Map<String, Object> variables) {
         Optional<FileStorage> templateOpt = fileStorageService.findByFileNameAndIsActive(templateName, true);
@@ -45,10 +45,6 @@ public class TemplateResolverService {
             String templateContent = new String(templateContentBytes, StandardCharsets.UTF_8);
             Context context = new Context();
             context.setVariables(variables);
-            //System.out.println("template :"+templateOpt.get().getFileName()+"  "+context);
-            //System.out.println("Variable : "+variables);
-            //System.out.println(templateContent+"  "+context);
-            //System.out.println("Output : "+templateEngine.process(templateContent, context));
             return templateEngine.process(templateContent, context);
         } else {
             return "Not Found";
@@ -75,8 +71,6 @@ public class TemplateResolverService {
                 variables.put("userGender",br.getGender());
                 context.setVariables(variables);
                 String renderedTemplate=templateEngine.process(templateContent, context);
-                //System.out.println("Rendered Template : "+renderedTemplate);
-
                 TemplatesGenerated tempGen=TemplatesGenerated.builder()
                         .groupName(groupName)
                         .createdBy(loggedUser)
@@ -87,7 +81,7 @@ public class TemplateResolverService {
                         .sendToEmail(br.getEmail())
                         .build();
                 templateGenerateService.save(tempGen);
-                kafkaTemplatesProducer.sendStudentToTopic("broad-email-topic","email",tempGen);
+                kafkaTemplatesProducer.sendTemplateToTopic("broad-email-topic","email",tempGen);
             }
             return "check log";
         } else {
@@ -126,7 +120,7 @@ public class TemplateResolverService {
                         .sendToEmail(br.getEmail())
                         .build();
                 templateGenerateService.save(tempGen);
-                kafkaTemplatesProducer.sendStudentToTopic("broad-sms-topic","sms",tempGen);
+                kafkaTemplatesProducer.sendTemplateToTopic("broad-sms-topic","sms",tempGen);
             }
             return "check log";
         } else {

@@ -7,16 +7,10 @@
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
       <changelist_data name="sagar_varade" email="varade.sagar12@gmail.com" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/dto/AuthRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/dto/AuthRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/entity/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/entity/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/filter/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/filter/JwtAuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/repository/UserInfoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/repository/UserInfoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka/KafkaCommands.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka/offsetExplorerConnectionImage.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/emailTemplate_2.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/KafkaProducer/KafkaTemplatesProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/KafkaProducer/KafkaTemplateProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/Util/TemplateResolverService.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/Util/TemplateResolverService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/KafkaMessageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/KafkaMessageListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/KafkaMessageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/KafkaMessageListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,7 +237,7 @@
       <command value="mvn clean install -U" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.BroadcomappDev">
+  <component name="RunManager" selected="Application.SmsApp">
     <configuration name="AuthApplicationDev" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.authentication.AuthApplication" />
       <module name="authentication" />

@@ -9,7 +9,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 public class KafkaMessageListener {
 
     @KafkaListener(topics = "broad-email-topic", containerFactory = "kafkaListenerContainerFactory")
-    public void consumeStudent(TemplatesGenerated templatesGenerated){
-        System.out.println("Consumer:5 consume the student : "+templatesGenerated.toString());
+    public void consumeTemplate(TemplatesGenerated templatesGenerated){
+        System.out.println("Consumer: Email consume the template : "+templatesGenerated.toString());
     }
 }
