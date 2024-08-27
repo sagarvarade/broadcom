@@ -14,15 +14,15 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>namingserver</module>
-        <module>apigateway</module>
+        <module>naming-server</module>
+        <module>api-gateway</module>
         <module>authentication</module>
         <module>Util</module>
-        <module>broadcomapp</module>
+        <module>broad-com-app</module>
         <module>AppRunner</module>
         <module>broadcomUI</module>
-        <module>emailsender</module>
-        <module>smssender</module>
+        <module>email-sender</module>
+        <module>sms-sender</module>
     </modules>
 
     <properties>

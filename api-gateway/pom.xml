@@ -11,7 +11,7 @@
     <version>2.1.1</version>
     <artifactId>apigateway</artifactId>
     <groupId>com.ApiGateway</groupId>
-    <name>ApiGateway</name>
+    <name>api-gateway</name>
     <properties>
         <java.version>17</java.version>
         <spring-cloud.version>2021.0.1</spring-cloud.version>
@@ -50,7 +50,6 @@
             <artifactId>netty-resolver-dns-native-macos</artifactId>
             <version>4.1.84.Final</version> <!-- Replace with the appropriate version -->
         </dependency>
-
         <dependency>
             <groupId>com.util</groupId>
             <artifactId>Util</artifactId>

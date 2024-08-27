@@ -3,15 +3,15 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/AppRunner/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Util/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/apigateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/authentication/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/broad-com-app/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/broadcomUI/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/broadcomapp/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/emailsender/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/namingserver/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/namingserver/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/smssender/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/smssender/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/email-sender/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/naming-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/naming-server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sms-sender/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sms-sender/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>
