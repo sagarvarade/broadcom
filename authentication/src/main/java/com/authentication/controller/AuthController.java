@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -41,8 +42,8 @@ public class AuthController {
     private AuthenticationManager authenticationManager;
 
     @GetMapping("/welcome")
-    public String welcome() {
-        return "Welcome this endpoint is not secure";
+    public ResponseEntity<String> welcome() {
+        return new ResponseEntity<String>("Welcome this endpoint is not secure",HttpStatus.OK);
     }
 
     @PostMapping("/new")
@@ -65,12 +66,11 @@ public class AuthController {
 
     @PostMapping("/authenticate")
     @CrossOrigin(origins = "*")
-    public Map<String, Object> authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
+    public ResponseEntity<Map<String, Object>> authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
  
         String token=jwtService.generateToken(authRequest.getUsername());
-        System.out.println(">>"+token);
-        
+        System.out.println("Checking Toke : "+token);
         if (authentication.isAuthenticated()) {
         	Map<String, Object> response = new HashMap<>();
         	UserInfo user = userInfoService.loadUserDetails(authRequest.getUsername()).orElse(new UserInfo());
@@ -79,20 +79,20 @@ public class AuthController {
             response.put("email", user.getEmail());
             response.put("roles", user.getRoles());
             response.put("token", token);
-            return response;
+            return  new ResponseEntity<>(response,HttpStatus.OK);
         } else {
         	Map<String, Object> response = new HashMap<>();
             response.put("error","Invalid credentials");
-            return response;
+            return  new ResponseEntity<>(response,HttpStatus.BAD_REQUEST);
         }
     }
     
     @GetMapping("/test-token")
-    public String index() {
+    public ResponseEntity<String> index() {
     	Authentication auth=SecurityContextHolder.getContext().getAuthentication();
     	if(!(auth instanceof AnonymousAuthenticationToken)) {
-    		return "TOKEN_IS_VALID";
+    		return new ResponseEntity<>("TOKEN_IS_VALID",HttpStatus.OK);
     	}
-        return "TOKEN_NOT_VALID";
+        return new ResponseEntity<>("TOKEN_NOT_VALID",HttpStatus.BAD_REQUEST);
     }
 }

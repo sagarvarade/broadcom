@@ -6,15 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
       <changelist_data name="sagar_varade" email="varade.sagar12@gmail.com" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/apigateway/URLS/CheckToken.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/apigateway/ApiGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/apigateway/ApiGatewayApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/apigateway/LoggingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/apigateway/LoggingFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/apigateway/URLS/CallsWithOtherServices.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application-prod.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/URLS/CallsWithOtherServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/dto/AuthRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/dto/AuthRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/entity/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/entity/UserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/filter/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/filter/JwtAuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/repository/UserInfoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/repository/UserInfoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka/KafkaCommands.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka/offsetExplorerConnectionImage.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/emailTemplate_2.ftl" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +185,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "jdk.selected.JAVA_MODULE": "17 (2)",
     "last_directory_selection": "E:/SpringIJ/BroadCom/smssender/src/main/java/com",
-    "last_opened_file_path": "E:/SpringIJ/Java_Learning/database_learning",
+    "last_opened_file_path": "E:/SpringIJ/BroadCom/authentication",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",

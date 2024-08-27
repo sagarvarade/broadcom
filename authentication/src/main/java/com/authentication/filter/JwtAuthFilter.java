@@ -3,6 +3,8 @@ package com.authentication.filter;
 import java.io.IOException;
 
 import jakarta.annotation.PostConstruct;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -22,6 +24,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @Component
 public class JwtAuthFilter extends OncePerRequestFilter {
+    private final Logger log = LoggerFactory.getLogger(JwtAuthFilter.class);
 
     @Autowired
     private JwtService jwtService;
@@ -40,12 +43,13 @@ public class JwtAuthFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
-        System.out.println(" Auth app header received ,user_id : "+request.getHeader("sub"));
-        System.out.println(" Auth app header received , exp    : "+request.getHeader("exp"));
-        System.out.println(" Auth app header received , iat    : "+request.getHeader("iat"));
-        System.out.println(" Auth app header received , roles  : "+request.getHeader("roles"));
-        System.out.println(" Auth app header received , broadcom_communication_token : "+request.getHeader("broadcom_communication_token"));
-        System.out.println(" Auth this service token  , broadcom_communication_token : "+broadcom_communication_token);
+        log.info(" Auth app header received ,user_id : {} ",request.getHeader("sub"));
+        log.info(" Auth app header received , exp    : {} ",request.getHeader("exp"));
+        log.info(" Auth app header received , iat    : {} ",request.getHeader("iat"));
+        log.info(" Auth app header received , roles  : {} ",request.getHeader("roles"));
+        log.info(" Auth app header received , broadcom_communication_token : {} ",request.getHeader("broadcom_communication_token"));
+        log.info(" Auth this service token  , broadcom_communication_token : {} ",broadcom_communication_token);
+
         String tokenForMicroCommunication= request.getHeader("broadcom_communication_token");
         if (!tokenForMicroCommunication.equals(broadcom_communication_token)) {
             throw new RuntimeException("You are not allow to communicate to this services {} " + tokenForMicroCommunication);
