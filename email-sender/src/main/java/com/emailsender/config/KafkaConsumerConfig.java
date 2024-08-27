@@ -1,4 +1,4 @@
-package com.emailsender;
+package com.emailsender.config;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

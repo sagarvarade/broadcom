@@ -1,4 +1,4 @@
-package com.Broadcomapp.message.beans;
+package com.smssender.message.beans;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
@@ -34,6 +34,7 @@ public class TemplatesGenerated {
     private String groupName;
     private String sendToPhoneNumber;
     private String sendToEmail;
+    private String type;
     @Lob
     @Column(name = "data", columnDefinition = "LONGTEXT")
     private String data;

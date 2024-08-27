@@ -1,6 +1,6 @@
-package com.Broadcomapp.message.repository;
+package com.emailsender.message.repository;
 
-import com.Broadcomapp.message.beans.TemplatesGenerated;
+import com.emailsender.message.beans.TemplatesGenerated;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

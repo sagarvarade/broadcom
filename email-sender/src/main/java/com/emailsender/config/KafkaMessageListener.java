@@ -1,10 +1,9 @@
-package com.emailsender;
+package com.emailsender.config;
 
 
-import com.Broadcomapp.message.beans.TemplatesGenerated;
-import com.Broadcomapp.message.service.TemplateService;
+import com.emailsender.message.beans.TemplatesGenerated;
+import com.emailsender.message.service.TemplateService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.stereotype.Component;
 import org.springframework.kafka.annotation.KafkaListener;
 

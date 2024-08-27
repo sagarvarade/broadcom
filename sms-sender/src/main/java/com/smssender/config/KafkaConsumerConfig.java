@@ -1,4 +1,4 @@
-package com.smssender;
+package com.smssender.config;
 
 
 import jakarta.annotation.PostConstruct;

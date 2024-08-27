@@ -1,7 +1,7 @@
-package com.Broadcomapp.message.service;
+package com.smssender.message.service;
 
-import com.Broadcomapp.message.beans.TemplatesGenerated;
-import com.Broadcomapp.message.repository.TemplateRepo;
+import com.smssender.message.beans.TemplatesGenerated;
+import com.smssender.message.repository.TemplateRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

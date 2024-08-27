@@ -1,8 +1,8 @@
-package com.smssender;
+package com.smssender.config;
 
 
-import com.Broadcomapp.message.beans.TemplatesGenerated;
-import com.Broadcomapp.message.service.TemplateService;
+import com.smssender.message.beans.TemplatesGenerated;
+import com.smssender.message.service.TemplateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;

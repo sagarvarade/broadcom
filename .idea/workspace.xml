@@ -7,8 +7,16 @@
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
       <changelist_data name="sagar_varade" email="varade.sagar12@gmail.com" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/resources/application-prod.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/Broadcomapp/message/beans/TemplatesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/message/beans/TemplatesGenerated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/Broadcomapp/message/repository/TemplateRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/message/repository/TemplateRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/Broadcomapp/message/service/TemplateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/message/service/TemplateService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/KafkaConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/config/KafkaConsumerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/KafkaMessageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/config/KafkaMessageListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sms-sender/src/main/java/com/Broadcomapp/message/beans/TemplatesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/message/beans/TemplatesGenerated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sms-sender/src/main/java/com/Broadcomapp/message/repository/TemplateRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/message/repository/TemplateRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sms-sender/src/main/java/com/Broadcomapp/message/service/TemplateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/message/service/TemplateService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/KafkaConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/config/KafkaConsumerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/KafkaMessageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/config/KafkaMessageListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +275,7 @@
       <module name="emailsender" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.emailsender.*" />
+          <option name="PATTERN" value="com.emailsender.config.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -280,7 +288,7 @@
       <module name="smssender" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.smssender.*" />
+          <option name="PATTERN" value="com.smssender.config.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
