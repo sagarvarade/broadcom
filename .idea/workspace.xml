@@ -6,10 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
       <changelist_data name="sagar_varade" email="varade.sagar12@gmail.com" />
+      <change afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/Broadcomapp/message/repository/TemplateRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/Broadcomapp/message/service/TemplateService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/Broadcomapp/message/repository/TemplateRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/Broadcomapp/message/service/TemplateService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/KafkaProducer/KafkaTemplatesProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/KafkaProducer/KafkaTemplateProducer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/Util/TemplateResolverService.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/Util/TemplateResolverService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/beans/TemplatesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/beans/TemplatesGenerated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/Broadcomapp/message/beans/TemplatesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/Broadcomapp/message/beans/TemplatesGenerated.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/KafkaMessageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/KafkaMessageListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sms-sender/src/main/java/com/Broadcomapp/message/beans/TemplatesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/Broadcomapp/message/beans/TemplatesGenerated.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/KafkaMessageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/KafkaMessageListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,8 +184,8 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "jdk.selected.JAVA_MODULE": "17 (2)",
-    "last_directory_selection": "E:/SpringIJ/BroadCom/smssender/src/main/java/com",
-    "last_opened_file_path": "E:/SpringIJ/BroadCom/authentication",
+    "last_directory_selection": "E:/SpringIJ/BroadCom/sms-sender/src/main/java/com/Broadcomapp/message",
+    "last_opened_file_path": "E:/SpringIJ/BroadCom/sms-sender/src/main/java/com/Broadcomapp/message/beans",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -192,11 +198,11 @@
       <recent name="com.Broadcomapp.user.beans" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\SpringIJ\BroadCom\sms-sender\src\main\java\com\Broadcomapp\message\beans" />
       <recent name="E:\SpringIJ\BroadCom\smssender\src\main\java\com\smssender" />
       <recent name="E:\SpringIJ\BroadCom\emailsender" />
       <recent name="E:\SpringIJ\BroadCom\smssender" />
       <recent name="E:\SpringIJ\BroadCom\smssender\src\main\resources" />
-      <recent name="E:\SpringIJ\BroadCom\emailsender\src\main\resources" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -210,11 +216,11 @@
       <recent name="com.util" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.Broadcomapp.message.beans.repository" />
       <recent name="beans" />
       <recent name="com.emailsender" />
       <recent name="com.smssender" />
       <recent name="com.Broadcomapp.config" />
-      <recent name="com.Broadcomapp.message.KafkaProducer" />
     </key>
   </component>
   <component name="RunAnythingCache">

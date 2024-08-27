@@ -79,6 +79,7 @@ public class TemplateResolverService {
                         .createdDate(LocalDateTime.now())
                         .sendToPhoneNumber(br.getPhoneNumber())
                         .sendToEmail(br.getEmail())
+                        .type("email")
                         .build();
                 templateGenerateService.save(tempGen);
                 kafkaTemplatesProducer.sendTemplateToTopic("broad-email-topic","email",tempGen);
@@ -118,6 +119,7 @@ public class TemplateResolverService {
                         .createdDate(LocalDateTime.now())
                         .sendToPhoneNumber(br.getPhoneNumber())
                         .sendToEmail(br.getEmail())
+                        .type("sms")
                         .build();
                 templateGenerateService.save(tempGen);
                 kafkaTemplatesProducer.sendTemplateToTopic("broad-sms-topic","sms",tempGen);

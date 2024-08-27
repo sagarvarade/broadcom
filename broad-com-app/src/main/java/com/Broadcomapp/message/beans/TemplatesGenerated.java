@@ -29,15 +29,12 @@ public class TemplatesGenerated {
     private Long templateId;
     private String templateName;
     private String groupName;
-
     private String sendToPhoneNumber;
     private String sendToEmail;
-
+    private String type;
     @Lob
     @Column(name = "data", columnDefinition = "LONGTEXT")
     private String data;
-
     private String createdBy;
     private LocalDateTime createdDate;
-
 }

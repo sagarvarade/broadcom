@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Table(name="template_generated")
 public class TemplatesGenerated {
 
     @Id
@@ -33,7 +34,7 @@ public class TemplatesGenerated {
     private String groupName;
     private String sendToPhoneNumber;
     private String sendToEmail;
-
+    private String type;
     @Lob
     @Column(name = "data", columnDefinition = "LONGTEXT")
     private String data;
