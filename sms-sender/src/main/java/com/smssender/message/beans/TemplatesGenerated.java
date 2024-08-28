@@ -1,6 +1,6 @@
 package com.smssender.message.beans;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,13 +9,11 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@JsonIgnoreProperties(ignoreUnknown = true)
 @Table(name="template_generated")
 public class TemplatesGenerated {
 
@@ -41,3 +39,4 @@ public class TemplatesGenerated {
     private String createdBy;
     private LocalDateTime createdDate;
 }
+
