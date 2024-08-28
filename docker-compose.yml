@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   zookeeper:
     image: wurstmeister/zookeeper:latest
@@ -141,6 +139,8 @@ services:
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=admin
       - BROADCOM_COMMUNICATION_TOKEN=ABCD_1234
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      - SPRING_KAFKA_BOOTSTRAP_GROUP_ID=broadcom-group
     healthcheck:
       test: [ "CMD", "curl", "-f","-H", "broadcom_communication_token:ABCD_1234", "http://localhost:7100/actuator/health" ]
       interval: 30s
@@ -175,6 +175,13 @@ services:
         - apigateway
       networks:
         - broadcom-network
+      environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7100/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/emailsender?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      - SPRING_KAFKA_BOOTSTRAP_GROUP_ID=broadcom-group
       healthcheck:
         test: [ "CMD", "curl", "-f", "http://localhost:7230/actuator/health" ]
         interval: 30s
@@ -192,6 +199,13 @@ services:
       - apigateway
     networks:
       - broadcom-network
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7100/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/smssender?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      - SPRING_KAFKA_BOOTSTRAP_GROUP_ID=broadcom-group
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:7231/actuator/health" ]
       interval: 30s
