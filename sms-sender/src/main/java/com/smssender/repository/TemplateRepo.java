@@ -1,6 +1,6 @@
-package com.smssender.message.repository;
+package com.smssender.repository;
 
-import com.smssender.message.beans.TemplatesGenerated;
+import com.smssender.beans.TemplatesGenerated;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,7 @@
-package com.emailsender.message.beans;
+package com.emailsender.beans;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -37,6 +38,7 @@ public class TemplatesGenerated {
     @Column(name = "data", columnDefinition = "LONGTEXT")
     private String data;
     private String createdBy;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdDate;
 }
 

@@ -1,7 +1,7 @@
-package com.emailsender.message.service;
+package com.smssender.service;
 
-import com.emailsender.message.beans.TemplatesGenerated;
-import com.emailsender.message.repository.TemplateRepo;
+import com.smssender.beans.TemplatesGenerated;
+import com.smssender.repository.TemplateRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

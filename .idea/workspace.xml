@@ -7,8 +7,22 @@
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
       <changelist_data name="sagar_varade" email="varade.sagar12@gmail.com" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/message/beans/TemplatesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/message/beans/TemplatesGenerated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broad-com-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/BroadComApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/BroadComApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/KafkaProducer/KafkaTemplateProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/KafkaProducer/KafkaTemplateProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/beans/TemplatesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/beans/TemplatesGenerated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-sender/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/EmailApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/EmailApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/config/KafkaMessageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/config/KafkaMessageListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/message/beans/TemplatesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/beans/TemplatesGenerated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/message/repository/TemplateRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/repository/TemplateRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/message/service/TemplateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/service/TemplateService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sms-sender/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/SmsApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/SmsApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/config/KafkaMessageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/config/KafkaMessageListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/message/beans/TemplatesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/beans/TemplatesGenerated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/message/repository/TemplateRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/repository/TemplateRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/message/service/TemplateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/service/TemplateService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +167,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2gpZil8nixpodYTeTr5aDsUgKsB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -235,7 +249,7 @@
       <command value="mvn clean install -U" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.SmsApp">
+  <component name="RunManager" selected="Docker.docker-compose.yml.emailsender: Compose Deployment">
     <configuration name="AuthApplicationDev" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.authentication.AuthApplication" />
       <module name="authentication" />
@@ -324,6 +338,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="docker-compose.yml.emailsender: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="emailsender" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.NamingServerApplicationDev" />
       <item itemvalue="Application.ApiGatewayApplicationDev" />
@@ -335,6 +362,7 @@
       <item itemvalue="Application.SmsApp" />
       <item itemvalue="Application.EmailApp" />
       <item itemvalue="Application.BroadcomUIApp" />
+      <item itemvalue="Docker.docker-compose.yml.emailsender: Compose Deployment" />
       <item itemvalue="JUnit.All in Util" />
       <item itemvalue="JUnit.TokenTest" />
       <item itemvalue="JUnit.TokenTest.main" />
@@ -342,6 +370,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yml.emailsender: Compose Deployment" />
         <item itemvalue="Application.SmsApp" />
         <item itemvalue="Application.EmailApp" />
         <item itemvalue="JUnit.TokenTest.main" />
@@ -438,6 +467,10 @@
           <url>file://$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java</url>
           <line>32</line>
           <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/email-sender/target/classes/com/emailsender/config/KafkaMessageListener.class</url>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
