@@ -40,12 +40,12 @@
         <dependency>
             <groupId>io.projectreactor.netty</groupId>
             <artifactId>reactor-netty</artifactId>
-            <version>1.0.23</version> <!-- Replace with the latest version -->
+            <version>1.0.23</version>
         </dependency>
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-resolver-dns-native-macos</artifactId>
-            <version>4.1.84.Final</version> <!-- Replace with the appropriate version -->
+            <version>4.1.84.Final</version>
         </dependency>
 
         <dependency>
@@ -79,7 +79,6 @@
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310 -->
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>

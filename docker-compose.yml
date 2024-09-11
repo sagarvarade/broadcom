@@ -69,7 +69,7 @@ services:
       db:
         condition: service_healthy
     ports:
-      - "7100:7100"
+      - "7000:7000"
     networks:
       - broadcom-network
     healthcheck:
@@ -82,7 +82,7 @@ services:
     image: broadcom-apigateway:2.1.1
     restart: always
     ports:
-      - "7000:7000"
+      - "7100:7100"
     depends_on:
       namingserver:
         condition: service_healthy
@@ -93,7 +93,7 @@ services:
     networks:
       - broadcom-network
     environment:
-      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7100/eureka/
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7000/eureka/
       - AUTHENTICATION_SERVICE_URL=http://authentication:7200
       - BROADCOMAPP_SERVICEURL=http://broadcomapp:7210
       - BROADCOM_COMMUNICATION_TOKEN=ABCD_1234
@@ -120,7 +120,7 @@ services:
     networks:
       - broadcom-network
     environment:
-      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7100/eureka/
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7000/eureka/
       - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/authentication?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=admin
@@ -150,7 +150,7 @@ services:
     networks:
       - broadcom-network
     environment:
-      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7100/eureka/
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7000/eureka/
       - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/broadcomapp?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=admin
@@ -201,7 +201,7 @@ services:
       networks:
         - broadcom-network
       environment:
-      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7100/eureka/
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7000/eureka/
       - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/emailsender?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=admin
@@ -226,7 +226,7 @@ services:
     networks:
       - broadcom-network
     environment:
-      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7100/eureka/
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7000/eureka/
       - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/smssender?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=admin

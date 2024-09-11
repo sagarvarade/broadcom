@@ -6,32 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
       <changelist_data name="sagar_varade" email="varade.sagar12@gmail.com" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra Info/smsTemplate.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/Extra Info/smsTemplate.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TextFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TextFile.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util/src/main/java/com/util/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/com/util/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util/src/test/java/com/util/TokenTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/test/java/com/util/TokenTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/apigateway/ApiGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/apigateway/ApiGatewayApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/apigateway/LoggingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/apigateway/AuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/apigateway/URLS/CheckToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/apigateway/clients/CheckToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/config/UserInfoUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/config/UserInfoUserDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/config/UserInfoUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/config/UserInfoUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/dto/AuthRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/dto/AuthRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/filter/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/filter/JwtAuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/service/JwtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/BLogic/controller/BroadCastGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/BLogic/controller/BroadCastGroupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/BLogic/controller/BroadUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/BLogic/controller/BroadUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/BLogic/repository/BroadCastGroupRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/BLogic/repository/BroadCastGroupRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/BLogic/repository/BroadUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/BLogic/repository/BroadUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/filter/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/filter/JwtAuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/controller/TemplateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/controller/TemplateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/service/FileStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/service/FileStorageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/config/KafkaConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/config/KafkaConsumerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/config/KafkaConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/config/KafkaConsumerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-sender/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naming-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/naming-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sms-sender/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,7 +249,7 @@
       <command value="mvn clean install -U" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TokenTest.main">
+  <component name="RunManager" selected="Application.NamingServerApplicationDev">
     <configuration name="AuthApplicationDev" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.authentication.AuthApplication" />
       <module name="authentication" />
