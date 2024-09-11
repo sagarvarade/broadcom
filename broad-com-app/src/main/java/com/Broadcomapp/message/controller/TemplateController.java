@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/template")
+@RequestMapping("/broad-com-app/template")
 public class TemplateController {
 
     @Autowired
@@ -27,7 +27,7 @@ public class TemplateController {
 
     @PostMapping("/upload")
     public ResponseEntity<Map<String, String>> uploadFile(@RequestParam("file") MultipartFile file, @RequestHeader("user_id") String userID) {
-        Map<String,String> response = new HashMap<String, String>();
+        Map<String,String> response = new HashMap<>();
         try {
             fileStorageService.saveFile(file,userID);
             response.put("ok", "File uploaded successfully!");

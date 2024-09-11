@@ -2,19 +2,19 @@ package com.Broadcomapp.BLogic.controller;
 
 import com.Broadcomapp.BLogic.beans.BroadCastGroup;
 import com.Broadcomapp.BLogic.beans.BroadUser;
-import com.Broadcomapp.BLogic.repository.BroadCastGroupRepository;
 import com.Broadcomapp.BLogic.service.BroadCastGroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/broad-user-group")
+@RequestMapping("/broad-com-app/group")
 public class BroadCastGroupController {
 
     @Autowired
@@ -46,9 +46,9 @@ public class BroadCastGroupController {
     public ResponseEntity<String> deleteGroupById(@PathVariable ("id") Long id,@RequestHeader("user_id") String userID){
         try{
             broadCastGroupService.deleteGroupById(id);
-            return new ResponseEntity<String>("Deleted", HttpStatus.OK);
+            return new ResponseEntity<>("Deleted", HttpStatus.OK);
         }catch (Exception e){
-            return new ResponseEntity<String>("Not Deleted", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Not Deleted", HttpStatus.BAD_REQUEST);
         }
     }
     @GetMapping("get-group-details-by-group-name/{name}")

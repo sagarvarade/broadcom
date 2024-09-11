@@ -5,17 +5,13 @@ import com.Broadcomapp.message.repository.FileStorageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import org.thymeleaf.TemplateEngine;
-import org.thymeleaf.context.Context;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -25,8 +21,7 @@ public class FileStorageService {
 
     @Autowired
     private FileStorageRepository fileStorageRepository;
-    @Autowired
-    private TemplateEngine templateEngine;
+
 
     public void saveFile(MultipartFile file,String userID) throws IOException {
         LocalDateTime now=LocalDateTime.now();

@@ -1,33 +1,23 @@
-package com.apigateway.URLS;
-
-import org.springframework.http.*;
-import org.springframework.web.client.RestTemplate;
+package com.apigateway.clients;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.*;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.PostConstruct;
+import org.springframework.web.client.RestTemplate;
 
 @Component
 public class CheckToken {
     private final Logger log = LoggerFactory.getLogger(CheckToken.class);
 
     @Autowired
-    private Environment env;
-
-    @Autowired
     RestTemplate restTemplate;
-    private String broadcom_communication_token;
-    private String AUTH_URL;
-
-    @PostConstruct
-    private void postConstruct() {
-        this.AUTH_URL = env.getProperty("authentication_service_url");
-        this.broadcom_communication_token = env.getProperty("broadcom_communication_token");
-    }
+    @Value("${authentication_service_url}")
+    String broadcom_communication_token;
+    @Value("${broadcom_communication_token}")
+    String AUTH_URL;
 
     public ResponseEntity<String> checkToken(String token) {
         try {
@@ -35,7 +25,7 @@ public class CheckToken {
             headers.set("broadcom_communication_token", broadcom_communication_token);
             headers.set("Authorization", "Bearer " + token);
             HttpEntity<String> entity = new HttpEntity<>(headers);
-            ResponseEntity<String> response = restTemplate.exchange(AUTH_URL + "/auth/test-token",
+            ResponseEntity<String> response = restTemplate.exchange(AUTH_URL + "",
                     HttpMethod.GET,
                     entity, String.class);
             log.info("Response: {} ", response.getBody());
@@ -44,6 +34,6 @@ public class CheckToken {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return new ResponseEntity<String>("Error", HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>("Error", HttpStatus.BAD_REQUEST);
     }
 }

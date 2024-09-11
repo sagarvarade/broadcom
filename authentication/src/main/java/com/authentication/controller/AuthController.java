@@ -1,9 +1,10 @@
 package com.authentication.controller;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import com.authentication.config.UserInfoUserDetailsService;
+import com.authentication.dto.AuthRequest;
+import com.authentication.entity.UserInfo;
+import com.authentication.service.JwtService;
+import com.authentication.service.UserAuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,19 +14,10 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import com.authentication.config.UserInfoUserDetailsService;
-import com.authentication.dto.AuthRequest;
-import com.authentication.entity.UserInfo;
-import com.authentication.service.JwtService;
-import com.authentication.service.UserAuthService;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/auth")
@@ -43,7 +35,7 @@ public class AuthController {
 
     @GetMapping("/welcome")
     public ResponseEntity<String> welcome() {
-        return new ResponseEntity<String>("Welcome this endpoint is not secure",HttpStatus.OK);
+        return new ResponseEntity<>("Welcome this endpoint is not secure",HttpStatus.OK);
     }
 
     @PostMapping("/new")

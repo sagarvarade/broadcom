@@ -14,7 +14,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/broad-user")
+@RequestMapping("/broad-com-app/user")
 public class BroadUserController {
 
 	@Autowired
@@ -95,10 +95,10 @@ public class BroadUserController {
 	public ResponseEntity<String> deleteUser (@PathVariable("id") Long id,@RequestHeader("user_id") String userID){
 		try{
 			userService.deleteUserByIdAndUpdatedBy(id,userID);
-			return new ResponseEntity<String>("Deleted", HttpStatus.OK);
+			return new ResponseEntity<>("Deleted", HttpStatus.OK);
 		}
 		catch (Exception e){
-			return new ResponseEntity<String>("Not Deleted", HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>("Not Deleted", HttpStatus.BAD_REQUEST);
 		}
 	}
 }

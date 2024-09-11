@@ -15,7 +15,7 @@ import com.authentication.repository.UserInfoRepository;
 public class UserInfoUserDetailsService implements UserDetailsService {
 
     @Autowired
-    private UserInfoRepository repository;
+    UserInfoRepository repository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
