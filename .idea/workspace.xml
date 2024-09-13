@@ -6,16 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
       <changelist_data name="sagar_varade" email="varade.sagar12@gmail.com" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/exception/ExceptionHandlers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppRunner/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/appRunner/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppRunner/src/main/java/app/runner/AppRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/appRunner/src/main/java/app/runner/AppRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/appRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/appRunner/src/main/java/app/runner/MakeRunnable/MakeRunnable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Util/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/SmsApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/SmsApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/AuthApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/AuthApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/exception/CustomAccessDeniedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/exception/CustomAccessDeniedHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/resources/application-prod.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +246,7 @@
       <command value="mvn clean install -U" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.EmailAppDev">
+  <component name="RunManager" selected="Application.AuthApplicationDev">
     <configuration name="AuthApplicationDev" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.authentication.AuthApplication" />
       <module name="authentication" />

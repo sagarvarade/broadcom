@@ -43,7 +43,6 @@ public class AuthController {
         return ResponseEntity.ok(service.addUser(userInfo));
     }
 
-
     @GetMapping("/check-role-admin")
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<String> checkRoleAdmin() {
