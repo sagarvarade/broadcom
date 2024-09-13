@@ -19,5 +19,5 @@ public interface BroadUserRepository extends JpaRepository<BroadUser, Long> {
     @Modifying
     @Transactional
     @Query("delete from BroadUser where broadUserId=:id and updatedBy=:user")
-    void deleteByBroadUserIdAndUpdatedBy(@Param("id") Long id, @Param("user") String user);
+    void deleteByBroadUserIdAndUpdatedBy(Long id,String user);
 }
