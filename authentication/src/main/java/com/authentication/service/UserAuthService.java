@@ -21,6 +21,6 @@ public class UserAuthService {
 	public String addUser(UserInfo userInfo) {
 		userInfo.setPassword(passwordEncoder.encode(userInfo.getPassword()));
 		repository.save(userInfo);
-		return "BLogic added to system ";
+		return "User Added to Authentication";
 	}
 }

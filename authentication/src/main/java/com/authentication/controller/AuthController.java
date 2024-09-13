@@ -38,9 +38,9 @@ public class AuthController {
         return new ResponseEntity<>("Welcome this endpoint is not secure",HttpStatus.OK);
     }
 
-    @PostMapping("/new")
-    public String addNewUser(@RequestBody UserInfo userInfo) {
-        return service.addUser(userInfo);
+    @PostMapping("/new-user")
+    public ResponseEntity<String> addNewUser(@RequestBody UserInfo userInfo) {
+        return ResponseEntity.ok(service.addUser(userInfo));
     }
 
 

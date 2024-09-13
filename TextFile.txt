@@ -6,6 +6,12 @@ Things to Implement
 5. Check for SMS integration with twilio integration
 
 
+1. Naming server : 7000
+http://localhost:7000/eureka/apps  : check register services
+http://localhost:7000/             ; UI
+
+
+
 
 
 Databse need to for first Login :
