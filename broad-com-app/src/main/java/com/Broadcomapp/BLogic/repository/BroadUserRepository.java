@@ -1,6 +1,7 @@
 package com.Broadcomapp.BLogic.repository;
 
 import com.Broadcomapp.BLogic.beans.BroadUser;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -16,6 +17,7 @@ public interface BroadUserRepository extends JpaRepository<BroadUser, Long> {
 
     List<BroadUser> findAllByUpdatedBy(String user);
     @Modifying
-    @Query("delete from BroadUser where id = :id and updatedBy=:user")
+    @Transactional
+    @Query("delete from BroadUser where broadUserId=:id and updatedBy=:user")
     void deleteByBroadUserIdAndUpdatedBy(@Param("id") Long id, @Param("user") String user);
 }
