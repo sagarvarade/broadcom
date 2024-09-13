@@ -3,6 +3,8 @@ package com.Broadcomapp.BLogic.controller;
 
 import com.Broadcomapp.BLogic.beans.BroadUser;
 import com.Broadcomapp.BLogic.service.BroadUserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -16,19 +18,22 @@ import java.util.List;
 @RestController
 @RequestMapping("/broad-com-app/user")
 public class BroadUserController {
-
+	private final Logger log = LoggerFactory.getLogger(BroadUserController.class);
 	@Autowired
 	private BroadUserService userService;
 
 	@GetMapping("/hello")
 	public String getHello(){
+		log.info("/broad-com-app/user/hello called ");
 		return  "Hello World";
 	}
 
 	@PostMapping(path = "create",
     consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> createUser(@RequestBody BroadUser user, @RequestHeader("user_id") String userID) {
-		System.out.println(" Create user : "+user);
+	public ResponseEntity<String> createUser(@RequestBody BroadUser user,
+											 @RequestHeader("user_id") String userID) {
+		log.info("/broad-com-app/user/create called ");
+		log.info("BroadUser {} , User Id : {} ",user,userID);
 		try{
 			LocalDateTime now=LocalDateTime.now();
 			user.setCreatedBy(userID);
@@ -46,8 +51,10 @@ public class BroadUserController {
 
 	@PostMapping(path = "create-list",
 			consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> createUser(@RequestBody List<BroadUser> users,@RequestHeader("user_id") String userID) {
-		System.out.println(" Create user List : ");
+	public ResponseEntity<String> createUser(@RequestBody List<BroadUser> users,
+											 @RequestHeader("user_id") String userID) {
+		log.info("/broad-com-app/user/create-list called ");
+		log.info("BroadUser {} , User Id : {} ",users,userID);
 		try{
 			LocalDateTime now=LocalDateTime.now();
 			for(BroadUser br:users){
@@ -66,23 +73,31 @@ public class BroadUserController {
 	}
 
 	@GetMapping(path="get/{id}")
-	public ResponseEntity<BroadUser> getUser(@PathVariable("id") Long id,@RequestHeader("user_id") String userID){
+	public ResponseEntity<BroadUser> getUser(@PathVariable("id") Long id,
+											 @RequestHeader("user_id") String userID){
+		log.info("/broad-com-app/user/get/{id} called ");
+		log.info("BroadUser Id {} , User Id : {} ",id,userID);
 		if(userService.getUserByIdAndUpdatedBy(id,userID).isPresent()){
 			return ResponseEntity.ok(userService.getUserByIdAndUpdatedBy(id,userID).get());
 		}
 		else{
-			return ResponseEntity.badRequest().build();
+			return ResponseEntity.notFound().build();
 		}
 	}
 
 	@GetMapping(path="get-all")
 	public ResponseEntity<List<BroadUser>> getAllUser(@RequestHeader("user_id") String userID){
+		log.info("/broad-com-app/user/get-all called ");
+		log.info("Broad  User Id : {} ",userID);
 		List<BroadUser> brList= userService.getAllUsersForUpdatedBy(userID);
 		return new ResponseEntity<>(brList,HttpStatus.OK);
 	}
 
 	@PutMapping(path="update")
-	public  ResponseEntity<BroadUser> updateUser (@RequestBody BroadUser user,@RequestHeader("user_id") String userID){
+	public  ResponseEntity<BroadUser> updateUser (@RequestBody BroadUser user,
+												  @RequestHeader("user_id") String userID){
+		log.info("/broad-com-app/user/update called ");
+		log.info("Broad  User : {}, UserID : {} ",user,userID);
 		LocalDateTime now=LocalDateTime.now();
 		user.setUpdatedBy(userID);
 		user.setUpdatedDate(now);
@@ -90,12 +105,16 @@ public class BroadUserController {
 	}
 
 	@DeleteMapping(path="delete/{id}")
-	public ResponseEntity<String> deleteUser (@PathVariable("id") Long id,@RequestHeader("user_id") String userID){
+	public ResponseEntity<String> deleteUser (@PathVariable("id") Long id,
+											  @RequestHeader("user_id") String userID){
+		log.info("/broad-com-app/user/delete/{id} called ");
+		log.info("BroadUser Id {} , User Id : {} ",id,userID);
 		try{
 			userService.deleteUserByIdAndUpdatedBy(id,userID);
 			return new ResponseEntity<>("Deleted", HttpStatus.OK);
 		}
 		catch (Exception e){
+			log.info("Not Deleted userId {} ,  user Id {} ",id,userID);
 			return new ResponseEntity<>("Not Deleted", HttpStatus.BAD_REQUEST);
 		}
 	}

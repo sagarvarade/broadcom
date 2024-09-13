@@ -1,10 +1,14 @@
 package com.Broadcomapp.message.controller;
 
+import com.Broadcomapp.filter.JwtAuthFilter;
 import com.Broadcomapp.message.Util.TemplateResolverService;
 import com.Broadcomapp.message.beans.FileStorage;
 import com.Broadcomapp.message.beans.Template;
 import com.Broadcomapp.message.service.FileStorageService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -19,6 +23,7 @@ import java.util.Optional;
 @RequestMapping("/broad-com-app/template")
 public class MessageController {
 
+    private final Logger log = LoggerFactory.getLogger(MessageController.class);
     @Autowired
     private FileStorageService fileStorageService;
 
@@ -26,7 +31,10 @@ public class MessageController {
     private TemplateResolverService templateResolverService;
 
     @PostMapping("/upload")
-    public ResponseEntity<Map<String, String>> uploadFile(@RequestParam("file") MultipartFile file, @RequestHeader("user_id") String userID) {
+    public ResponseEntity<Map<String, String>> uploadFile(@RequestParam("file") MultipartFile file,
+                                                          @RequestHeader("user_id") String userID) {
+        log.info("/broad-com-app/template/upload called ");
+        log.info("User Id  , {} ",userID);
         Map<String,String> response = new HashMap<>();
         try {
             fileStorageService.saveFile(file,userID);
@@ -39,51 +47,76 @@ public class MessageController {
     }
 
     @GetMapping("get-file/{id}")
-    public Optional<FileStorage> getFile(@PathVariable Long id,@RequestHeader("user_id") String userID) {
-        return fileStorageService.getFileByFileNameAndUpdatedBy(id,userID);
+    public ResponseEntity<FileStorage> getFile(@PathVariable Long id,@RequestHeader("user_id") String userID) {
+        log.info("/broad-com-app/template/get-file/{id} called ");
+        log.info("File Id : {} ,User Id  , {} ",id,userID);
+        Optional<FileStorage> optionalFileStorage=fileStorageService.getFileByFileNameAndUpdatedBy(id,userID);
+        return optionalFileStorage.map(fileStorage -> new ResponseEntity<>(fileStorage, HttpStatus.OK)).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @GetMapping("/get-active-files")
-    public List<FileStorage> getActiveFiles(@RequestHeader("user_id") String userID) {
-        return fileStorageService.getActiveFiles();
+    public ResponseEntity<List<FileStorage>> getActiveFiles(@RequestHeader("user_id") String userID) {
+        log.info("/broad-com-app/template/get-active-files called ");
+        log.info("User Id  , {} ",userID);
+        return new ResponseEntity<List<FileStorage>>(fileStorageService.getActiveFiles(),HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
-    public String deleteFile(@PathVariable Long id,@RequestHeader("user_id") String userID) {
+    public ResponseEntity<String> deleteFile(@PathVariable Long id,@RequestHeader("user_id") String userID) {
+        log.info("/broad-com-app/template//delete/{id} called ");
+        log.info("User Id  , {} ",userID);
         try {
             fileStorageService.deleteFile(id);
-            return "File deleted successfully!";
+            return new ResponseEntity<>("File deleted successfully!",HttpStatus.OK);
         } catch (Exception e) {
-            e.printStackTrace();
-            return "Failed to delete file!";
+            log.info("Exception while deleting : {} "+e.getMessage());
+            return new ResponseEntity<>("Failed to delete file!",HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
     @PutMapping("/update/{id}")
-    public String updateFile(@PathVariable Long id, @RequestParam("file") MultipartFile file, @RequestParam("isActive") boolean isActive,@RequestHeader("user_id") String userID) {
+    public ResponseEntity<String> updateFile(@PathVariable Long id,
+                             @RequestParam("file") MultipartFile file,
+                             @RequestParam("isActive") boolean isActive,
+                             @RequestHeader("user_id") String userID) {
+        log.info("/broad-com-app/template/update/{id} called ");
+        log.info("User Id  , {} ",userID);
         try {
             fileStorageService.updateFile(id, file, isActive,userID);
-            return "File updated successfully!";
+            return new ResponseEntity<>("File updated successfully!",HttpStatus.OK);
         } catch (IOException e) {
             e.printStackTrace();
-            return "Failed to update file!";
+            return new ResponseEntity<>("Failed to update file!",HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
     @PostMapping("/render-test")
-    public String renderTemplate(@RequestBody Template template) {
-        System.out.println(template.getTemplateName()+"  "+template.getVariable());
-        return templateResolverService.processTemplate(template.getTemplateName(), template.getVariable());
+    public ResponseEntity<String> renderTemplate(@RequestBody Template template) {
+        log.info("/broad-com-app/template/render-test called ");
+        log.info("Template Name  {}, Template Variable {} ",template.getTemplateName(),template.getVariable());
+        return new ResponseEntity<>(templateResolverService.processTemplate(template.getTemplateName(), template.getVariable()),HttpStatus.OK);
     }
 
     @PostMapping("/render-for-group-email/{group-name}")
-    public String renderTemplateForGroupWithEmail(@PathVariable("group-name") String groupName,@RequestBody Template template,@RequestHeader("user_id") String userID) {
-        return templateResolverService.processTemplateWithGroupEmail(groupName,template,userID);
+    public ResponseEntity<String> renderTemplateForGroupWithEmail(@PathVariable("group-name") String groupName,
+                                                  @RequestBody Template template,
+                                                  @RequestHeader("user_id") String userID) {
+        log.info("/broad-com-app/template/render-for-group-email/{group-name} called ");
+        log.info("Template Name  {}, Template Variable {} ",template.getTemplateName(),template.getVariable());
+        log.info("Template groupName  {}, Template Name {}, Template Variable {} ",groupName,template.getTemplateName(),template.getVariable());
+        log.info("User Id  , {} ",userID);
+        return new ResponseEntity<>(templateResolverService.processTemplateWithGroupEmail(groupName,template,userID),HttpStatus.OK);
     }
 
     @PostMapping("/render-for-group-sms/{group-name}")
-    public String renderTemplateForGroupWithSMS(@PathVariable("group-name") String groupName,@RequestBody Template template,@RequestHeader("user_id") String userID) {
-        return templateResolverService.processTemplateWithGroupSMS(groupName,template,userID);
+    public ResponseEntity<String> renderTemplateForGroupWithSMS(@PathVariable("group-name") String groupName,
+                                                @RequestBody Template template,
+                                                @RequestHeader("user_id") String userID) {
+        log.info("/broad-com-app/template//render-for-group-sms/{group-name} called ");
+        log.info("Template Name  {}, Template Variable {} ",template.getTemplateName(),template.getVariable());
+        log.info("Template groupName  {}, Template Name {}, Template Variable {} ",groupName,template.getTemplateName(),template.getVariable());
+        log.info("User Id  , {} ",userID);
+        return new ResponseEntity<>(templateResolverService.processTemplateWithGroupSMS(groupName,template,userID),HttpStatus.OK);
     }
 
 }
