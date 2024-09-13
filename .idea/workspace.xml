@@ -7,12 +7,12 @@
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
       <changelist_data name="sagar_varade" email="varade.sagar12@gmail.com" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/resources/application-prod.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/controller/BroadUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/BLogic/controller/BroadUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/filter/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomapp/src/main/java/com/Broadcomapp/filter/JwtAuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emailsender/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emailsender/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smssender/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/smssender/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application-prod.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/controller/MessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/controller/EmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/controller/EmailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/controller/SmsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/controller/SmsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sms-sender/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,6 +144,13 @@
       <filtered-out-file-type name="SQLite" />
       <filtered-out-file-type name="TensorFlow Lite Model" />
       <filtered-out-file-type name="UNKNOWN" />
+      <filtered-out-file-type name="DBN-PSQL" />
+      <filtered-out-file-type name="DBN-SQL" />
+      <filtered-out-file-type name="JavaFX" />
+      <filtered-out-file-type name="JavaScript" />
+      <filtered-out-file-type name="spring-boot-configuration-properties" />
+      <filtered-out-file-type name="spring-boot-configuration-yaml" />
+      <filtered-out-file-type name="spring-boot-properties-yaml" />
     </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -167,38 +174,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "jdk.selected.JAVA_MODULE": "17 (2)",
-    "last_directory_selection": "E:/SpringIJ/BroadCom/smssender/src/main/java/com",
-    "last_opened_file_path": "E:/SpringIJ/Java_Learning/database_learning",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17 (2)&quot;,
+    &quot;last_directory_selection&quot;: &quot;E:/SpringIJ/BroadCom/SpringTestApp/src/main/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/SpringIJ/BroadCom/SpringTestApp/src/main/resources&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.Broadcomapp.user.beans" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\SpringIJ\BroadCom\SpringTestApp\src\main\resources" />
+      <recent name="E:\SpringIJ\BroadCom\sms-sender\src\main\java\com\Broadcomapp\message\beans" />
       <recent name="E:\SpringIJ\BroadCom\smssender\src\main\java\com\smssender" />
       <recent name="E:\SpringIJ\BroadCom\emailsender" />
       <recent name="E:\SpringIJ\BroadCom\smssender" />
-      <recent name="E:\SpringIJ\BroadCom\smssender\src\main\resources" />
-      <recent name="E:\SpringIJ\BroadCom\emailsender\src\main\resources" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -212,11 +219,11 @@
       <recent name="com.util" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="com.Broadcomapp.message.beans.repository" />
       <recent name="beans" />
       <recent name="com.emailsender" />
       <recent name="com.smssender" />
-      <recent name="com.Broadcomapp.config" />
-      <recent name="com.Broadcomapp.message.KafkaProducer" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -236,9 +243,10 @@
       <command value="mvn com.github.eirslett:frontend-maven-plugin:1.11.3:install-node-and-npm" />
       <command value="mvn clean install -f" />
       <command value="mvn clean:install -f" />
+      <command value="mvn clean install -U" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.SmsApp">
+  <component name="RunManager" selected="Application.SmsAppDev">
     <configuration name="AuthApplicationDev" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.authentication.AuthApplication" />
       <module name="authentication" />
@@ -252,25 +260,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BroadcomUIApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.broadcom.UI.BroadcomUIApp" />
-      <module name="broadcomUI" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.broadcom.UI.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EmailApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="EmailAppDev" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.emailsender.EmailApp" />
       <module name="emailsender" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.emailsender.*" />
+          <option name="PATTERN" value="com.emailsender.config.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -278,12 +273,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SmsApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="SmsAppDev" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.smssender.SmsApp" />
       <module name="smssender" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.smssender.*" />
+          <option name="PATTERN" value="com.smssender.config.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -327,6 +322,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="docker-compose.yml.emailsender: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="emailsender" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.NamingServerApplicationDev" />
       <item itemvalue="Application.ApiGatewayApplicationDev" />
@@ -335,9 +343,9 @@
       <item itemvalue="Application.ApiGatewayApplicationProd" />
       <item itemvalue="Application.AuthApplication" />
       <item itemvalue="Application.NamingServerApplicationProd" />
-      <item itemvalue="Application.SmsApp" />
-      <item itemvalue="Application.EmailApp" />
-      <item itemvalue="Application.BroadcomUIApp" />
+      <item itemvalue="Application.EmailAppDev" />
+      <item itemvalue="Application.SmsAppDev" />
+      <item itemvalue="Docker.docker-compose.yml.emailsender: Compose Deployment" />
       <item itemvalue="JUnit.All in Util" />
       <item itemvalue="JUnit.TokenTest" />
       <item itemvalue="JUnit.TokenTest.main" />
@@ -345,10 +353,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SmsApp" />
-        <item itemvalue="Application.EmailApp" />
+        <item itemvalue="Application.SmsAppDev" />
         <item itemvalue="JUnit.TokenTest.main" />
-        <item itemvalue="Application.BroadcomUIApp" />
+        <item itemvalue="Docker.docker-compose.yml.emailsender: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -423,27 +430,15 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="15" />
+          <url>file://$PROJECT_DIR$/email-sender/target/classes/com/emailsender/config/KafkaMessageListener.class</url>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/BroadCom$NamingServerApplication.ic" NAME="NamingServerApplication Coverage Results" MODIFIED="1716397618751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

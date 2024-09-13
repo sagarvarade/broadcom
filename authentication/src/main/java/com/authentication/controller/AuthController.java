@@ -1,10 +1,12 @@
 package com.authentication.controller;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import com.authentication.config.UserInfoUserDetailsService;
+import com.authentication.dto.AuthRequest;
+import com.authentication.entity.UserInfo;
+import com.authentication.service.JwtService;
+import com.authentication.service.UserAuthService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -12,19 +14,10 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import com.authentication.config.UserInfoUserDetailsService;
-import com.authentication.dto.AuthRequest;
-import com.authentication.entity.UserInfo;
-import com.authentication.service.JwtService;
-import com.authentication.service.UserAuthService;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/auth")
@@ -41,15 +34,14 @@ public class AuthController {
     private AuthenticationManager authenticationManager;
 
     @GetMapping("/welcome")
-    public String welcome() {
-        return "Welcome this endpoint is not secure";
+    public ResponseEntity<String> welcome() {
+        return new ResponseEntity<>("Welcome this endpoint is not secure",HttpStatus.OK);
     }
 
-    @PostMapping("/new")
-    public String addNewUser(@RequestBody UserInfo userInfo) {
-        return service.addUser(userInfo);
+    @PostMapping("/new-user")
+    public ResponseEntity<String> addNewUser(@RequestBody UserInfo userInfo) {
+        return ResponseEntity.ok(service.addUser(userInfo));
     }
-
 
     @GetMapping("/check-role-admin")
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
@@ -65,12 +57,11 @@ public class AuthController {
 
     @PostMapping("/authenticate")
     @CrossOrigin(origins = "*")
-    public Map<String, Object> authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
+    public ResponseEntity<Map<String, Object>> authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
  
         String token=jwtService.generateToken(authRequest.getUsername());
-        System.out.println(">>"+token);
-        
+        System.out.println("Checking Toke : "+token);
         if (authentication.isAuthenticated()) {
         	Map<String, Object> response = new HashMap<>();
         	UserInfo user = userInfoService.loadUserDetails(authRequest.getUsername()).orElse(new UserInfo());
@@ -79,20 +70,20 @@ public class AuthController {
             response.put("email", user.getEmail());
             response.put("roles", user.getRoles());
             response.put("token", token);
-            return response;
+            return  new ResponseEntity<>(response,HttpStatus.OK);
         } else {
         	Map<String, Object> response = new HashMap<>();
             response.put("error","Invalid credentials");
-            return response;
+            return  new ResponseEntity<>(response,HttpStatus.BAD_REQUEST);
         }
     }
     
     @GetMapping("/test-token")
-    public String index() {
+    public ResponseEntity<String> index() {
     	Authentication auth=SecurityContextHolder.getContext().getAuthentication();
     	if(!(auth instanceof AnonymousAuthenticationToken)) {
-    		return "TOKEN_IS_VALID";
+    		return new ResponseEntity<>("TOKEN_IS_VALID",HttpStatus.OK);
     	}
-        return "TOKEN_NOT_VALID";
+        return new ResponseEntity<>("TOKEN_NOT_VALID",HttpStatus.BAD_REQUEST);
     }
 }

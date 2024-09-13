@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.2</version>
+        <version>3.3.3</version>
         <relativePath />
     </parent>
     <groupId>org.BroadCom</groupId>
@@ -14,28 +14,22 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>namingserver</module>
-        <module>apigateway</module>
+        <module>naming-server</module>
+        <module>api-gateway</module>
         <module>authentication</module>
         <module>Util</module>
-        <module>broadcomapp</module>
+        <module>broad-com-app</module>
         <module>AppRunner</module>
         <module>broadcomUI</module>
-        <module>emailsender</module>
-        <module>smssender</module>
+        <module>email-sender</module>
+        <module>sms-sender</module>
     </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-cloud.version>2022.0.1</spring-cloud.version>
-        <!--
-        <namingserver.version>1.1.1</namingserver.version>
-         API Gateway is hosted by itself at version 2.1.1
-        <authentication.version>3.1.1</authentication.version>
-        <broadcomapp.version>4.1.1</broadcomapp.version>
-        -->
+        <spring-cloud.version>2023.0.3</spring-cloud.version>
     </properties>
 
 </project>
