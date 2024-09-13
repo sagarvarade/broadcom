@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/email-sender/email-controller")
+@RequestMapping("/email-sender")
 public class EmailController {
 
     @GetMapping("/hello")
-    public ResponseEntity<String> getHelloWorld(){
-         return new ResponseEntity<>("Hello Email Sender", HttpStatus.OK);
+    public ResponseEntity<String> getHelloWorld() {
+        return new ResponseEntity<>("Hello Email Sender", HttpStatus.OK);
     }
 }

@@ -1,6 +1,5 @@
 package com.Broadcomapp.message.controller;
 
-import com.Broadcomapp.filter.JwtAuthFilter;
 import com.Broadcomapp.message.Util.TemplateResolverService;
 import com.Broadcomapp.message.beans.FileStorage;
 import com.Broadcomapp.message.beans.Template;
@@ -60,7 +59,7 @@ public class MessageController {
     public ResponseEntity<List<FileStorage>> getActiveFiles(@RequestHeader("user_id") String userID) {
         log.info("/broad-com-app/template/get-active-files called ");
         log.info("User Id  , {} ",userID);
-        return new ResponseEntity<List<FileStorage>>(fileStorageService.getActiveFiles(),HttpStatus.OK);
+        return new ResponseEntity<>(fileStorageService.getActiveFiles(),HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
