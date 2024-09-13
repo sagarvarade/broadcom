@@ -25,7 +25,6 @@ public class BroadUserController {
 		return  "Hello World";
 	}
 
-
 	@PostMapping(path = "create",
     consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> createUser(@RequestBody BroadUser user, @RequestHeader("user_id") String userID) {
@@ -37,13 +36,12 @@ public class BroadUserController {
 			user.setCreatedDate(now);
 			user.setUpdatedDate(now);
 			userService.createUser(user);
-			return ResponseEntity.ok("User added successfully");
+			return new ResponseEntity<>("User added Successfully.",HttpStatus.OK);
 		}
 		catch (Exception e){
 			e.printStackTrace();
 		}
-
-		return ResponseEntity.ok("Internal Server error.");
+		return new ResponseEntity<>("Internal Server Error.",HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
 	@PostMapping(path = "create-list",
@@ -51,21 +49,20 @@ public class BroadUserController {
 	public ResponseEntity<String> createUser(@RequestBody List<BroadUser> users,@RequestHeader("user_id") String userID) {
 		System.out.println(" Create user List : ");
 		try{
-		LocalDateTime now=LocalDateTime.now();
-		for(BroadUser br:users){
-			br.setCreatedBy(userID);
-			br.setUpdatedBy(userID);
-			br.setCreatedDate(now);
-			br.setUpdatedDate(now);
-		}
-		userService.saveAll(users);
-			return ResponseEntity.ok("Users added successfully");
+			LocalDateTime now=LocalDateTime.now();
+			for(BroadUser br:users){
+				br.setCreatedBy(userID);
+				br.setUpdatedBy(userID);
+				br.setCreatedDate(now);
+				br.setUpdatedDate(now);
+			}
+			userService.saveAll(users);
+			return new ResponseEntity<>("User added Successfully.",HttpStatus.OK);
 		}
 		catch (Exception e){
 			e.printStackTrace();
 		}
-
-		return ResponseEntity.ok("Internal Server error.");
+		return new ResponseEntity<>("Internal Server Error.",HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
 	@GetMapping(path="get/{id}")
@@ -79,16 +76,17 @@ public class BroadUserController {
 	}
 
 	@GetMapping(path="get-all")
-	public List<BroadUser> getAllUser(@RequestHeader("user_id") String userID){
-		return userService.getAllUsersForUpdatedBy(userID);
+	public ResponseEntity<List<BroadUser>> getAllUser(@RequestHeader("user_id") String userID){
+		List<BroadUser> brList= userService.getAllUsersForUpdatedBy(userID);
+		return new ResponseEntity<>(brList,HttpStatus.OK);
 	}
 
 	@PutMapping(path="update")
-	public  BroadUser updateUser (@RequestBody BroadUser user,@RequestHeader("user_id") String userID){
+	public  ResponseEntity<BroadUser> updateUser (@RequestBody BroadUser user,@RequestHeader("user_id") String userID){
 		LocalDateTime now=LocalDateTime.now();
 		user.setUpdatedBy(userID);
 		user.setUpdatedDate(now);
-		return userService.updateUser(user.getBroadUserId(),user);
+		return new ResponseEntity<>(userService.updateUser(user.getBroadUserId(),user),HttpStatus.OK);
 	}
 
 	@DeleteMapping(path="delete/{id}")

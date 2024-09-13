@@ -89,7 +89,7 @@ public class AuthenticationFilter implements GlobalFilter, Ordered {
 			logger.info("exp   : {}", tokenParts.get("exp"));
 			logger.info("iat   : {}", tokenParts.get("iat"));
 			logger.info("roles : {}", tokenParts.get("roles"));
-			
+
 			return chain.filter(exchange);
 		}
 		catch(Exception e){

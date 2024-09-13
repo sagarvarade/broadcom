@@ -12,12 +12,9 @@ import java.util.Optional;
 
 @Repository
 public interface BroadUserRepository extends JpaRepository<BroadUser, Long> {
-
-
     Optional<BroadUser> findByBroadUserIdAndUpdatedBy(Long id, String user);
 
     List<BroadUser> findAllByUpdatedBy(String user);
-
     @Modifying
     @Query("delete from BroadUser where id = :id and updatedBy=:user")
     void deleteByBroadUserIdAndUpdatedBy(@Param("id") Long id, @Param("user") String user);

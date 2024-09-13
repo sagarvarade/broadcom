@@ -17,7 +17,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/broad-com-app/template")
-public class TemplateController {
+public class MessageController {
 
     @Autowired
     private FileStorageService fileStorageService;

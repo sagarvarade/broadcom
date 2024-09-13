@@ -21,25 +21,26 @@ public class BroadCastGroupController {
     private BroadCastGroupService broadCastGroupService;
 
     @PostMapping("create")
-    public BroadCastGroup createGroup(@RequestBody BroadCastGroup broadCastGroup,@RequestHeader("user_id") String userID){
+    public ResponseEntity<BroadCastGroup> createGroup(@RequestBody BroadCastGroup broadCastGroup,
+                                                      @RequestHeader("user_id") String userID){
         LocalDateTime now=LocalDateTime.now();
         broadCastGroup.setCreatedBy(userID);
         broadCastGroup.setUpdatedBy(userID);
         broadCastGroup.setCreatedDate(now);
         broadCastGroup.setUpdatedDate(now);
-        return  broadCastGroupService.saveGroup(broadCastGroup);
+        return  new ResponseEntity<>(broadCastGroupService.saveGroup(broadCastGroup),HttpStatus.OK);
     }
 
     @GetMapping("get-group-by-id/{id}")
-    public BroadCastGroup getGroupById(@PathVariable ("id") Long id,@RequestHeader("user_id") String userID){
+    public ResponseEntity<BroadCastGroup> getGroupById(@PathVariable ("id") Long id,@RequestHeader("user_id") String userID){
         Optional<BroadCastGroup> optionalBroadCastGroup = broadCastGroupService.findGroupByIdAndUpdatedByUser(id,userID);
-        return optionalBroadCastGroup.orElseGet(BroadCastGroup::new);
+        return optionalBroadCastGroup.map(broadCastGroup -> new ResponseEntity<>(broadCastGroup, HttpStatus.OK)).orElseGet(() -> ResponseEntity.noContent().build());
     }
 
     @GetMapping("get-by-group-name/{name}")
-    public BroadCastGroup getGroupById(@PathVariable ("name") String name,@RequestHeader("user_id") String userID){
+    public ResponseEntity<BroadCastGroup> getGroupById(@PathVariable ("name") String name,@RequestHeader("user_id") String userID){
         Optional<BroadCastGroup> optionalBroadCastGroup = broadCastGroupService.findGroupByNameAndUpdatedByUser(name,userID);
-        return optionalBroadCastGroup.orElseGet(BroadCastGroup::new);
+        return optionalBroadCastGroup.map(broadCastGroup -> new ResponseEntity<>(broadCastGroup, HttpStatus.OK)).orElseGet(() -> ResponseEntity.noContent().build());
     }
 
     @DeleteMapping("delete-by-id/{id}")
@@ -47,17 +48,17 @@ public class BroadCastGroupController {
         try{
             broadCastGroupService.deleteGroupById(id);
             return new ResponseEntity<>("Deleted", HttpStatus.OK);
-        }catch (Exception e){
+        } catch (Exception e){
             return new ResponseEntity<>("Not Deleted", HttpStatus.BAD_REQUEST);
         }
     }
     @GetMapping("get-group-details-by-group-name/{name}")
-    public HashMap<String, List<BroadUser>> getGroupWithUsers(@PathVariable ("name") String name,@RequestHeader("user_id") String userID){
+    public ResponseEntity<HashMap<String, List<BroadUser>>> getGroupWithUsers(@PathVariable ("name") String name,@RequestHeader("user_id") String userID){
         HashMap<String, List<BroadUser>> bg = broadCastGroupService.getGroupDetails(name,userID);
         if(bg.isEmpty()){
-            return  null;
+            return ResponseEntity.noContent().build();
         }else{
-            return  bg;
+            return  new ResponseEntity<>(bg, HttpStatus.OK);
         }
     }
 }
