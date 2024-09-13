@@ -6,31 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
       <changelist_data name="sagar_varade" email="varade.sagar12@gmail.com" />
-      <change afterPath="$PROJECT_DIR$/SpringTestApp/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringTestApp/src/main/java/com/springApp/SpringTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringTestApp/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/controller/EmailController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/controller/SmsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/apigateway/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/apigateway/AuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application-prod.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broad-com-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/BLogic/controller/BroadCastGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/BLogic/controller/BroadCastGroupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/BLogic/controller/BroadUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/BLogic/controller/BroadUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/BLogic/repository/BroadUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/BLogic/repository/BroadUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/controller/TemplateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/controller/MessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email-sender/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/EmailApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/EmailApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email-sender/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email-sender/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/resources/application-prod.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naming-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/naming-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sms-sender/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppRunner/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/appRunner/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppRunner/src/main/java/app/runner/AppRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/appRunner/src/main/java/app/runner/AppRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/appRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/appRunner/src/main/java/app/runner/MakeRunnable/MakeRunnable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Util/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/SmsApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/SmsApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sms-sender/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sms-sender/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/resources/application-prod.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,28 +177,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "jdk.selected.JAVA_MODULE": "17 (2)",
-    "last_directory_selection": "E:/SpringIJ/BroadCom/SpringTestApp/src/main/java",
-    "last_opened_file_path": "E:/SpringIJ/BroadCom/SpringTestApp/src/main/resources",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17 (2)&quot;,
+    &quot;last_directory_selection&quot;: &quot;E:/SpringIJ/BroadCom/SpringTestApp/src/main/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/SpringIJ/BroadCom/SpringTestApp/src/main/resources&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.Broadcomapp.user.beans" />
@@ -478,22 +463,22 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java</url>
+          <url>file://$PROJECT_DIR$/appRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java</url>
           <line>13</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java</url>
+          <url>file://$PROJECT_DIR$/appRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java</url>
           <line>23</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java</url>
+          <url>file://$PROJECT_DIR$/appRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java</url>
           <line>25</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/AppRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java</url>
+          <url>file://$PROJECT_DIR$/appRunner/src/main/java/app/runner/MakeRunnable/MakeDockerFiles.java</url>
           <line>32</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>

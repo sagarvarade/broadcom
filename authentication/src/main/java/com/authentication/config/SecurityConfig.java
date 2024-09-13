@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -37,20 +38,20 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http.csrf().disable()
-                .authorizeHttpRequests()
-                .requestMatchers("/auth/new","/auth/authenticate","/actuator/**").permitAll()
-                .and()
-                .authorizeHttpRequests().requestMatchers("/auth/**")
-                .authenticated().and()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
-                .exceptionHandling()
-                .accessDeniedHandler(accessDeniedHandler)
-                .and()
-                .authenticationProvider(authenticationProvider())
-                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
+        return http
+                .csrf(AbstractHttpConfigurer::disable)  // Disable CSRF
+                .authorizeHttpRequests(auth -> auth     // Configure request authorization
+                        .requestMatchers("/auth/new", "/auth/authenticate", "/actuator/**","/auth/**").permitAll()  // Publicly accessible endpoints
+                        .anyRequest().authenticated()  // All other endpoints require authentication
+                )
+                .sessionManagement(session -> session   // Configure session management
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                )
+                .exceptionHandling(exceptions -> exceptions   // Handle access denied exceptions
+                        .accessDeniedHandler(accessDeniedHandler)
+                )
+                .authenticationProvider(authenticationProvider())   // Custom authentication provider
+                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)   // Custom authentication filter
                 .build();
     }
 

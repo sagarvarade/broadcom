@@ -9,7 +9,7 @@
         <relativePath />
     </parent>
     <version>2.1.1</version>
-    <artifactId>apigateway</artifactId>
+    <artifactId>api-gateway</artifactId>
     <groupId>com.ApiGateway</groupId>
     <name>api-gateway</name>
     <properties>
