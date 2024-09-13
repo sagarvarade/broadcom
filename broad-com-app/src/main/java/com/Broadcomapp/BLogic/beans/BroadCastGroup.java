@@ -12,6 +12,9 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @ToString
+@Table(name="broad_user_group", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"groupName","updatedBy"})
+})
 public class BroadCastGroup {
     @Id
     @SequenceGenerator(

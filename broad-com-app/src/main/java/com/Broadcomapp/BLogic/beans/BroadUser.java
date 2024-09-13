@@ -14,6 +14,9 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 @ToString(exclude = "address")
+@Table(name="broad_user", uniqueConstraints = {
+		@UniqueConstraint(columnNames = {"email", "phoneNumber","updatedBy"})
+})
 public class BroadUser {
 	@Id
 	@SequenceGenerator(

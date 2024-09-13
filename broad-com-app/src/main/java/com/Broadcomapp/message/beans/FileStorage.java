@@ -10,7 +10,9 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name="file_storage")
+@Table(name="file_storage", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"fileName", "updatedBy"})
+})
 public class FileStorage {
     @Id
     @SequenceGenerator(
