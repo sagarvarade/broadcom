@@ -23,7 +23,6 @@
         <module>broadcomUI</module>
         <module>email-sender</module>
         <module>sms-sender</module>
-        <module>SpringTestApp</module>
     </modules>
 
     <properties>
