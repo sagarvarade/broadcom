@@ -14,9 +14,9 @@ public class CheckToken {
 
     @Autowired
     RestTemplate restTemplate;
-    @Value("${authentication_service_url}")
-    String broadcom_communication_token;
     @Value("${broadcom_communication_token}")
+    String broadcom_communication_token;
+    @Value("${authentication_service_url}")
     String AUTH_URL;
 
     public ResponseEntity<String> checkToken(String token) {
@@ -25,7 +25,8 @@ public class CheckToken {
             headers.set("broadcom_communication_token", broadcom_communication_token);
             headers.set("Authorization", "Bearer " + token);
             HttpEntity<String> entity = new HttpEntity<>(headers);
-            ResponseEntity<String> response = restTemplate.exchange(AUTH_URL + "",
+            log.info("Check Token , Calling : AUTH_URL  {} ",AUTH_URL);
+            ResponseEntity<String> response = restTemplate.exchange(AUTH_URL,
                     HttpMethod.GET,
                     entity, String.class);
             log.info("Response: {} ", response.getBody());
