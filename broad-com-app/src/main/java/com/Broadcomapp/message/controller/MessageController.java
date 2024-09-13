@@ -40,6 +40,8 @@ public class MessageController {
             fileStorageService.saveFile(file,userID);
             response.put("ok", "File uploaded successfully!");
         } catch (IOException e) {
+            e.printStackTrace();
+            log.info("uploadFile error : "+e.getMessage());
             response.put("error", "an error expected on processing file");
             return ResponseEntity.badRequest().body(response);
         }
@@ -69,6 +71,8 @@ public class MessageController {
             fileStorageService.deleteFile(id);
             return new ResponseEntity<>("File deleted successfully!",HttpStatus.OK);
         } catch (Exception e) {
+            e.printStackTrace();
+            log.info("deleteFile error : "+e.getMessage());
             log.info("Exception while deleting : {} "+e.getMessage());
             return new ResponseEntity<>("Failed to delete file!",HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -86,6 +90,7 @@ public class MessageController {
             return new ResponseEntity<>("File updated successfully!",HttpStatus.OK);
         } catch (IOException e) {
             e.printStackTrace();
+            log.info("updateFile error : "+e.getMessage());
             return new ResponseEntity<>("Failed to update file!",HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

@@ -9,10 +9,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/BLogic/controller/BroadCastGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/BLogic/controller/BroadCastGroupController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/BLogic/controller/BroadUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/BLogic/controller/BroadUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/filter/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/filter/JwtAuthFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/controller/MessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/resources/application-prod.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -61,6 +61,8 @@ public class BroadCastGroupController {
             broadCastGroupService.deleteGroupById(id);
             return new ResponseEntity<>("Deleted", HttpStatus.OK);
         } catch (Exception e){
+            e.printStackTrace();
+            log.info("deleteGroupById error : "+e.getMessage());
             return new ResponseEntity<>("Not Deleted", HttpStatus.BAD_REQUEST);
         }
     }

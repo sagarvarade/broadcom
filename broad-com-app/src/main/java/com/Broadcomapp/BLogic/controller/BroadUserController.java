@@ -114,7 +114,9 @@ public class BroadUserController {
 			return new ResponseEntity<>("Deleted", HttpStatus.OK);
 		}
 		catch (Exception e){
-			log.info("Not Deleted userId {} ,  user Id {} ",id,userID);
+			e.printStackTrace();
+			log.info("Delete error : "+e.getMessage());
+			log.info("Not Deleted userId {} ,  user{} ",id,userID);
 			return new ResponseEntity<>("Not Deleted", HttpStatus.BAD_REQUEST);
 		}
 	}
