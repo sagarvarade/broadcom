@@ -19,7 +19,7 @@
         <module>authentication</module>
         <module>Util</module>
         <module>broad-com-app</module>
-        <module>AppRunner</module>
+        <module>appRunner</module>
         <module>broadcomUI</module>
         <module>email-sender</module>
         <module>sms-sender</module>

@@ -1,4 +1,12 @@
 services:
+  zipkin:
+    image: openzipkin/zipkin:latest
+    container_name: zipkin
+    ports:
+      - "9411:9411"   # Zipkin runs on port 9411 by default
+    environment:
+      - STORAGE_TYPE=mem
+
   zookeeper:
     image: wurstmeister/zookeeper:latest
     ports:
