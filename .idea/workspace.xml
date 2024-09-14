@@ -241,7 +241,7 @@
       <command value="mvn clean install -U" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.SmsAppDev">
+  <component name="RunManager" selected="Docker.docker-compose.yml.apigateway: Compose Deployment">
     <configuration name="AuthApplicationDev" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.authentication.AuthApplication" />
       <module name="authentication" />
@@ -317,12 +317,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="docker-compose.yml.emailsender: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.apigateway: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="emailsender" />
+              <option value="apigateway" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.namingserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="namingserver" />
             </list>
           </option>
           <option name="sourceFilePath" value="docker-compose.yml" />
@@ -340,7 +361,9 @@
       <item itemvalue="Application.NamingServerApplicationProd" />
       <item itemvalue="Application.EmailAppDev" />
       <item itemvalue="Application.SmsAppDev" />
-      <item itemvalue="Docker.docker-compose.yml.emailsender: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.apigateway: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.namingserver: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       <item itemvalue="JUnit.All in Util" />
       <item itemvalue="JUnit.TokenTest" />
       <item itemvalue="JUnit.TokenTest.main" />
@@ -348,9 +371,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yml.apigateway: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.namingserver: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Application.SmsAppDev" />
         <item itemvalue="JUnit.TokenTest.main" />
-        <item itemvalue="Docker.docker-compose.yml.emailsender: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
