@@ -1,6 +1,6 @@
-package com.Broadcomapp.BLogic.repository;
+package com.Broadcomapp.broadcast.repository;
 
-import com.Broadcomapp.BLogic.beans.Address;
+import com.Broadcomapp.broadcast.beans.Address;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AddressRepository extends JpaRepository<Address, Long> {

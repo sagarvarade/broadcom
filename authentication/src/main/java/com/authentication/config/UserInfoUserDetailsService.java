@@ -21,7 +21,7 @@ public class UserInfoUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<UserInfo> userInfo = repository.findByName(username);
         return userInfo.map(UserInfoUserDetails::new)
-                .orElseThrow(() -> new UsernameNotFoundException("BLogic not found " + username));
+                .orElseThrow(() -> new UsernameNotFoundException("broadcast not found " + username));
     }
     
     public Optional<UserInfo> loadUserDetails(String username) {

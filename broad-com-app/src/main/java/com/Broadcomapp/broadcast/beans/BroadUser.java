@@ -1,4 +1,4 @@
-package com.Broadcomapp.BLogic.beans;
+package com.Broadcomapp.broadcast.beans;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

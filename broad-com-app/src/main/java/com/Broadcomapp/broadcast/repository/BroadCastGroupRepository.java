@@ -1,6 +1,6 @@
-package com.Broadcomapp.BLogic.repository;
+package com.Broadcomapp.broadcast.repository;
 
-import com.Broadcomapp.BLogic.beans.BroadCastGroup;
+import com.Broadcomapp.broadcast.beans.BroadCastGroup;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
