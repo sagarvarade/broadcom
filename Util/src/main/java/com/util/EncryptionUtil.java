@@ -8,7 +8,7 @@ import java.util.Base64;
 
 public class EncryptionUtil {
 
-    private static String KEY="8391023948237561";
+    private static final String KEY="8391023948237561";
 
     public static String encrypt(String data) throws Exception {
         SecretKeySpec secretKey = new SecretKeySpec(KEY.getBytes(), "AES");
