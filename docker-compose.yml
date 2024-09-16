@@ -66,7 +66,7 @@ services:
       MYSQL_ROOT_PASSWORD: admin
       MYSQL_DATABASE: authentication
     ports:
-      - "3307:3306"
+      - "3399:3306"
     volumes:
       - mysql-data:/var/lib/mysql
     networks:
