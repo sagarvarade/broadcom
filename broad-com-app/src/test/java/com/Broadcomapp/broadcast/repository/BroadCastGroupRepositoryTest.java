@@ -1,9 +1,7 @@
-package com.Broadcomapp.BLogic.repository;
+package com.Broadcomapp.broadcast.repository;
 
-import com.Broadcomapp.BLogic.beans.BroadCastGroup;
-import org.junit.jupiter.api.Test;
+import com.Broadcomapp.broadcast.beans.BroadCastGroup;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 

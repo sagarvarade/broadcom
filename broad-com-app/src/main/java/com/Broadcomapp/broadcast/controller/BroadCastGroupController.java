@@ -1,8 +1,8 @@
-package com.Broadcomapp.BLogic.controller;
+package com.Broadcomapp.broadcast.controller;
 
-import com.Broadcomapp.BLogic.beans.BroadCastGroup;
-import com.Broadcomapp.BLogic.beans.BroadUser;
-import com.Broadcomapp.BLogic.service.BroadCastGroupService;
+import com.Broadcomapp.broadcast.beans.BroadCastGroup;
+import com.Broadcomapp.broadcast.beans.BroadUser;
+import com.Broadcomapp.broadcast.service.BroadCastGroupService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

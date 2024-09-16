@@ -1,4 +1,19 @@
+version: '3.8'
+
 services:
+  zipkin:
+    image: openzipkin/zipkin:latest
+    container_name: zipkin
+    ports:
+      - "9411:9411"
+    environment:
+      - STORAGE_TYPE=mem
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9411/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
   zookeeper:
     image: wurstmeister/zookeeper:latest
     ports:
@@ -51,7 +66,7 @@ services:
       MYSQL_ROOT_PASSWORD: admin
       MYSQL_DATABASE: authentication
     ports:
-      - "3307:3306"
+      - "3399:3306"
     volumes:
       - mysql-data:/var/lib/mysql
     networks:
@@ -72,6 +87,8 @@ services:
       - "7000:7000"
     networks:
       - broadcom-network
+    environment:
+      - SPRING_ZIPKIN_BASE-URL=http://zipkin:9411
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:7100/actuator/health" ]
       interval: 30s
@@ -94,9 +111,10 @@ services:
       - broadcom-network
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7000/eureka/
-      - AUTHENTICATION_SERVICE_URL=http://authentication:7200
+      - AUTHENTICATION_SERVICE_URL=http://authentication:7200/auth/test-token
       - BROADCOMAPP_SERVICEURL=http://broadcomapp:7210
       - BROADCOM_COMMUNICATION_TOKEN=ABCD_1234
+      - SPRING_ZIPKIN_BASE-URL=http://zipkin:9411
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:7000/actuator/health" ]
       interval: 30s
@@ -125,6 +143,7 @@ services:
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=admin
       - BROADCOM_COMMUNICATION_TOKEN=ABCD_1234
+      - SPRING_ZIPKIN_BASE-URL=http://zipkin:9411
     healthcheck:
       test: [ "CMD", "curl", "-f", "-H", "broadcom_communication_token:ABCD_1234", "http://localhost:7200/actuator/health" ]
       interval: 30s
@@ -156,8 +175,9 @@ services:
       - SPRING_DATASOURCE_PASSWORD=admin
       - BROADCOM_COMMUNICATION_TOKEN=ABCD_1234
       - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9093
+      - SPRING_ZIPKIN_BASE-URL=http://zipkin:9411
     healthcheck:
-      test: [ "CMD", "curl", "-f","-H", "broadcom_communication_token:ABCD_1234", "http://localhost:7100/actuator/health" ]
+      test: [ "CMD", "curl", "-f", "-H", "broadcom_communication_token:ABCD_1234", "http://localhost:7100/actuator/health" ]
       interval: 30s
       timeout: 10s
       retries: 5
@@ -189,29 +209,30 @@ services:
       retries: 5
 
   emailsender:
-      image: broadcom-emailsender:8.1.1
-      restart: always
-      ports:
-        - "7230:7230"
-      depends_on:
-        kafka:
-          condition: service_healthy
-        db:
-          condition: service_healthy
-      networks:
-        - broadcom-network
-      environment:
+    image: broadcom-emailsender:8.1.1
+    restart: always
+    ports:
+      - "7230:7230"
+    depends_on:
+      kafka:
+        condition: service_healthy
+      db:
+        condition: service_healthy
+    networks:
+      - broadcom-network
+    environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://namingserver:7000/eureka/
       - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/emailsender?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=admin
       - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9093
       - SPRING_KAFKA_BOOTSTRAP_GROUP_ID=broadcom-group
-      healthcheck:
-        test: [ "CMD", "curl", "-f", "http://localhost:7230/actuator/health" ]
-        interval: 30s
-        timeout: 10s
-        retries: 5
+      - SPRING_ZIPKIN_BASE-URL=http://zipkin:9411
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:7230/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   smssender:
     image: broadcom-smssender:9.1.1
@@ -232,6 +253,7 @@ services:
       - SPRING_DATASOURCE_PASSWORD=admin
       - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9093
       - SPRING_KAFKA_BOOTSTRAP_GROUP_ID=broadcom-group
+      - SPRING_ZIPKIN_BASE-URL=http://zipkin:9411
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:7231/actuator/health" ]
       interval: 30s

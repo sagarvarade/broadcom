@@ -2,6 +2,7 @@ package com.Broadcomapp.config;
 
 import jakarta.annotation.PostConstruct;
 import org.apache.kafka.clients.admin.NewTopic;
+import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,7 @@ public class KafkaNewTopicConfig {
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,BOOTSTRAP_SERVERS_CONFIG);
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
+        props.put(ConsumerConfig.GROUP_ID_CONFIG, "broadcom-group-consumer");
         props.put(JsonDeserializer.TRUSTED_PACKAGES,"*");
         return props;
     }

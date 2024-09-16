@@ -1,7 +1,7 @@
-package com.Broadcomapp.BLogic.service;
+package com.Broadcomapp.broadcast.service;
 
-import com.Broadcomapp.BLogic.beans.BroadUser;
-import com.Broadcomapp.BLogic.repository.BroadUserRepository;
+import com.Broadcomapp.broadcast.beans.BroadUser;
+import com.Broadcomapp.broadcast.repository.BroadUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

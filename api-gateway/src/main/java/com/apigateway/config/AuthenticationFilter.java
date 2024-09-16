@@ -1,4 +1,4 @@
-package com.apigateway;
+package com.apigateway.config;
 
 import com.apigateway.clients.CheckToken;
 import com.fasterxml.jackson.core.JsonProcessingException;

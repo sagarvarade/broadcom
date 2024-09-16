@@ -1,7 +1,7 @@
 package com.Broadcomapp.message.Util;
 
-import com.Broadcomapp.BLogic.beans.BroadUser;
-import com.Broadcomapp.BLogic.service.BroadCastGroupService;
+import com.Broadcomapp.broadcast.beans.BroadUser;
+import com.Broadcomapp.broadcast.service.BroadCastGroupService;
 import com.Broadcomapp.message.KafkaProducer.KafkaTemplateProducer;
 import com.Broadcomapp.message.beans.FileStorage;
 import com.Broadcomapp.message.beans.Template;

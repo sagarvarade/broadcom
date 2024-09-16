@@ -1,7 +1,7 @@
 Things to Implement
 1. Logging with ELK statck with docket integration
 2. Implement failure with resilence 4j 
-3. Test all the endpoints in application
+3. Test all the endpoints in application  - Done
 4. Check for email tempalte with user email and password integration
 5. Check for SMS integration with twilio integration
 
@@ -10,7 +10,7 @@ Things to Implement
 http://localhost:7000/eureka/apps  : check register services
 http://localhost:7000/             ; UI
 
-
+Add zipkin to docker compose
 
 
 
