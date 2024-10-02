@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import { alertActions } from '_store';
-import { history, fetchWrapper } from '_helpers';
+//import { history, fetchWrapper } from '_helpers';
+import { history  } from '_helpers';
 import apiService from 'broadcom/user/API/apiService';
 
 // create slice
@@ -37,7 +38,7 @@ function createReducers() {
 }
 
 function createExtraActions() {
-    const baseUrl = `${process.env.REACT_APP_API_URL}/users`;
+   // const baseUrl = `${process.env.REACT_APP_API_URL}/users`;
 
     return {
         login: login(),
@@ -59,13 +60,8 @@ function createExtraActions() {
                     }
 
                     console.log("Here login ",loggedUser);
-                    
-                    var xt=await apiService('loginService', 'authenticate', {}, loggedUser);
-
-                    console.log("Here login from Api Gateway ",xt);
-
-                    const user = await fetchWrapper.post(`${baseUrl}/authenticate`, { username, password });
-
+                    const user = await apiService('loginService', 'authenticate', {}, loggedUser);
+                    console.log("Here login from Api Gateway ",user);
                     // set auth user in redux state
                     dispatch(authActions.setAuth(user));
 

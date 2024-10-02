@@ -1,29 +1,27 @@
-import { NavLink } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+//import { NavLink } from 'react-router-dom';
+//import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-import { authActions } from '_store';
-
+//import { authActions } from '_store';
+import localStorageGet from 'broadcom/user/API/localStorageReader';
+import RoleAdminNav from './RoleAdminNav';
+import RoleUserNav from './RoleUserNav';
 export { Nav };
 
 function Nav() {
     const auth = useSelector(x => x.auth.value);
-    const dispatch = useDispatch();
-    const logout = () => dispatch(authActions.logout());
-
+    //const dispatch = useDispatch();
+    //const logout = () => dispatch(authActions.logout());
+    const logedUserRole=localStorageGet('roles');
+    console.log('Loged user role ', logedUserRole)
     // only show nav when logged in
     if (!auth) return null;
     
     return (
-        <nav className="navbar navbar-expand navbar-dark bg-dark px-3">
-            <div className="navbar-nav">
-                <NavLink to="/" className="nav-item nav-link">Home</NavLink>
-                <NavLink to="/users" className="nav-item nav-link">Users</NavLink>
-                <NavLink to="/addbroaduser" className="nav-item nav-link">Add Users </NavLink>
-                <NavLink to="/addbroaduser" className="nav-item nav-link">Edit Users </NavLink>
-                <NavLink to="/addbroaduser" className="nav-item nav-link">Create Group </NavLink>
-                <NavLink to="/addbroaduser" className="nav-item nav-link">Broad Cast Message </NavLink>
-                <button onClick={logout} className="btn btn-link nav-item nav-link">Logout</button>
-            </div>
-        </nav>
+            logedUserRole === "ROLE_ADMIN" ? (
+                    <RoleAdminNav />
+                ) : (
+                    <RoleUserNav />
+            )
     );
 }
