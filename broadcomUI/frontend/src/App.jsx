@@ -11,7 +11,7 @@ import { Nav, Alert, PrivateRoute } from "_components";
 import { Home } from "home";
 import { AccountLayout } from "account";
 import { UsersLayout } from "users";
-import AddBroadUser from "broadcom/user/AddBroadUser";
+
 
 export { App };
 
@@ -31,7 +31,7 @@ function App() {
           <Route element={<PrivateRoute />}>
             <Route path="/" element={<Home />} />
             <Route path="users/*" element={<UsersLayout />} />
-            <Route path="addbroaduser/*" element={<AddBroadUser />} />
+            {/* <Route path="addbroaduser/*" element={<AddBr />} /> */}
           </Route>
           {/* public */}
           <Route path="account/*" element={<AccountLayout />} />

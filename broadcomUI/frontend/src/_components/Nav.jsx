@@ -17,7 +17,7 @@ function Nav() {
         <nav className="navbar navbar-expand navbar-dark bg-dark px-3">
             <div className="navbar-nav">
                 <NavLink to="/" className="nav-item nav-link">Home</NavLink>
-                {/* <NavLink to="/users" className="nav-item nav-link">Users</NavLink> */}
+                <NavLink to="/users" className="nav-item nav-link">Users</NavLink>
                 <NavLink to="/addbroaduser" className="nav-item nav-link">Add Users </NavLink>
                 <NavLink to="/addbroaduser" className="nav-item nav-link">Edit Users </NavLink>
                 <NavLink to="/addbroaduser" className="nav-item nav-link">Create Group </NavLink>

@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import { alertActions } from '_store';
 import { history, fetchWrapper } from '_helpers';
+import apiService from 'broadcom/user/API/apiService';
 
 // create slice
 
@@ -44,11 +45,25 @@ function createExtraActions() {
     };
 
     function login() {
+
+
         return createAsyncThunk(
             `${name}/login`,
             async function ({ username, password }, { dispatch }) {
                 dispatch(alertActions.clear());
                 try {
+                    
+                    let loggedUser={
+                        "username":username,
+                        "password":password
+                    }
+
+                    console.log("Here login ",loggedUser);
+                    
+                    var xt=await apiService('loginService', 'authenticate', {}, loggedUser);
+
+                    console.log("Here login from Api Gateway ",xt);
+
                     const user = await fetchWrapper.post(`${baseUrl}/authenticate`, { username, password });
 
                     // set auth user in redux state

@@ -1,0 +1,30 @@
+{
+  "loginService": {
+    "endpoints": {
+      "authenticate": {
+        "path": "/auth/authenticate",
+        "method": "POST"
+      },
+      "welcome": {
+        "path": "/auth/welcome",
+        "method": "GET"
+      },
+      "new-user": {
+        "path": "/auth/new-user",
+        "method": "POST"
+      },
+      "check-role-admin": {
+        "path": "/auth/check-role-admin",
+        "method": "GET"
+      },
+      "check-role-user": {
+        "path": "/auth/check-role-user",
+        "method": "GET"
+      },
+      "test-token": {
+        "path": "/auth/test-token",
+        "method": "GET"
+      }
+    }
+  }
+}

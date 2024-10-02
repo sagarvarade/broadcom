@@ -18,10 +18,7 @@ import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
 import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 @Component
 public class AuthenticationFilter implements GlobalFilter, Ordered {
@@ -38,8 +35,15 @@ public class AuthenticationFilter implements GlobalFilter, Ordered {
 	public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
 		try {
 			logger.info("Path ,{} ", exchange.getRequest().getPath());
-			String tokenForMicroCommunication = Objects.requireNonNull(exchange.getRequest().getHeaders().get("broadcom_communication_token")).get(0);
 
+			List<String> tokenForMicroCommunicationList = exchange.getRequest().getHeaders().get("broadcom_communication_token");
+
+			if (tokenForMicroCommunicationList==null) {
+				throw new RuntimeException("You are not allow to communicate to this services {}, Token missing for communication ");
+			}
+
+			String tokenForMicroCommunication="BLANK";
+			tokenForMicroCommunication=tokenForMicroCommunicationList.get(0);
 			logger.info("Token From Call ,{} ", tokenForMicroCommunication);
 			logger.info("Token Set For All microservices Call ,{} ", this.broadcom_communication_token);
 
@@ -93,6 +97,7 @@ public class AuthenticationFilter implements GlobalFilter, Ordered {
 			return chain.filter(exchange);
 		}
 		catch(Exception e){
+			e.printStackTrace();
 			return handleException(exchange, e);
 		}
 	}
