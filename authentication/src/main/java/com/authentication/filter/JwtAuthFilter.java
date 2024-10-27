@@ -6,8 +6,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -20,8 +19,8 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 
 @Component
+@Slf4j
 public class JwtAuthFilter extends OncePerRequestFilter {
-    private final Logger log = LoggerFactory.getLogger(JwtAuthFilter.class);
 
     @Autowired
     private JwtService jwtService;
@@ -68,8 +67,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             filterChain.doFilter(request, response);
         }
         catch(Exception ex){
-            ex.printStackTrace();
-            log.info(" Error in Auth Filter : "+ex.getMessage());
+            log.error(" Error in Auth Filter : {} ", ex.getMessage());
             ((HttpServletResponse) response).setStatus(HttpServletResponse.SC_BAD_REQUEST);
             ((HttpServletResponse) response).setContentType("application/json");
             ((HttpServletResponse) response).getWriter().write("{ \"error\": \"An error occurred: " + ex.getMessage() + "\" }");

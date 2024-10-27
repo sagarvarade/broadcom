@@ -1,15 +1,15 @@
 package com.authentication.config;
 
-import java.util.Optional;
-
+import com.authentication.entity.UserInfo;
+import com.authentication.repository.UserInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import com.authentication.entity.UserInfo;
-import com.authentication.repository.UserInfoRepository;
+import java.util.List;
+import java.util.Optional;
 
 @Component
 public class UserInfoUserDetailsService implements UserDetailsService {
@@ -26,5 +26,9 @@ public class UserInfoUserDetailsService implements UserDetailsService {
     
     public Optional<UserInfo> loadUserDetails(String username) {
         return repository.findByName(username);
+    }
+
+    public List<UserInfo> getAllUsers() {
+        return repository.findAll();
     }
 }

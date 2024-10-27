@@ -5,17 +5,15 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.smssender.beans.TemplatesGenerated;
 import com.smssender.service.TemplateService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.annotation.TopicPartition;
 import org.springframework.stereotype.Component;
 
 @Component
+@Slf4j
 public class KafkaMessageListener {
-
-    private final Logger log = LoggerFactory.getLogger(KafkaMessageListener.class);
 
     @Autowired
     private TemplateService templateService;
@@ -31,7 +29,7 @@ public class KafkaMessageListener {
             templateService.save(template);
             log.info("Consumer One : Email consume the template : {} ", template.toString());
         } catch (JsonProcessingException e) {
-            e.printStackTrace();
+            log.error("One : SMS-Sender consumer template error : {} ", e.getMessage());
         }
     }
 
@@ -43,7 +41,7 @@ public class KafkaMessageListener {
             templateService.save(template);
             log.info("Consumer Two : Email consume the template : {} ", template.toString());
         } catch (JsonProcessingException e) {
-            e.printStackTrace();
+            log.error("Two : SMS-Sender consumer template error : {} ", e.getMessage());
         }
     }
 
@@ -55,7 +53,7 @@ public class KafkaMessageListener {
             templateService.save(template);
             log.info("Consumer Three : Email consume the template : {} ", template.toString());
         } catch (JsonProcessingException e) {
-            e.printStackTrace();
+            log.error("Three : SMS-Sender consumer template error : {} ", e.getMessage());
         }
     }
 
@@ -67,7 +65,7 @@ public class KafkaMessageListener {
             templateService.save(template);
             log.info("Consumer Four : Email consume the template : {} ", template.toString());
         } catch (JsonProcessingException e) {
-            e.printStackTrace();
+            log.error("Four : SMS-Sender consumer template error : {} ", e.getMessage());
         }
     }
 
@@ -79,7 +77,7 @@ public class KafkaMessageListener {
             templateService.save(template);
             log.info("Consumer Five : Email consume the template : {} ", template.toString());
         } catch (JsonProcessingException e) {
-            e.printStackTrace();
+            log.error("Five : SMS-Sender consumer template error : {} ", e.getMessage());
         }
     }
 
@@ -91,7 +89,7 @@ public class KafkaMessageListener {
             templateService.save(template);
             log.info("Consumer Six : Email consume the template : {} ", template.toString());
         } catch (JsonProcessingException e) {
-            e.printStackTrace();
+            log.error("Six : SMS-Sender consumer template error : {} ", e.getMessage());
         }
     }
 

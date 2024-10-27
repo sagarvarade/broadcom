@@ -4,8 +4,7 @@ package com.Broadcomapp.message.KafkaProducer;
 import com.Broadcomapp.message.beans.TemplatesGenerated;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
@@ -14,9 +13,8 @@ import org.springframework.stereotype.Service;
 import java.util.concurrent.CompletableFuture;
 
 @Service
+@Slf4j
 public class KafkaTemplateProducer {
-
-    private final Logger log = LoggerFactory.getLogger(KafkaTemplateProducer.class);
 
     @Autowired
     private KafkaTemplate<String,Object> template;

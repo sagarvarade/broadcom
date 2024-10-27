@@ -11,8 +11,8 @@ public class BroadComUIController {
     //@RequestMapping(value = "/**/{[path:[^\\.]*}")
     @RequestMapping(value = {"/ui/**", "/**/{path:[^\\.]*}"})
     public ModelAndView home() {
-        ModelAndView mav=new ModelAndView("index");
-        return mav;
+        ModelAndView model = new ModelAndView("index");
+        return model;
     }
     @GetMapping("/broadcomui")
     public  String broadComUI(){

@@ -3,8 +3,7 @@ package com.Broadcomapp.broadcast.controller;
 import com.Broadcomapp.broadcast.beans.BroadCastGroup;
 import com.Broadcomapp.broadcast.beans.BroadUser;
 import com.Broadcomapp.broadcast.service.BroadCastGroupService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,9 +16,9 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/broad-com-app/group")
+@Slf4j
 public class BroadCastGroupController {
 
-    private final Logger log = LoggerFactory.getLogger(BroadCastGroupController.class);
     @Autowired
     private BroadCastGroupService broadCastGroupService;
 
@@ -61,8 +60,7 @@ public class BroadCastGroupController {
             broadCastGroupService.deleteGroupById(id);
             return new ResponseEntity<>("Deleted", HttpStatus.OK);
         } catch (Exception e){
-            e.printStackTrace();
-            log.info("deleteGroupById error : "+e.getMessage());
+            log.info("deleteGroupById error : {} ", e.getMessage());
             return new ResponseEntity<>("Not Deleted", HttpStatus.BAD_REQUEST);
         }
     }
@@ -70,11 +68,11 @@ public class BroadCastGroupController {
     public ResponseEntity<HashMap<String, List<BroadUser>>> getGroupWithUsers(@PathVariable ("name") String name,
                                                                               @RequestHeader("user_id") String userID){
         log.info("/broad-com-app/group/get-group-details-by-group-name/{name} called ");
-        log.info("broadCastGroup name {} , User Id : {} ",name,userID);
+        log.info("getGroupWithUsers name {} , User Id : {} ", name, userID);
         HashMap<String, List<BroadUser>> bg = broadCastGroupService.getGroupDetails(name,userID);
         if(bg.isEmpty()){
             return ResponseEntity.noContent().build();
-        }else{
+        } else {
             return  new ResponseEntity<>(bg, HttpStatus.OK);
         }
     }

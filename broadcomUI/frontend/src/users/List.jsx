@@ -1,13 +1,24 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { userActions } from '_store';
+import apiService from 'broadcom/user/API/apiService';
 
 export { List };
 
 function List() {
-    const users = useSelector(x => x.users.list);
+
+    const fetchUsers = async () => {
+        try {
+            await apiService('loginService', 'get-all-users', {}, {});
+        } catch (error) {
+            console.error("Failed to fetch users", error);
+        }
+    };
+    console.log(fetchUsers);
+
+    const users = JSON.parse('[{"id":1,"name":"sagar","email":"a@gmail.com","password":"$2a$10$zan24hGdotQG9VEOKNkQoO01Owv9GF5CIihhOGHgv5zNbF2HJrmBy","roles":"ROLE_ADMIN"},{"id":2,"name":"akash","email":"akash@gmail.com","password":"$2a$10$.aMMUaYkd5yR87GuCcffw.clEVchWg2ia3WvI24yAfH2udPDxaIBe","roles":"ROLE_USER"}]');
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -21,18 +32,18 @@ function List() {
             <table className="table table-striped">
                 <thead>
                     <tr>
-                        <th style={{ width: '30%' }}>First Name</th>
-                        <th style={{ width: '30%' }}>Last Name</th>
-                        <th style={{ width: '30%' }}>Username</th>
+                        <th style={{ width: '30%' }}>Name</th>
+                        <th style={{ width: '30%' }}>Email</th>
+                        <th style={{ width: '30%' }}>Roles</th>
                         <th style={{ width: '10%' }}></th>
                     </tr>
                 </thead>
                 <tbody>
-                    {users?.value?.map(user =>
+                    {users?.map(user =>
                         <tr key={user.id}>
-                            <td>{user.firstName}</td>
-                            <td>{user.lastName}</td>
-                            <td>{user.username}</td>
+                            <td>{user.name}</td>
+                            <td>{user.email}</td>
+                            <td>{user.roles}</td>
                             <td style={{ whiteSpace: 'nowrap' }}>
                                 <Link to={`edit/${user.id}`} className="btn btn-sm btn-primary me-1">Edit</Link>
                                 <button onClick={() => dispatch(userActions.delete(user.id))} className="btn btn-sm btn-danger" style={{ width: '60px' }} disabled={user.isDeleting}>

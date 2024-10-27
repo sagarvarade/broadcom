@@ -2,8 +2,7 @@ package com.emailsender.controller;
 
 import com.emailsender.beans.EmailCredential;
 import com.emailsender.service.EmailCredentialService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,9 +12,8 @@ import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/email-sender")
+@Slf4j
 public class EmailController {
-
-    private final Logger log = LoggerFactory.getLogger(EmailController.class);
 
     @Autowired
     public EmailCredentialService emailCredentialService;
@@ -39,7 +37,7 @@ public class EmailController {
             return new ResponseEntity<>(emailCredentialService.saveEmailCredentials(emailCredential),HttpStatus.OK);
         }
         catch(Exception e){
-            log.info("/email-sender/save-email-credential called  Error : {} ",e.getMessage());
+            log.error("/email-sender/save-email-credential called  Error : {} ", e.getMessage());
         }
         return  ResponseEntity.noContent().build();
     }

@@ -4,8 +4,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -13,14 +12,16 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 
 @Component
+@Slf4j
 public class JwtAuthFilter extends OncePerRequestFilter {
 
-    private final Logger log = LoggerFactory.getLogger(JwtAuthFilter.class);
     @Value("${broadcom_communication_token}")
     String broadcom_communication_token;
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+    protected void doFilterInternal(HttpServletRequest request,
+                                    HttpServletResponse response,
+                                    FilterChain filterChain) throws ServletException, IOException {
         log.info("/broad-com-app/group/create called ");
         log.info(" Broadcom header received , user_id : {} ",request.getHeader("sub"));
         log.info(" Broadcom header received , exp    :  {}",request.getHeader("exp"));

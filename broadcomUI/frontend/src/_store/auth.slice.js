@@ -46,8 +46,6 @@ function createExtraActions() {
     };
 
     function login() {
-
-
         return createAsyncThunk(
             `${name}/login`,
             async function ({ username, password }, { dispatch }) {

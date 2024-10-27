@@ -5,6 +5,7 @@ import com.authentication.dto.AuthRequest;
 import com.authentication.entity.UserInfo;
 import com.authentication.service.JwtService;
 import com.authentication.service.UserAuthService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,10 +18,12 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
 @RequestMapping("/auth")
+@Slf4j
 public class AuthController {
 
     @Autowired
@@ -36,6 +39,11 @@ public class AuthController {
     @GetMapping("/welcome")
     public ResponseEntity<String> welcome() {
         return new ResponseEntity<>("Welcome this endpoint is not secure",HttpStatus.OK);
+    }
+
+    @GetMapping("/get-all-users")
+    public ResponseEntity<List<UserInfo>> getAllUsers() {
+        return new ResponseEntity<>(userInfoService.getAllUsers(), HttpStatus.OK);
     }
 
     @PostMapping("/new-user")

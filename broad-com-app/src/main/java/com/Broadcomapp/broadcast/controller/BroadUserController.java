@@ -3,8 +3,7 @@ package com.Broadcomapp.broadcast.controller;
 
 import com.Broadcomapp.broadcast.beans.BroadUser;
 import com.Broadcomapp.broadcast.service.BroadUserService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -17,8 +16,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/broad-com-app/user")
+@Slf4j
 public class BroadUserController {
-	private final Logger log = LoggerFactory.getLogger(BroadUserController.class);
+
 	@Autowired
 	private BroadUserService userService;
 
@@ -33,7 +33,7 @@ public class BroadUserController {
 	public ResponseEntity<String> createUser(@RequestBody BroadUser user,
 											 @RequestHeader("user_id") String userID) {
 		log.info("/broad-com-app/user/create called ");
-		log.info("BroadUser {} , User Id : {} ",user,userID);
+        log.info("BroadUser createUser {} , User Id : {} ", user, userID);
 		try{
 			LocalDateTime now=LocalDateTime.now();
 			user.setCreatedBy(userID);
@@ -44,7 +44,7 @@ public class BroadUserController {
 			return new ResponseEntity<>("User added Successfully.",HttpStatus.OK);
 		}
 		catch (Exception e){
-			e.printStackTrace();
+            log.error("Exception occurred at Create user : {} ", e.getMessage());
 		}
 		return new ResponseEntity<>("Internal Server Error.",HttpStatus.INTERNAL_SERVER_ERROR);
 	}
@@ -67,7 +67,7 @@ public class BroadUserController {
 			return new ResponseEntity<>("User added Successfully.",HttpStatus.OK);
 		}
 		catch (Exception e){
-			e.printStackTrace();
+            log.error("Exception occurred at Create user-list : {} ", e.getMessage());
 		}
 		return new ResponseEntity<>("Internal Server Error.",HttpStatus.INTERNAL_SERVER_ERROR);
 	}
@@ -76,7 +76,7 @@ public class BroadUserController {
 	public ResponseEntity<BroadUser> getUser(@PathVariable("id") Long id,
 											 @RequestHeader("user_id") String userID){
 		log.info("/broad-com-app/user/get/{id} called ");
-		log.info("BroadUser Id {} , User Id : {} ",id,userID);
+        log.info("BroadUser : getUser : Id {} , User Id : {} ", id, userID);
 		if(userService.getUserByIdAndUpdatedBy(id,userID).isPresent()){
 			return ResponseEntity.ok(userService.getUserByIdAndUpdatedBy(id,userID).get());
 		}
@@ -114,8 +114,7 @@ public class BroadUserController {
 			return new ResponseEntity<>("Deleted", HttpStatus.OK);
 		}
 		catch (Exception e){
-			e.printStackTrace();
-			log.info("Delete error : "+e.getMessage());
+            log.error("Delete error : {} ", e.getMessage());
 			log.info("Not Deleted userId {} ,  user{} ",id,userID);
 			return new ResponseEntity<>("Not Deleted", HttpStatus.BAD_REQUEST);
 		}

@@ -9,6 +9,10 @@
         "path": "/auth/welcome",
         "method": "GET"
       },
+      "get-all-users": {
+        "path": "/auth/get-all-users",
+        "method": "GET"
+      },
       "new-user": {
         "path": "/auth/new-user",
         "method": "POST"

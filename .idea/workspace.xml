@@ -6,8 +6,43 @@
   <component name="ChangeListManager">
     <list default="true" id="02a2db7c-71b2-4fb7-ae83-f47f4b4d5c99" name="Changes" comment="ok">
       <changelist_data name="sagar_varade" email="varade.sagar12@gmail.com" />
+      <change afterPath="$PROJECT_DIR$/Util/src/main/java/Bean/TokenDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Util/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/src/main/java/com/util/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/main/java/com/util/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/src/test/java/com/util/TokenTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Util/src/test/java/com/util/TokenTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/apigateway/clients/CheckToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/apigateway/clients/CheckToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/apigateway/config/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/apigateway/config/AuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/config/UserInfoUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/config/UserInfoUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/exception/CustomAccessDeniedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/exception/CustomAccessDeniedHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/filter/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/filter/JwtAuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/repository/UserInfoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/src/main/java/com/authentication/repository/UserInfoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/broadcast/controller/BroadCastGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/broadcast/controller/BroadCastGroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/broadcast/controller/BroadUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/broadcast/controller/BroadUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/config/KafkaNewTopicConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/config/KafkaNewTopicConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/filter/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/filter/JwtAuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/KafkaProducer/KafkaTemplateProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/KafkaProducer/KafkaTemplateProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/controller/MessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/service/FileStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/service/FileStorageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/service/TemplateGenerateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/broad-com-app/src/main/java/com/Broadcomapp/message/service/TemplateGenerateService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/broadcomUI/frontend/src/_store/auth.slice.js" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomUI/frontend/src/_store/auth.slice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomUI/frontend/src/broadcom/user/API/endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomUI/frontend/src/broadcom/user/API/endpoints.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomUI/frontend/src/users/List.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomUI/frontend/src/users/List.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomUI/src/main/java/com/broadcom/UI/BroadComUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomUI/src/main/java/com/broadcom/UI/BroadComUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomUI/src/main/resources/static/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomUI/src/main/resources/static/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broadcomUI/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/broadcomUI/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/config/KafkaMessageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/config/KafkaMessageListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/controller/EmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/controller/EmailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/repository/EmailCredentialRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/repository/EmailCredentialRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/repository/TemplateRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/repository/TemplateRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/service/EmailCredentialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/service/EmailCredentialService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/service/TemplateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-sender/src/main/java/com/emailsender/service/TemplateService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/config/KafkaMessageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/config/KafkaMessageListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/repository/TemplateRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/repository/TemplateRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/service/TemplateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sms-sender/src/main/java/com/smssender/service/TemplateService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,16 +186,12 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2gpZil8nixpodYTeTr5aDsUgKsB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -169,28 +200,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17 (2)&quot;,
-    &quot;last_directory_selection&quot;: &quot;E:/SpringIJ/BroadCom/SpringTestApp/src/main/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/SpringIJ/BroadCom/SpringTestApp/src/main/resources&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.TokenTest.testToken.executor": "Run",
+    "Maven.BroadCom [clean].executor": "Run",
+    "Maven.BroadCom [install].executor": "Run",
+    "Maven.Util [clean].executor": "Run",
+    "Maven.Util [install].executor": "Run",
+    "Maven.api-gateway [install].executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "story/UI__upd",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "17 (2)",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "E:/SpringIJ/BroadCom/SpringTestApp/src/main/java",
+    "last_opened_file_path": "E:/SpringIJ/BroadCom",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.Broadcomapp.user.beans" />
@@ -241,7 +281,7 @@
       <command value="mvn clean install -U" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.AuthApplicationDev">
+  <component name="RunManager" selected="JUnit.TokenTest.testToken">
     <configuration name="AuthApplicationDev" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.authentication.AuthApplication" />
       <module name="authentication" />
@@ -316,22 +356,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TokenTest.testToken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Util" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.util" />
+      <option name="MAIN_CLASS_NAME" value="com.util.TokenTest" />
+      <option name="METHOD_NAME" value="testToken" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml.apigateway: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="apigateway" />
-            </list>
-          </option>
           <option name="sourceFilePath" value="docker-compose.yml" />
         </settings>
       </deployment>
@@ -360,20 +403,16 @@
       <item itemvalue="Application.NamingServerApplicationProd" />
       <item itemvalue="Application.EmailAppDev" />
       <item itemvalue="Application.SmsAppDev" />
-      <item itemvalue="Docker.docker-compose.yml.apigateway: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml.namingserver: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       <item itemvalue="JUnit.All in Util" />
       <item itemvalue="JUnit.TokenTest" />
+      <item itemvalue="JUnit.TokenTest.testToken" />
       <item itemvalue="JUnit.EncryptionUtilTest" />
       <item itemvalue="Multirun.RunBroadCom" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TokenTest.testToken" />
         <item itemvalue="JUnit.EncryptionUtilTest" />
-        <item itemvalue="Docker.docker-compose.yml.apigateway: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.namingserver: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Application.SmsAppDev" />
       </list>
     </recent_temporary>
@@ -444,6 +483,7 @@
     <MESSAGE value="ok" />
     <option name="LAST_COMMIT_MESSAGE" value="ok" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

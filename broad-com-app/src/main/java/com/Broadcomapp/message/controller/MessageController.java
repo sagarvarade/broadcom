@@ -4,8 +4,7 @@ import com.Broadcomapp.message.Util.TemplateResolverService;
 import com.Broadcomapp.message.beans.FileStorage;
 import com.Broadcomapp.message.beans.Template;
 import com.Broadcomapp.message.service.FileStorageService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,9 +19,9 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/broad-com-app/template")
+@Slf4j
 public class MessageController {
 
-    private final Logger log = LoggerFactory.getLogger(MessageController.class);
     @Autowired
     private FileStorageService fileStorageService;
 
@@ -33,14 +32,13 @@ public class MessageController {
     public ResponseEntity<Map<String, String>> uploadFile(@RequestParam("file") MultipartFile file,
                                                           @RequestHeader("user_id") String userID) {
         log.info("/broad-com-app/template/upload called ");
-        log.info("User Id  , {} ",userID);
+        log.info("User Id : {} ", userID);
         Map<String,String> response = new HashMap<>();
         try {
             fileStorageService.saveFile(file,userID);
             response.put("ok", "File uploaded successfully!");
         } catch (IOException e) {
-            e.printStackTrace();
-            log.info("uploadFile error : "+e.getMessage());
+            log.error("uploadFile error : {} ", e.getMessage());
             response.put("error", "an error expected on processing file");
             return ResponseEntity.badRequest().body(response);
         }
@@ -58,21 +56,19 @@ public class MessageController {
     @GetMapping("/get-active-files")
     public ResponseEntity<List<FileStorage>> getActiveFiles(@RequestHeader("user_id") String userID) {
         log.info("/broad-com-app/template/get-active-files called ");
-        log.info("User Id  , {} ",userID);
+        log.info(" getActiveFiles User Id  , {} ", userID);
         return new ResponseEntity<>(fileStorageService.getActiveFiles(),HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteFile(@PathVariable Long id,@RequestHeader("user_id") String userID) {
         log.info("/broad-com-app/template//delete/{id} called ");
-        log.info("User Id  , {} ",userID);
+        log.info("deleteFile User Id  , {} ", userID);
         try {
             fileStorageService.deleteFile(id);
             return new ResponseEntity<>("File deleted successfully!",HttpStatus.OK);
         } catch (Exception e) {
-            e.printStackTrace();
-            log.info("deleteFile error : "+e.getMessage());
-            log.info("Exception while deleting : {} "+e.getMessage());
+            log.info("Exception while deleting : {} ", e.getMessage());
             return new ResponseEntity<>("Failed to delete file!",HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -83,13 +79,12 @@ public class MessageController {
                              @RequestParam("isActive") boolean isActive,
                              @RequestHeader("user_id") String userID) {
         log.info("/broad-com-app/template/update/{id} called ");
-        log.info("User Id  , {} ",userID);
+        log.info("updateFile User Id  , {} ", userID);
         try {
             fileStorageService.updateFile(id, file, isActive,userID);
             return new ResponseEntity<>("File updated successfully!",HttpStatus.OK);
         } catch (IOException e) {
-            e.printStackTrace();
-            log.info("updateFile error : "+e.getMessage());
+            log.error("updateFile error : {} ", e.getMessage());
             return new ResponseEntity<>("Failed to update file!",HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -97,7 +92,7 @@ public class MessageController {
     @PostMapping("/render-test")
     public ResponseEntity<String> renderTemplate(@RequestBody Template template) {
         log.info("/broad-com-app/template/render-test called ");
-        log.info("Template Name  {}, Template Variable {} ",template.getTemplateName(),template.getVariable());
+        log.info("renderTemplate Template Name  {}, Template Variable {} ", template.getTemplateName(), template.getVariable());
         return new ResponseEntity<>(templateResolverService.processTemplate(template.getTemplateName(), template.getVariable()),HttpStatus.OK);
     }
 
@@ -106,9 +101,8 @@ public class MessageController {
                                                   @RequestBody Template template,
                                                   @RequestHeader("user_id") String userID) {
         log.info("/broad-com-app/template/render-for-group-email/{group-name} called ");
-        log.info("Template Name  {}, Template Variable {} ",template.getTemplateName(),template.getVariable());
-        log.info("Template groupName  {}, Template Name {}, Template Variable {} ",groupName,template.getTemplateName(),template.getVariable());
-        log.info("User Id  , {} ",userID);
+        log.info("renderTemplateForGroupWithEmail Template Name  {}, Template Variable {} ", template.getTemplateName(), template.getVariable());
+        log.info("renderTemplateForGroupWithEmail Template groupName  {}, Template Name {}, Template Variable {} ", groupName, template.getTemplateName(), template.getVariable());
         return new ResponseEntity<>(templateResolverService.processTemplateWithGroupEmail(groupName,template,userID),HttpStatus.OK);
     }
 
@@ -117,9 +111,8 @@ public class MessageController {
                                                 @RequestBody Template template,
                                                 @RequestHeader("user_id") String userID) {
         log.info("/broad-com-app/template//render-for-group-sms/{group-name} called ");
-        log.info("Template Name  {}, Template Variable {} ",template.getTemplateName(),template.getVariable());
-        log.info("Template groupName  {}, Template Name {}, Template Variable {} ",groupName,template.getTemplateName(),template.getVariable());
-        log.info("User Id  , {} ",userID);
+        log.info("renderTemplateForGroupWithSMS Template Name  {}, Template Variable {} ", template.getTemplateName(), template.getVariable());
+        log.info("renderTemplateForGroupWithSMS Template groupName  {}, Template Name {}, Template Variable {} ", groupName, template.getTemplateName(), template.getVariable());
         return new ResponseEntity<>(templateResolverService.processTemplateWithGroupSMS(groupName,template,userID),HttpStatus.OK);
     }
 
